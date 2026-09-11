@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thiên Địa Nhân — 24 Tiết Khí &amp; Thời Gian</title>
+<meta name="description" content="Thiên Địa Nhân: seri 24 tiết khí và các bài viết về thời gian, lịch pháp, vũ trụ — trời đất vận hành, con người đứng giữa mà quan sát.">
+<meta name="theme-color" content="#0d1424">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Thiên Địa Nhân — 24 Tiết Khí &amp; Thời Gian">
+<meta property="og:description" content="Trời vận hành, đất đổi mùa, con người đứng giữa mà quan sát. 24 tiết khí và những bài viết về thời gian, lịch pháp.">
+<!-- TODO: thay bằng URL thật của trang và một ảnh og-image (khuyến nghị 1200x630px) khi deploy -->
+<meta property="og:site_name" content="Dừa &amp; Mixue"><meta property="og:url" content="https://duamixue.github.io/thien-dia-nhan/">
+<meta property="og:image" content="https://duamixue.github.io/thien-dia-nhan/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Thiên Địa Nhân — 24 Tiết Khí &amp; Thời Gian">
+<meta name="twitter:description" content="Trời vận hành, đất đổi mùa, con người đứng giữa mà quan sát. 24 tiết khí và những bài viết về thời gian, lịch pháp.">
+<meta name="twitter:image" content="https://duamixue.github.io/thien-dia-nhan/og-image.png">
+<meta property="og:locale" content="vi_VN">
+<link rel="canonical" href="https://duamixue.github.io/thien-dia-nhan/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230d1424'/%3E%3Ccircle cx='50' cy='50' r='13' fill='%23c9a24a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Thiên Địa Nhân",
+  "url": "https://duamixue.github.io/thien-dia-nhan/",
+  "description": "Thiên Địa Nhân: seri 24 tiết khí và các bài viết về thời gian, lịch pháp, vũ trụ — trời đất vận hành, con người đứng giữa mà quan sát.",
+  "inLanguage": "vi"
+}
+</script>
+<style>
+  :root{
+    --ink:#0d1424;
+    --ink-2:#141d33;
+    --paper:#f4efe4;
+    --paper-dim:#e7ded0;
+    --brass:#c9a24a;
+    --brass-dim:#8a723a;
+    --line:#3a4560;
+    --text-soft:#c9d2e8;
+    --text-dim:#8f9ab8;
+    --max:760px;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    position:relative;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.02 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      var(--ink);
+    color:var(--text-soft);
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-weight:300;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0; z-index:-1;
+    pointer-events:none;
+    background:radial-gradient(ellipse at 50% 0%, transparent 45%, rgba(0,0,0,0.35) 100%);
+  }
+
+  /* ---- Scroll reveal ---- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  /* ---- Hero ---- */
+  .hero{
+    position:relative;
+    padding:96px 24px 64px;
+    text-align:center;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(201,162,74,0.14), transparent 60%),
+      var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{ position:relative; z-index:1; }
+  .hero-stars{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(1.5px 1.5px at 12% 22%, rgba(244,239,228,0.55), transparent),
+      radial-gradient(1.5px 1.5px at 78% 15%, rgba(244,239,228,0.4), transparent),
+      radial-gradient(1px 1px at 32% 68%, rgba(244,239,228,0.5), transparent),
+      radial-gradient(1.5px 1.5px at 88% 60%, rgba(244,239,228,0.35), transparent),
+      radial-gradient(1px 1px at 55% 82%, rgba(244,239,228,0.45), transparent),
+      radial-gradient(1px 1px at 8% 78%, rgba(244,239,228,0.35), transparent),
+      radial-gradient(1.5px 1.5px at 65% 30%, rgba(244,239,228,0.4), transparent);
+    animation: twinkle 7s ease-in-out infinite alternate;
+    pointer-events:none;
+  }
+  @keyframes twinkle{ from{ opacity:0.55; } to{ opacity:1; } }
+  @media (prefers-reduced-motion: reduce){ .hero-stars{ animation:none; } }
+  .orbit{ width:220px; height:220px; margin:0 auto 32px; }
+  @media (max-width:400px){
+    .orbit{ width:168px; height:168px; margin:0 auto 24px; }
+    .hero{ padding:72px 16px 48px; }
+  }
+  .eyebrow{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.05rem;
+    color:var(--brass);
+    letter-spacing:0.06em;
+    margin:0 0 16px;
+  }
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:clamp(2.4rem, 7vw, 3.6rem);
+    color:var(--paper);
+    margin:0 0 20px;
+    line-height:1.15;
+  }
+  .hero-sub{
+    max-width:480px;
+    margin:0 auto;
+    color:var(--text-dim);
+    font-size:1.02rem;
+  }
+  .hero-status{
+    margin-top:28px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-size:0.8rem;
+    letter-spacing:0.03em;
+    color:var(--brass-dim);
+  }
+  .hero-status::before{
+    content:"";
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--brass);
+    box-shadow:0 0 6px 1px rgba(201,162,74,0.7);
+    animation:sunPulse 4s ease-in-out infinite;
+    flex-shrink:0;
+  }
+  @media (prefers-reduced-motion: reduce){ .hero-status::before{ animation:none; } }
+
+  .orbit-sun{ animation: sunPulse 4s ease-in-out infinite; }
+  @keyframes sunPulse{ 0%,100%{ opacity:1; } 50%{ opacity:0.75; } }
+  @media (prefers-reduced-motion: reduce){ .orbit-sun{ animation:none; } }
+
+  /* ---- Nền đổi theo giờ thực của người xem ---- */
+  .sky-tint{
+    position:fixed; inset:0; z-index:-1;
+    pointer-events:none;
+    opacity:0;
+    mix-blend-mode:soft-light;
+    transition:opacity 1.8s ease, background 1.8s ease;
+  }
+  body.sky-ready .sky-tint{ opacity:1; }
+  body.sky-dawn .sky-tint{ background:radial-gradient(ellipse at 50% -10%, rgba(255,183,94,0.35), transparent 65%); }
+  body.sky-day .sky-tint{ background:radial-gradient(ellipse at 50% -10%, rgba(120,170,255,0.12), transparent 65%); }
+  body.sky-dusk .sky-tint{ background:radial-gradient(ellipse at 50% -10%, rgba(255,110,150,0.28), transparent 65%); }
+  body.sky-night .sky-tint{ background:radial-gradient(ellipse at 50% -10%, rgba(90,70,200,0.30), transparent 65%); }
+
+  /* ---- Sections ---- */
+  main section{ position:relative; padding:56px 0; }
+  main section:last-of-type::after{ display:none; }
+  main section::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
+  }
+
+  .lede{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.35rem;
+    color:var(--paper);
+    line-height:1.55;
+    margin:0;
+  }
+
+  .section-title{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:clamp(1.5rem, 4vw, 1.9rem);
+    color:var(--paper);
+    margin:0 0 10px;
+  }
+  .section-note{
+    color:var(--text-dim);
+    font-size:0.94rem;
+    margin:0 0 32px;
+  }
+
+  .tag{
+    display:inline-block;
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-size:0.7rem;
+    font-weight:600;
+    letter-spacing:0.04em;
+    color:var(--brass);
+    border:1px solid var(--brass-dim);
+    border-radius:3px;
+    padding:3px 9px;
+    margin-bottom:16px;
+  }
+
+  /* ---- Prologue card ---- */
+  .prologue-card{
+    display:block;
+    border:1px solid var(--brass-dim);
+    border-radius:6px;
+    padding:26px 28px;
+    background:linear-gradient(160deg, rgba(201,162,74,0.07), transparent 70%);
+    box-shadow:0 10px 30px -14px rgba(6,10,20,0.65);
+    transition:border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .prologue-card:hover{
+    border-color:var(--brass);
+    background:linear-gradient(160deg, rgba(201,162,74,0.13), transparent 70%);
+    box-shadow:0 16px 38px -14px rgba(201,162,74,0.28), 0 4px 14px -6px rgba(6,10,20,0.6);
+    transform:translateY(-2px);
+  }
+  .prologue-num{
+    display:block;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:0.95rem;
+    color:var(--brass-dim);
+    margin-bottom:6px;
+  }
+  .prologue-card h3{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:1.5rem;
+    color:var(--paper);
+    margin:0 0 10px;
+  }
+  .prologue-card p{
+    color:var(--text-dim);
+    font-size:0.95rem;
+    margin:0 0 14px;
+  }
+  .read-link{
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-size:0.82rem;
+    color:var(--brass);
+    letter-spacing:0.02em;
+  }
+
+  /* ---- Wheel / seasons (vòng tròn 24 tiết khí) ---- */
+  .wheel-visual{ margin-top:12px; display:flex; justify-content:center; }
+  .wheel-svg{
+    display:block;
+    width:min(560px, 92vw);
+    height:auto;
+    overflow:visible;
+  }
+  .wheel-ring{ fill:none; stroke:var(--line); stroke-width:1; }
+  #wheel-backdrop{ transform-origin:310px 310px; will-change:transform; }
+  .wheel-tick{ stroke-width:1; opacity:0.8; }
+  .wheel-tick.major{ stroke-width:1.8; opacity:1; }
+  .wheel-needle{
+    stroke:var(--brass);
+    stroke-width:1.2;
+    stroke-linecap:round;
+    opacity:0.55;
+    transform-origin:310px 310px;
+    transition:transform 1.4s cubic-bezier(0.22,1,0.36,1), filter 1.4s ease;
+  }
+  .wheel-needle.settled{ filter:drop-shadow(0 0 4px rgba(201,162,74,0.7)); }
+  .wheel-season-label{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:30px;
+    fill:var(--brass-dim);
+  }
+  .wheel-season-zh{ font-size:15px; fill:#56628c; }
+  .wheel-term-label{
+    font-family:'Cormorant Garamond', serif;
+    font-size:17px;
+    fill:var(--text-dim);
+    transition:fill 0.18s ease;
+  }
+  .wheel-dot{ opacity:0.75; transition:opacity 0.2s ease, filter 0.2s ease; }
+  .wheel-hit{ fill:transparent; }
+  .tietkhi.ready{ cursor:pointer; }
+  .tietkhi.ready .wheel-term-label{ fill:var(--paper); }
+  .tietkhi.ready .wheel-dot{ fill:var(--brass); opacity:1; }
+  a.tietkhi.ready:hover .wheel-term-label,
+  a.tietkhi.ready:focus-visible .wheel-term-label{ fill:var(--brass); }
+  a.tietkhi.ready:hover .wheel-dot,
+  a.tietkhi.ready:focus-visible .wheel-dot{
+    filter:drop-shadow(0 0 6px rgba(201,162,74,0.9));
+  }
+  a.tietkhi.ready:focus-visible{ outline:none; }
+  a.tietkhi.ready:focus-visible .wheel-dot{ stroke:var(--brass); stroke-width:2; }
+
+  .tietkhi.current .wheel-term-label{ fill:var(--brass); font-weight:600; }
+  .tietkhi.current .wheel-dot{ fill:#fff6da; opacity:1; filter:drop-shadow(0 0 5px rgba(255,246,218,0.7)); }
+
+  @media (max-width:480px){
+    .wheel-term-label{ font-size:20px; }
+    .wheel-season-label{ font-size:26px; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .wheel-needle{ transition:none; }
+    .wheel-dot{ transition:none; }
+  }
+
+  /* ---- Related articles ---- */
+  .related-grid{ display:flex; flex-direction:column; gap:16px; }
+  .related-card{
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:22px 24px;
+    transition:border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .related-card:hover{
+    border-color:var(--brass-dim);
+    box-shadow:0 12px 30px -16px rgba(6,10,20,0.6);
+  }
+  .related-card h3{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:1.25rem;
+    color:var(--paper-dim);
+    margin:0 0 8px;
+  }
+  .related-card p{
+    color:var(--text-dim);
+    font-size:0.92rem;
+    margin:0;
+  }
+
+  footer{
+    text-align:center;
+    padding:48px 24px 64px;
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.03em;
+    color:var(--text-dim);
+  }
+  footer .glyph{
+    display:block;
+    margin:0 auto 14px;
+    width:22px; height:22px;
+    opacity:0.7;
+  }
+  footer .brand{ color:var(--brass-dim); }
+</style>
+</head>
+<body>
+<div class="sky-tint" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="hero-stars" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="orbit" aria-hidden="true">
+      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="presentation">
+        <defs>
+          <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fff6da"/>
+            <stop offset="35%" stop-color="#e8c164"/>
+            <stop offset="100%" stop-color="#c9a24a" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="earthSphere" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#f4efe4"/>
+            <stop offset="55%" stop-color="#c9a24a"/>
+            <stop offset="100%" stop-color="#6d5a2c"/>
+          </radialGradient>
+          <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <circle cx="150" cy="150" r="132" fill="none" stroke="#3a4560" stroke-width="0.6"/>
+
+        <g stroke="#8a723a" stroke-width="1">
+          <line x1="180.6" y1="36.0" x2="184.2" y2="22.5"/>
+          <line x1="209" y1="47.8" x2="216" y2="35.7"/>
+          <line x1="233.4" y1="66.6" x2="243.3" y2="56.7"/>
+          <line x1="264.0" y1="119.4" x2="277.5" y2="115.8"/>
+          <line x1="264.0" y1="180.6" x2="277.5" y2="184.2"/>
+          <line x1="252.2" y1="209" x2="264.3" y2="216"/>
+          <line x1="233.4" y1="233.4" x2="243.3" y2="243.3"/>
+          <line x1="209" y1="252.2" x2="216" y2="264.3"/>
+          <line x1="180.6" y1="264.0" x2="184.2" y2="277.5"/>
+          <line x1="119.4" y1="264.0" x2="115.8" y2="277.5"/>
+          <line x1="91" y1="252.2" x2="84" y2="264.3"/>
+          <line x1="66.6" y1="233.4" x2="56.7" y2="243.3"/>
+          <line x1="47.8" y1="209" x2="35.7" y2="216"/>
+          <line x1="36.0" y1="180.6" x2="22.5" y2="184.2"/>
+          <line x1="36.0" y1="119.4" x2="22.5" y2="115.8"/>
+          <line x1="47.8" y1="91" x2="35.7" y2="84"/>
+          <line x1="66.6" y1="66.6" x2="56.7" y2="56.7"/>
+          <line x1="91" y1="47.8" x2="84" y2="35.7"/>
+          <line x1="119.4" y1="36.0" x2="115.8" y2="22.5"/>
+        </g>
+        <g stroke="#c9a24a" stroke-width="1.5">
+          <line x1="150" y1="40" x2="150" y2="12"/>
+          <line x1="260" y1="150" x2="288" y2="150"/>
+          <line x1="150" y1="260" x2="150" y2="288"/>
+          <line x1="40" y1="150" x2="12" y2="150"/>
+        </g>
+
+        <ellipse cx="150" cy="150" rx="106" ry="47" fill="none" stroke="#8a723a" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.55" transform="rotate(18 150 150)"/>
+        <g transform="rotate(-18 150 150)">
+          <ellipse cx="150" cy="150" rx="106" ry="47" fill="none" stroke="#c9a24a" stroke-width="1" opacity="0.8"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="90s" repeatCount="indefinite"/>
+            <line x1="150" y1="150" x2="230.4" y2="180.9" stroke="#c9a24a" stroke-width="0.6" opacity="0.5"/>
+            <circle cx="230.4" cy="180.9" r="8" fill="#f4efe4" opacity="0.15"/>
+            <circle cx="230.4" cy="180.9" r="4.2" fill="url(#earthSphere)"/>
+            <circle cx="229.0" cy="179.3" r="1.1" fill="#fff6da" opacity="0.7"/>
+          </g>
+        </g>
+
+        <circle class="orbit-sun" cx="150" cy="150" r="15" fill="url(#sunGlow)" filter="url(#softGlow)"/>
+        <circle cx="150" cy="150" r="5" fill="#fff6da"/>
+      </svg>
+    </div>
+
+    <p class="eyebrow"><span lang="zh">天 · 地 · 人</span></p>
+    <h1>Thiên Địa Nhân</h1>
+    <p class="hero-sub">Trời vận hành, đất đổi mùa, con người đứng giữa mà quan sát, mà đặt tên, mà sống theo. Đây là nơi ghi lại 24 tiết khí — chậm rãi, từng bài một — cùng những bài viết khác về thời gian và lịch pháp.</p>
+    <p class="hero-status" id="hero-status">Trời đất đang vận hành&hellip;</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <main>
+
+    <section class="intro reveal">
+      <p class="lede">24 điểm trên một đường tròn 360° — mỗi 15° hoàng đạo là một cái tên, một trạng thái của trời đất. Bạn đang ở đây, giữa một vòng quay đã lặp lại hàng tỷ lần trước khi có ai đặt tên cho nó.</p>
+    </section>
+
+    <section class="prologue-section reveal">
+      <h2 class="tag">Mở đầu</h2>
+      <a class="prologue-card" href="bai-so-0-truoc-khi-co-ten-goi.html">
+        <span class="prologue-num">Bài 0</span>
+        <h3>Trước Khi Có Tên Gọi</h3>
+        <p>Vì sao có đúng 24 cái tên — không phải 12, không phải 30? Câu chuyện về việc đặt tên cho thời gian, trước khi seri lần lượt kể về từng tiết khí.</p>
+        <span class="read-link">Đọc bài mở đầu →</span>
+      </a>
+    </section>
+
+    <section class="wheel-section reveal">
+      <h2 class="section-title">Vòng Tiết Khí</h2>
+      <p class="section-note">24 tiết khí xếp trên một vòng, theo bốn mùa. Điểm sáng là bài đã đăng — chạm vào để đọc.</p>
+
+      <div class="wheel-visual">
+<svg viewBox="0 0 620 620" class="wheel-svg" role="img" aria-label="Vòng 24 tiết khí xếp theo mùa, mỗi tiết 15 độ">
+  <defs>
+    <radialGradient id="wheelSunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff6da"/>
+      <stop offset="35%" stop-color="#e8c164"/>
+      <stop offset="100%" stop-color="#c9a24a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="wheelSoftGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g id="wheel-backdrop">
+  <circle cx="310" cy="310" r="235" class="wheel-ring"/>
+  <g class="wheel-ticks">
+    <line x1="310.0" y1="75.0" x2="310.0" y2="48.0" class="wheel-tick major" stroke="#549661"/>
+    <line x1="370.8" y1="83.0" x2="374.2" y2="70.5" class="wheel-tick" stroke="#579b53"/>
+    <line x1="427.5" y1="106.5" x2="434.0" y2="95.2" class="wheel-tick" stroke="#6a9f52"/>
+    <line x1="476.2" y1="143.8" x2="485.4" y2="134.6" class="wheel-tick" stroke="#7fa451"/>
+    <line x1="513.5" y1="192.5" x2="524.8" y2="186.0" class="wheel-tick" stroke="#98a94f"/>
+    <line x1="537.0" y1="249.2" x2="549.5" y2="245.8" class="wheel-tick" stroke="#aea84e"/>
+    <line x1="545.0" y1="310.0" x2="572.0" y2="310.0" class="wheel-tick major" stroke="#b2934d"/>
+    <line x1="537.0" y1="370.8" x2="549.5" y2="374.2" class="wheel-tick" stroke="#ac774c"/>
+    <line x1="513.5" y1="427.5" x2="524.8" y2="434.0" class="wheel-tick" stroke="#a65d4c"/>
+    <line x1="476.2" y1="476.2" x2="485.4" y2="485.4" class="wheel-tick" stroke="#a04b50"/>
+    <line x1="427.5" y1="513.5" x2="434.0" y2="524.8" class="wheel-tick" stroke="#994a63"/>
+    <line x1="370.8" y1="537.0" x2="374.2" y2="549.5" class="wheel-tick" stroke="#934a73"/>
+    <line x1="310.0" y1="545.0" x2="310.0" y2="572.0" class="wheel-tick major" stroke="#8d4980"/>
+    <line x1="249.2" y1="537.0" x2="245.8" y2="549.5" class="wheel-tick" stroke="#8d4c91"/>
+    <line x1="192.5" y1="513.5" x2="186.0" y2="524.8" class="wheel-tick" stroke="#7f5094"/>
+    <line x1="143.8" y1="476.2" x2="134.6" y2="485.4" class="wheel-tick" stroke="#715397"/>
+    <line x1="106.5" y1="427.5" x2="95.2" y2="434.0" class="wheel-tick" stroke="#64579a"/>
+    <line x1="83.0" y1="370.8" x2="70.5" y2="374.2" class="wheel-tick" stroke="#5b5e9e"/>
+    <line x1="75.0" y1="310.0" x2="48.0" y2="310.0" class="wheel-tick major" stroke="#5e73a1"/>
+    <line x1="83.0" y1="249.2" x2="70.5" y2="245.8" class="wheel-tick" stroke="#5d829f"/>
+    <line x1="106.5" y1="192.5" x2="95.2" y2="186.0" class="wheel-tick" stroke="#5b909d"/>
+    <line x1="143.8" y1="143.8" x2="134.6" y2="134.6" class="wheel-tick" stroke="#599b98"/>
+    <line x1="192.5" y1="106.5" x2="186.0" y2="95.2" class="wheel-tick" stroke="#589a85"/>
+    <line x1="249.2" y1="83.0" x2="245.8" y2="70.5" class="wheel-tick" stroke="#569873"/>
+  </g>
+  </g>
+  <g class="wheel-seasons">
+    <text x="403.3" y="208.7" text-anchor="middle" class="wheel-season-label">Xuân</text>
+    <text x="403.3" y="232.7" text-anchor="middle" class="wheel-season-zh" lang="zh">春</text>
+    <text x="403.3" y="395.3" text-anchor="middle" class="wheel-season-label">Hạ</text>
+    <text x="403.3" y="419.3" text-anchor="middle" class="wheel-season-zh" lang="zh">夏</text>
+    <text x="216.7" y="395.3" text-anchor="middle" class="wheel-season-label">Thu</text>
+    <text x="216.7" y="419.3" text-anchor="middle" class="wheel-season-zh" lang="zh">秋</text>
+    <text x="216.7" y="208.7" text-anchor="middle" class="wheel-season-label">Đông</text>
+    <text x="216.7" y="232.7" text-anchor="middle" class="wheel-season-zh" lang="zh">冬</text>
+  </g>
+  <line id="wheel-needle" x1="310" y1="310" x2="310" y2="75" class="wheel-needle"/>
+  <circle cx="310" cy="310" r="16" fill="url(#wheelSunGlow)" filter="url(#wheelSoftGlow)"/>
+  <circle cx="310" cy="310" r="5" fill="#fff6da"/>
+  <g class="wheel-terms">
+    <g class="tietkhi" data-n="1">
+      <title>Chưa đăng — Mùa xuân bắt đầu; một mốc mở đầu cho vòng khí của năm.</title>
+      <circle cx="310.0" cy="75.0" r="3" class="wheel-dot" fill="#549661"/>
+      <text x="310.0" y="38.0" text-anchor="start" dominant-baseline="middle" transform="rotate(-90.0 310.0 38.0)" class="wheel-term-label">Lập Xuân</text>
+    </g>
+    <g class="tietkhi" data-n="2">
+      <title>Chưa đăng — Mưa xuân xuất hiện nhiều hơn, vạn vật bắt đầu chuyển động.</title>
+      <circle cx="370.8" cy="83.0" r="3" class="wheel-dot" fill="#579b53"/>
+      <text x="380.4" y="47.3" text-anchor="start" dominant-baseline="middle" transform="rotate(-75.0 380.4 47.3)" class="wheel-term-label">Vũ Thủy</text>
+    </g>
+    <g class="tietkhi" data-n="3">
+      <title>Chưa đăng — Sấm đầu mùa đánh thức côn trùng và nhịp sống.</title>
+      <circle cx="427.5" cy="106.5" r="3" class="wheel-dot" fill="#6a9f52"/>
+      <text x="446.0" y="74.4" text-anchor="start" dominant-baseline="middle" transform="rotate(-60.0 446.0 74.4)" class="wheel-term-label">Kinh Trập</text>
+    </g>
+    <g class="tietkhi" data-n="4">
+      <title>Chưa đăng — Ngày và đêm gần như cân bằng; mùa xuân ở điểm giữa.</title>
+      <circle cx="476.2" cy="143.8" r="3" class="wheel-dot" fill="#7fa451"/>
+      <text x="502.3" y="117.7" text-anchor="start" dominant-baseline="middle" transform="rotate(-45.0 502.3 117.7)" class="wheel-term-label">Xuân Phân</text>
+    </g>
+    <g class="tietkhi" data-n="5">
+      <title>Chưa đăng — Khí trời trong sáng hơn, thiên nhiên bước vào thời kỳ sinh trưởng.</title>
+      <circle cx="513.5" cy="192.5" r="3" class="wheel-dot" fill="#98a94f"/>
+      <text x="545.6" y="174.0" text-anchor="start" dominant-baseline="middle" transform="rotate(-30.0 545.6 174.0)" class="wheel-term-label">Thanh Minh</text>
+    </g>
+    <g class="tietkhi" data-n="6">
+      <title>Chưa đăng — Mưa nuôi lúa và cây cối; mùa xuân đi về cuối.</title>
+      <circle cx="537.0" cy="249.2" r="3" class="wheel-dot" fill="#aea84e"/>
+      <text x="572.7" y="239.6" text-anchor="start" dominant-baseline="middle" transform="rotate(-15.0 572.7 239.6)" class="wheel-term-label">Cốc Vũ</text>
+    </g>
+    <g class="tietkhi" data-n="7">
+      <title>Chưa đăng — Mùa hạ bắt đầu, ánh sáng và nhiệt lượng tăng.</title>
+      <circle cx="545.0" cy="310.0" r="3" class="wheel-dot" fill="#b2934d"/>
+      <text x="582.0" y="310.0" text-anchor="start" dominant-baseline="middle" transform="rotate(0.0 582.0 310.0)" class="wheel-term-label">Lập Hạ</text>
+    </g>
+    <g class="tietkhi" data-n="8">
+      <title>Chưa đăng — Vạn vật đầy đặn hơn; mùa sinh trưởng mạnh.</title>
+      <circle cx="537.0" cy="370.8" r="3" class="wheel-dot" fill="#ac774c"/>
+      <text x="572.7" y="380.4" text-anchor="start" dominant-baseline="middle" transform="rotate(15.0 572.7 380.4)" class="wheel-term-label">Tiểu Mãn</text>
+    </g>
+    <g class="tietkhi" data-n="9">
+      <title>Chưa đăng — Thời điểm gắn với gieo trồng và mùa vụ.</title>
+      <circle cx="513.5" cy="427.5" r="3" class="wheel-dot" fill="#a65d4c"/>
+      <text x="545.6" y="446.0" text-anchor="start" dominant-baseline="middle" transform="rotate(30.0 545.6 446.0)" class="wheel-term-label">Mang Chủng</text>
+    </g>
+    <g class="tietkhi" data-n="10">
+      <title>Chưa đăng — Mặt Trời đạt điểm cực bắc theo chuyển động biểu kiến.</title>
+      <circle cx="476.2" cy="476.2" r="3" class="wheel-dot" fill="#a04b50"/>
+      <text x="502.3" y="502.3" text-anchor="start" dominant-baseline="middle" transform="rotate(45.0 502.3 502.3)" class="wheel-term-label">Hạ Chí</text>
+    </g>
+    <g class="tietkhi" data-n="11">
+      <title>Chưa đăng — Nắng nóng bắt đầu rõ hơn.</title>
+      <circle cx="427.5" cy="513.5" r="3" class="wheel-dot" fill="#994a63"/>
+      <text x="446.0" y="545.6" text-anchor="start" dominant-baseline="middle" transform="rotate(60.0 446.0 545.6)" class="wheel-term-label">Tiểu Thử</text>
+    </g>
+    <g class="tietkhi" data-n="12">
+      <title>Chưa đăng — Một trong những thời điểm nóng nhất của năm.</title>
+      <circle cx="370.8" cy="537.0" r="3" class="wheel-dot" fill="#934a73"/>
+      <text x="380.4" y="572.7" text-anchor="start" dominant-baseline="middle" transform="rotate(75.0 380.4 572.7)" class="wheel-term-label">Đại Thử</text>
+    </g>
+    <g class="tietkhi" data-n="13">
+      <title>Chưa đăng — Mùa thu bắt đầu; nhịp nóng dần chuyển sang dịu hơn.</title>
+      <circle cx="310.0" cy="545.0" r="3" class="wheel-dot" fill="#8d4980"/>
+      <text x="310.0" y="582.0" text-anchor="start" dominant-baseline="middle" transform="rotate(90.0 310.0 582.0)" class="wheel-term-label">Lập Thu</text>
+    </g>
+    <g class="tietkhi" data-n="14">
+      <title>Chưa đăng — Cái nóng giảm dần, khí trời chuyển sang thu.</title>
+      <circle cx="249.2" cy="537.0" r="3" class="wheel-dot" fill="#8d4c91"/>
+      <text x="239.6" y="572.7" text-anchor="end" dominant-baseline="middle" transform="rotate(-75.0 239.6 572.7)" class="wheel-term-label">Xử Thử</text>
+    </g>
+    <a href="bach-lo.html" class="tietkhi ready" data-n="15">
+      <circle cx="192.5" cy="513.5" r="16" class="wheel-hit"/>
+      <circle cx="192.5" cy="513.5" r="4.5" class="wheel-dot" fill="#7f5094"/>
+      <text x="174.0" y="545.6" text-anchor="end" dominant-baseline="middle" transform="rotate(-60.0 174.0 545.6)" class="wheel-term-label">Bạch Lộ</text>
+    </a>
+    <g class="tietkhi" data-n="16">
+      <title>Chưa đăng — Ngày và đêm gần như cân bằng; mùa thu ở điểm giữa.</title>
+      <circle cx="143.8" cy="476.2" r="3" class="wheel-dot" fill="#715397"/>
+      <text x="117.7" y="502.3" text-anchor="end" dominant-baseline="middle" transform="rotate(-45.0 117.7 502.3)" class="wheel-term-label">Thu Phân</text>
+    </g>
+    <g class="tietkhi" data-n="17">
+      <title>Chưa đăng — Sương lạnh rõ hơn, tiết trời dần se.</title>
+      <circle cx="106.5" cy="427.5" r="3" class="wheel-dot" fill="#64579a"/>
+      <text x="74.4" y="446.0" text-anchor="end" dominant-baseline="middle" transform="rotate(-30.0 74.4 446.0)" class="wheel-term-label">Hàn Lộ</text>
+    </g>
+    <g class="tietkhi" data-n="18">
+      <title>Chưa đăng — Sương giá bắt đầu được cảm nhận rõ ở nhiều vùng.</title>
+      <circle cx="83.0" cy="370.8" r="3" class="wheel-dot" fill="#5b5e9e"/>
+      <text x="47.3" y="380.4" text-anchor="end" dominant-baseline="middle" transform="rotate(-15.0 47.3 380.4)" class="wheel-term-label">Sương Giáng</text>
+    </g>
+    <g class="tietkhi" data-n="19">
+      <title>Chưa đăng — Mùa đông bắt đầu.</title>
+      <circle cx="75.0" cy="310.0" r="3" class="wheel-dot" fill="#5e73a1"/>
+      <text x="38.0" y="310.0" text-anchor="end" dominant-baseline="middle" transform="rotate(0.0 38.0 310.0)" class="wheel-term-label">Lập Đông</text>
+    </g>
+    <g class="tietkhi" data-n="20">
+      <title>Chưa đăng — Tuyết nhẹ là hình tượng khí hậu của tiết này.</title>
+      <circle cx="83.0" cy="249.2" r="3" class="wheel-dot" fill="#5d829f"/>
+      <text x="47.3" y="239.6" text-anchor="end" dominant-baseline="middle" transform="rotate(15.0 47.3 239.6)" class="wheel-term-label">Tiểu Tuyết</text>
+    </g>
+    <g class="tietkhi" data-n="21">
+      <title>Chưa đăng — Tuyết nhiều hơn trong hệ quy chiếu khí hậu truyền thống.</title>
+      <circle cx="106.5" cy="192.5" r="3" class="wheel-dot" fill="#5b909d"/>
+      <text x="74.4" y="174.0" text-anchor="end" dominant-baseline="middle" transform="rotate(30.0 74.4 174.0)" class="wheel-term-label">Đại Tuyết</text>
+    </g>
+    <g class="tietkhi" data-n="22">
+      <title>Chưa đăng — Mặt Trời đạt điểm cực nam theo chuyển động biểu kiến.</title>
+      <circle cx="143.8" cy="143.8" r="3" class="wheel-dot" fill="#599b98"/>
+      <text x="117.7" y="117.7" text-anchor="end" dominant-baseline="middle" transform="rotate(45.0 117.7 117.7)" class="wheel-term-label">Đông Chí</text>
+    </g>
+    <g class="tietkhi" data-n="23">
+      <title>Chưa đăng — Cái lạnh bắt đầu rõ.</title>
+      <circle cx="192.5" cy="106.5" r="3" class="wheel-dot" fill="#589a85"/>
+      <text x="174.0" y="74.4" text-anchor="end" dominant-baseline="middle" transform="rotate(60.0 174.0 74.4)" class="wheel-term-label">Tiểu Hàn</text>
+    </g>
+    <g class="tietkhi" data-n="24">
+      <title>Chưa đăng — Một mốc lạnh sâu trong vòng tiết khí.</title>
+      <circle cx="249.2" cy="83.0" r="3" class="wheel-dot" fill="#569873"/>
+      <text x="239.6" y="47.3" text-anchor="end" dominant-baseline="middle" transform="rotate(75.0 239.6 47.3)" class="wheel-term-label">Đại Hàn</text>
+    </g>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section class="related-section reveal">
+      <h2 class="section-title">Bài Viết Khác</h2>
+      <p class="section-note">Không thuộc seri 24 tiết khí, nhưng cùng một mối quan tâm: thời gian, lịch pháp, vũ trụ.</p>
+      <div class="related-grid">
+        <div class="related-card">
+          <span class="tag">Sắp đăng</span>
+          <h3>Từ Đặc Quyền Đến Vật Dụng: Lịch Sử Của Việc &ldquo;Xem Lịch&rdquo;</h3>
+          <p>Ai từng nắm quyền kiểm soát thời gian — từ tư tế Lưỡng Hà, triều đình Đông Á, đến ứng dụng lịch trong túi áo hôm nay.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <svg class="glyph" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.4" fill="none" stroke="currentColor" stroke-width="1"/><g stroke="currentColor" stroke-width="1"><line x1="12" y1="1.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22.5" y2="12"/></g></svg>
+    <span class="brand">Thiên Địa Nhân</span> — một seri của Dừa &amp; Mixue
+  </footer>
+</div>
+
+<script>
+(function(){
+  var tietkhi = [
+    {n:1,  name:"Lập Xuân",   meaning:"Mùa xuân bắt đầu; một mốc mở đầu cho vòng khí của năm."},
+    {n:2,  name:"Vũ Thủy",    meaning:"Mưa xuân xuất hiện nhiều hơn, vạn vật bắt đầu chuyển động."},
+    {n:3,  name:"Kinh Trập",  meaning:"Sấm đầu mùa đánh thức côn trùng và nhịp sống."},
+    {n:4,  name:"Xuân Phân",  meaning:"Ngày và đêm gần như cân bằng; mùa xuân ở điểm giữa."},
+    {n:5,  name:"Thanh Minh", meaning:"Khí trời trong sáng hơn, thiên nhiên bước vào thời kỳ sinh trưởng."},
+    {n:6,  name:"Cốc Vũ",     meaning:"Mưa nuôi lúa và cây cối; mùa xuân đi về cuối."},
+    {n:7,  name:"Lập Hạ",     meaning:"Mùa hạ bắt đầu, ánh sáng và nhiệt lượng tăng."},
+    {n:8,  name:"Tiểu Mãn",   meaning:"Vạn vật đầy đặn hơn; mùa sinh trưởng mạnh."},
+    {n:9,  name:"Mang Chủng", meaning:"Thời điểm gắn với gieo trồng và mùa vụ."},
+    {n:10, name:"Hạ Chí",     meaning:"Mặt Trời đạt điểm cực bắc theo chuyển động biểu kiến."},
+    {n:11, name:"Tiểu Thử",   meaning:"Nắng nóng bắt đầu rõ hơn."},
+    {n:12, name:"Đại Thử",    meaning:"Một trong những thời điểm nóng nhất của năm."},
+    {n:13, name:"Lập Thu",    meaning:"Mùa thu bắt đầu; nhịp nóng dần chuyển sang dịu hơn."},
+    {n:14, name:"Xử Thử",     meaning:"Cái nóng giảm dần, khí trời chuyển sang thu."},
+    {n:15, name:"Bạch Lộ",    meaning:"Sương trắng được dùng làm dấu hiệu cảm nhận sự chuyển mùa."},
+    {n:16, name:"Thu Phân",   meaning:"Ngày và đêm gần như cân bằng; mùa thu ở điểm giữa."},
+    {n:17, name:"Hàn Lộ",     meaning:"Sương lạnh rõ hơn, tiết trời dần se."},
+    {n:18, name:"Sương Giáng",meaning:"Sương giá bắt đầu được cảm nhận rõ ở nhiều vùng."},
+    {n:19, name:"Lập Đông",   meaning:"Mùa đông bắt đầu."},
+    {n:20, name:"Tiểu Tuyết", meaning:"Tuyết nhẹ là hình tượng khí hậu của tiết này."},
+    {n:21, name:"Đại Tuyết",  meaning:"Tuyết nhiều hơn trong hệ quy chiếu khí hậu truyền thống."},
+    {n:22, name:"Đông Chí",   meaning:"Mặt Trời đạt điểm cực nam theo chuyển động biểu kiến."},
+    {n:23, name:"Tiểu Hàn",   meaning:"Cái lạnh bắt đầu rõ."},
+    {n:24, name:"Đại Hàn",    meaning:"Một mốc lạnh sâu trong vòng tiết khí."}
+  ];
+
+  // Kinh độ hoàng đạo biểu kiến của Mặt Trời (độ chính xác cỡ vài phút góc,
+  // thừa đủ cho việc xác định tiết khí — công thức rút gọn theo Meeus).
+  function toJulianDate(date){ return date.getTime() / 86400000 + 2440587.5; }
+  function solarEclipticLongitude(date){
+    var JD = toJulianDate(date);
+    var T = (JD - 2451545.0) / 36525;
+    var L0 = 280.46646 + T * (36000.76983 + T * 0.0003032);
+    var M = 357.52911 + T * (35999.05029 - T * 0.0001537);
+    var Mrad = M * Math.PI / 180;
+    var C = (1.914602 - T * (0.004817 + 0.000014 * T)) * Math.sin(Mrad)
+          + (0.019993 - 0.000101 * T) * Math.sin(2 * Mrad)
+          + 0.000289 * Math.sin(3 * Mrad);
+    var trueLong = L0 + C;
+    var omega = 125.04 - 1934.136 * T;
+    var apparentLong = trueLong - 0.00569 - 0.00478 * Math.sin(omega * Math.PI / 180);
+    return ((apparentLong % 360) + 360) % 360;
+  }
+
+  try{
+    var now = new Date();
+    var lambda = solarEclipticLongitude(now);
+    // Lập Xuân (n=1) ứng với kinh độ 315°; góc quay kim tính từ đó, thuận chiều kim đồng hồ.
+    var angle = ((lambda - 315) % 360 + 360) % 360;
+    var idx = Math.floor(angle / 15);
+    var cur = tietkhi[idx];
+    var next = tietkhi[(idx + 1) % tietkhi.length];
+
+    var statusEl = document.getElementById('hero-status');
+    if(statusEl){
+      statusEl.textContent = 'Hiện tại: giữa ' + cur.name + ' và ' + next.name + ' — ' + cur.meaning;
+    }
+
+    var curEl = document.querySelector('.tietkhi[data-n="' + cur.n + '"]');
+    if(curEl){ curEl.classList.add('current'); }
+
+    // Xoay kim tới đúng góc thực theo vị trí Mặt Trời hiện tại (không chỉ khớp 15° gần nhất)
+    var needle = document.getElementById('wheel-needle');
+    if(needle){
+      requestAnimationFrame(function(){
+        needle.style.transform = 'rotate(' + angle + 'deg)';
+        setTimeout(function(){ needle.classList.add('settled'); }, 1400);
+      });
+    }
+  }catch(e){
+    // giữ nguyên văn bản mặc định nếu có lỗi
+  }
+
+  // Nền xoay theo cuộn trang — "trời vận hành" khi người đọc lướt qua bài viết
+  try{
+    var backdrop = document.getElementById('wheel-backdrop');
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(backdrop && !reduceMotion){
+      var ticking = false;
+      var updateBackdrop = function(){
+        var doc = document.documentElement;
+        var scrollTop = window.scrollY || doc.scrollTop;
+        var scrollable = (doc.scrollHeight - doc.clientHeight) || 1;
+        var frac = Math.min(1, Math.max(0, scrollTop / scrollable));
+        backdrop.style.transform = 'rotate(' + (frac * 360) + 'deg)';
+        ticking = false;
+      };
+      window.addEventListener('scroll', function(){
+        if(!ticking){ requestAnimationFrame(updateBackdrop); ticking = true; }
+      }, { passive:true });
+      updateBackdrop();
+    }
+  }catch(e){}
+
+  // Nền trang đổi tông màu theo giờ thực của người xem
+  try{
+    var hour = now.getHours();
+    var period = (hour >= 5 && hour < 8) ? 'dawn'
+      : (hour >= 8 && hour < 17) ? 'day'
+      : (hour >= 17 && hour < 19) ? 'dusk'
+      : 'night';
+    document.body.classList.add('sky-' + period, 'sky-ready');
+  }catch(e){}
+
+  // Fade-in khi cuộn tới từng section
+  try{
+    var reveals = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window && reveals.length){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold:0.15, rootMargin:'0px 0px -40px 0px' });
+      reveals.forEach(function(el){ io.observe(el); });
+    } else {
+      reveals.forEach(function(el){ el.classList.add('in-view'); });
+    }
+  }catch(e){
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in-view'); });
+  }
+})();
+</script>
+
+</body>
+</html>

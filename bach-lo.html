@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bạch Lộ — Khi Sương Bắt Đầu Trắng Trên Lá</title>
+<meta name="description" content="Bạch Lộ, tiết khí thứ 15 trong 24 tiết khí: thiên văn, dân gian, dưỡng sinh, Bát Tự và dấu vết trong thơ ca từ Kinh Thi đến Đỗ Phủ.">
+<meta name="author" content="Mèo Đen">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #f3f4ee;
+    --bg-panel: #eaece2;
+    --ink: #262a22;
+    --ink-soft: #5b6355;
+    --ink-faint: #636b59;
+    --reed: #6f8464;
+    --dew: #91a8ac;
+    --dew-soft: #dbe4e2;
+    --seal: #8f4235;
+    --seal-soft: #e9dcd6;
+    --gold: #7a5c22;
+    --gold-soft: #ece2c9;
+    --rule: #d3d6c9;
+    --max: 640px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ background: var(--bg); }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Literata", Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero{
+    padding: 72px 0 40px;
+    text-align: center;
+  }
+
+  .hero-mark{
+    width: 92px;
+    height: auto;
+    margin: 0 auto 28px;
+    display: block;
+    color: var(--reed);
+  }
+
+  .hero-eyebrow{
+    font-family: "IBM Plex Mono";
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    margin: 0 0 18px;
+  }
+
+  h1{
+    font-family: "Literata";
+    font-weight: 600;
+    font-size: clamp(30px, 5.4vw, 42px);
+    line-height: 1.3;
+    margin: 0 0 22px;
+  }
+  h1 em{
+    font-style: italic;
+    font-weight: 500;
+    color: var(--reed);
+  }
+
+  .hero-quote{
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 17px;
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+  .hero-quote .zh{
+    display: block;
+    font-style: normal;
+    color: var(--seal);
+    font-size: 15px;
+    margin-top: 8px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- Dividers ---------- */
+
+  .divider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 56px 0;
+    color: var(--dew);
+  }
+  .divider .line{ flex: 1; height: 1px; background: var(--rule); max-width: 120px; }
+  .divider svg{ width: 26px; height: 14px; }
+
+  /* ---------- Intro ---------- */
+
+  .intro p{
+    font-size: 18.5px;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ---------- Layer sections ---------- */
+
+  .layer{ margin-bottom: 8px; }
+
+  .layer-head{
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+
+  .layer-num{
+    font-family: "IBM Plex Mono";
+    font-size: 13px;
+    color: var(--ink-faint);
+    letter-spacing: 0.03em;
+  }
+
+  h2{
+    font-family: "Literata";
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+
+  .badge{
+    font-family: "IBM Plex Mono";
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    padding: 3px 9px 4px;
+    border-radius: 3px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .badge.verified{ color: var(--seal); border-color: var(--seal); background: var(--seal-soft); }
+  .badge.folk{ color: var(--gold); border-color: var(--gold); background: var(--gold-soft); }
+  .badge.medicine{ color: #2f5254; border-color: #2f5254; background: var(--dew-soft); }
+  .badge.astro{ color: var(--ink-soft); border-color: var(--ink-faint); background: #e4e5db; }
+
+  .layer p{ margin: 0 0 16px; color: var(--ink); }
+  .layer p:last-child{ margin-bottom: 0; }
+  .layer ul{ margin: 0 0 16px; padding-left: 0; list-style: none; }
+  .layer li{
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .layer li:last-child{ margin-bottom: 0; }
+  .layer li::before{
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 11px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--dew);
+  }
+
+  .note{
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* ---------- Callout (điểm đắt giá) ---------- */
+
+  .callout{
+    margin: 22px 0;
+    padding: 18px 22px 20px;
+    background: var(--bg-panel);
+    border-left: 2px solid var(--seal);
+    border-radius: 2px;
+  }
+  .callout-label{
+    font-family: "IBM Plex Mono";
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    color: var(--seal);
+    margin: 0 0 10px;
+  }
+  .callout p{ margin: 0 0 12px; color: var(--ink); font-size: 17px; }
+  .callout p:last-child{ margin-bottom: 0; }
+  .callout p.note{ font-size: 14.5px; }
+
+  /* ---------- Poetry blocks ---------- */
+
+  blockquote{
+    margin: 26px 0;
+    padding: 4px 0 4px 22px;
+    border-left: 2px solid var(--dew);
+  }
+  blockquote p{
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink);
+    margin: 0 0 6px;
+    line-height: 1.6;
+  }
+  blockquote .gloss{
+    font-style: normal;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  .zh-tag{
+    font-family: "IBM Plex Mono";
+    font-size: 13px;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Table ---------- */
+
+  .table-wrap{ margin: 22px 0 8px; }
+  .table-scroll{
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "IBM Plex Mono";
+    font-size: 14px;
+  }
+  thead th{
+    text-align: left;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg-panel);
+  }
+  tbody td{
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+  }
+  tbody tr:last-child td{ border-bottom: none; }
+  tbody tr.current td{
+    background: var(--seal-soft);
+    font-weight: 500;
+    color: var(--seal);
+  }
+  tbody tr.estimate td{ color: var(--ink-faint); }
+  .table-caption{
+    font-family: "IBM Plex Mono";
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    margin: 10px 2px 0;
+    line-height: 1.6;
+  }
+
+  /* ---------- Bát Tự example ---------- */
+
+  .pillar-compare{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .pillar{
+    padding: 16px 18px;
+    background: var(--bg-panel);
+    border-radius: 4px;
+  }
+  .pillar-time{
+    font-family: "IBM Plex Mono";
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    margin: 0 0 6px;
+  }
+  .pillar-name{
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .pillar.before .pillar-name{ color: var(--ink); }
+  .pillar.after .pillar-name{ color: var(--seal); }
+  .pillar-desc{ font-size: 14.5px; color: var(--ink-soft); margin: 0; }
+  @media (max-width: 480px){
+    .pillar-compare{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Closing ---------- */
+
+  .closing p{ margin: 0 0 16px; }
+  .closing p:last-child{ margin-bottom: 0; }
+
+  .closing-couplet{
+    text-align: center;
+    margin: 40px 0;
+    padding: 32px 20px;
+  }
+  .closing-couplet p{
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+  .closing-couplet .attrib{
+    font-style: normal;
+    font-family: "IBM Plex Mono";
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    display: block;
+    margin-top: 16px;
+  }
+
+  footer{
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: "IBM Plex Mono";
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    line-height: 1.9;
+  }
+
+  ::selection{ background: var(--dew-soft); color: var(--ink); }
+
+  a{ color: var(--reed); }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--reed);
+    outline-offset: 2px;
+  }
+
+  .section-label{
+    font-family: "IBM Plex Mono";
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: var(--ink-faint);
+    margin: 0 0 14px;
+  }
+
+  figure{ margin: 0; }
+
+  @media print{
+    body{ background: #fff; color: #000; font-size: 13px; }
+    .hero-mark, .divider{ display: none; }
+    .badge, .callout, blockquote, table, .pillar-compare{ break-inside: avoid; }
+    a{ color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <svg class="hero-mark" viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20 82C20 82 12 60 26 40C36 26 30 12 30 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M50 86C50 86 40 55 58 30C70 14 62 6 62 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M78 82C78 82 72 64 82 48" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="30" cy="20" r="3.2" fill="#91a8ac"/>
+      <circle cx="60" cy="14" r="3.6" fill="#91a8ac"/>
+      <circle cx="80" cy="42" r="2.6" fill="#91a8ac"/>
+    </svg>
+    <p class="hero-eyebrow">Tiết khí thứ 15 / 24 — <span lang="zh">白露</span></p>
+    <h1>Khi sương bắt đầu <em>trắng</em> trên lá</h1>
+    <p class="hero-quote">
+      Lau lách còn xanh tốt, mà móc trắng đã đọng thành sương.
+      <span class="zh" lang="zh">蒹葭蒼蒼，白露為霜</span>
+    </p>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <p class="section-label">Mở đầu</p>
+      <p>Câu thơ hơn 2500 năm tuổi trong <em>Kinh Thi</em> đã gọi tên đúng khoảnh khắc này, trước cả khi &ldquo;Bạch Lộ&rdquo; trở thành một mốc trên lịch. Nếu Xử Thử là lúc nắng gắt dừng lại, thì Bạch Lộ là lúc bạn nhìn thấy bằng chứng đầu tiên của nó: sương trắng trên đầu lá vào sáng sớm.</p>
+    </section>
+
+    <div class="divider" role="presentation">
+      <span class="line"></span>
+      <svg viewBox="0 0 26 14" fill="none"><circle cx="4" cy="7" r="2" fill="#91a8ac"/><circle cx="13" cy="7" r="2" fill="#91a8ac"/><circle cx="22" cy="7" r="2" fill="#91a8ac"/></svg>
+      <span class="line"></span>
+    </div>
+
+    <!-- Lớp 1 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">01</span>
+        <h2>Thiên văn</h2>
+        <span class="badge verified">Đã kiểm chứng</span>
+      </div>
+
+      <ul>
+        <li>Bạch Lộ là tiết khí thứ 15/24, ứng với kinh độ Mặt Trời đạt <strong>165°</strong> trên hoàng đạo.</li>
+        <li>Thường bắt đầu khoảng 7&ndash;9/9 dương lịch hàng năm. <strong>Năm 2026: bắt đầu khoảng 21h&ndash;22h ngày 7/9/2026</strong> (giờ Hà Nội &mdash; các nguồn lịch tiết khí lệch nhau vài mươi phút, nên đối chiếu lại bằng thuật toán Hồ Ngọc Đức nếu cần độ chính xác tuyệt đối), kết thúc khoảng 23/9/2026 (chuyển sang Thu Phân).</li>
+        <li>Cơ chế &ldquo;sương trắng&rdquo;: ban ngày vẫn còn nắng, nhưng ban đêm bức xạ nhiệt mạnh khiến nhiệt độ mặt đất hạ nhanh xuống dưới điểm sương, hơi nước ngưng tụ thành sương &mdash; khác với sương mù ẩm ướt của mùa hè.</li>
+      </ul>
+
+      <div class="callout">
+        <p class="callout-label">Tam hậu &mdash; ba giai đoạn năm ngày, theo Lễ Ký (Nguyệt Lệnh)</p>
+        <p><span class="zh-tag" lang="zh">鴻雁來</span> &mdash; <em>nhất hậu</em>: hồng nhạn lai, chim hồng nhạn bắt đầu bay về.</p>
+        <p><span class="zh-tag" lang="zh">玄鳥歸</span> &mdash; <em>nhị hậu</em>: huyền điểu quy, chim én trở về phương nam.</p>
+        <p><span class="zh-tag" lang="zh">群鳥養羞</span> &mdash; <em>tam hậu</em>: quần điểu dưỡng tu, muôn chim cảm nhận khí lạnh, tích trữ lương thực ngon để dành qua mùa đông, như cất giữ của quý.</p>
+        <p>Đây là quan sát vật hậu học (phenology) cổ, cho thấy người xưa đọc thời tiết qua hành vi muôn loài chứ không chỉ qua nhiệt độ.</p>
+      </div>
+
+      <p class="note">Số liệu tam hậu được ghi kèm Hán tự vì các bản dịch lưu hành trên mạng khá loạn &mdash; người đọc kỹ có thể tự đối chiếu.</p>
+
+      <figure class="table-wrap">
+        <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Năm (Can Chi)</th><th>Thời điểm giao tiết Bạch Lộ</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Giáp Thìn 2024</td><td>07/9/2024, 10:11</td></tr>
+            <tr><td>Ất Tỵ 2025</td><td>07/9/2025, 15:51</td></tr>
+            <tr class="current"><td>Bính Ngọ 2026</td><td>07/9/2026, 21:41 &larr; năm nay</td></tr>
+            <tr><td>Đinh Mùi 2027</td><td>08/9/2027, 03:28</td></tr>
+            <tr><td>Mậu Thân 2028</td><td>07/9/2028, 09:22</td></tr>
+            <tr><td>Kỷ Dậu 2029</td><td>07/9/2029, 15:11</td></tr>
+            <tr><td>Canh Tuất 2030</td><td>07/9/2030, 20:52</td></tr>
+            <tr class="estimate"><td>Tân Hợi 2031*</td><td>08/9/2031, khoảng 02:41</td></tr>
+            <tr class="estimate"><td>Nhâm Tý 2032*</td><td>07/9/2032, khoảng 08:30</td></tr>
+            <tr class="estimate"><td>Quý Sửu 2033*</td><td>07/9/2033, khoảng 14:19</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <figcaption class="table-caption">Giờ Hà Nội (UTC+7). Số liệu 2024&ndash;2030 tính từ dữ liệu thiên văn thực (JPL Horizons); số liệu 2031&ndash;2033 (đánh dấu *) là ước tính theo chu kỳ hồi quy trung bình (~365 ngày 5 giờ 49 phút/năm), sai số có thể tới 20&ndash;30 phút.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px;">Điểm đáng chú ý: mốc giờ giao tiết trôi dần và có lúc vượt sang ngày hôm sau theo giờ Việt Nam (như Đinh Mùi 2027 lệch sang 8/9) &mdash; minh chứng sống động cho nguyên tắc ở Lớp 6: tháng Tứ Trụ đổi theo tiết khí chứ không theo ngày dương lịch cố định.</p>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Lớp 2 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">02</span>
+        <h2>Nhìn lại: Xử Thử vừa đi qua</h2>
+        <span class="badge verified">Mạch thời gian</span>
+      </div>
+      <ul>
+        <li>Xử Thử (23/8/2026, 09:22) = &ldquo;nắng dừng lại&rdquo;, kết thúc giai đoạn oi nóng gay gắt nhất.</li>
+        <li>Nếu ở Xử Thử, chênh lệch ngày đêm mới chớm, thì sang Bạch Lộ ở Hà Nội, bạn đã có thể cảm nhận rõ: áo khoác mỏng lúc 6 giờ sáng, áo cộc tay lúc 2 giờ chiều &mdash; đủ để hơi nước ban đêm ngưng tụ thành sương vào sáng sớm.</li>
+      </ul>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Lớp 3 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">03</span>
+        <h2>Nhìn tới: Thu Phân sắp tới</h2>
+        <span class="badge verified">Mạch thời gian</span>
+      </div>
+      <ul>
+        <li>Thu Phân (~23/9/2026, 7h05) = điểm cân bằng ngày&ndash;đêm, chính giữa mùa thu.</li>
+        <li>Bạch Lộ là bước đệm nửa chặng giữa Xử Thử và Thu Phân &mdash; nhiệt độ giảm có quy luật, không đột ngột.</li>
+      </ul>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Lớp 4 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">04</span>
+        <h2>Dân gian &amp; nông nghiệp</h2>
+        <span class="badge folk">Kinh nghiệm truyền thống</span>
+      </div>
+      <ul>
+        <li>Ở đồng bằng Bắc Bộ, đây là lúc sương bắt đầu đọng nặng vào sáng sớm &mdash; bà con trồng rau màu, mạ chiêm thường phải để ý rửa sương hoặc tưới nước sớm trước khi nắng lên, tránh sương đọng lâu làm hỏng lá non.</li>
+      </ul>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Lớp 5 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">05</span>
+        <h2>Dưỡng sinh</h2>
+        <span class="badge medicine">Lý thuyết Đông y</span>
+      </div>
+      <ul>
+        <li>Thu thuộc hành Kim, chủ về Phế. Khi sương trắng xuất hiện là lúc &ldquo;dương khí thu liễm, âm khí bắt đầu sinh&rdquo;.</li>
+        <li>Nguyên tắc dưỡng sinh: giữ ấm cổ và bụng khi đi sớm về khuya, tránh để hàn khí xâm nhập lúc giao mùa &mdash; đặc biệt thực tế với khí hậu Hà Nội giai đoạn này.</li>
+      </ul>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Lớp 6 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">06</span>
+        <h2>Bát Tự / Tử Vi</h2>
+        <span class="badge astro">Quy ước mệnh lý</span>
+      </div>
+      <ul>
+        <li>Tháng trong Tứ Trụ không đổi theo mùng 1 âm lịch, mà đổi theo tiết khí.</li>
+        <li>Người sinh <strong>trước thời điểm giao tiết (khoảng 21h&ndash;22h ngày 7/9/2026)</strong> vẫn tính trụ tháng <strong>Bính Thân</strong>; từ thời điểm đó trở đi mới chính thức sang trụ tháng <strong>Đinh Dậu</strong>.</li>
+      </ul>
+
+      <div class="callout">
+        <p class="callout-label">Không chỉ đổi tên</p>
+        <p>Bính Thân là Dương Hỏa cưỡi Dương Kim (chi Thân tàng Canh, Nhâm, Mậu); Đinh Dậu là Âm Hỏa cưỡi Âm Kim (chi Dậu thuần khí, chỉ tàng Tân). Đổi trụ tháng nghĩa là đổi cả âm dương lẫn tàng can của toàn trụ, kéo theo cách luận vượng suy khác hẳn &mdash; không phải chỉ khác mỗi cái tên gọi. Lệch vài phút quanh mốc này là lệch cả trụ tháng.</p>
+      </div>
+
+      <div class="pillar-compare">
+        <div class="pillar before">
+          <p class="pillar-time">21h30 &mdash; trước 21:41</p>
+          <p class="pillar-name">Bính Thân</p>
+          <p class="pillar-desc">Sinh trước mốc giao tiết</p>
+        </div>
+        <div class="pillar after">
+          <p class="pillar-time">21h50 &mdash; sau 21:41</p>
+          <p class="pillar-name">Đinh Dậu</p>
+          <p class="pillar-desc">Chỉ cách 20 phút, đã sang trụ tháng khác</p>
+        </div>
+      </div>
+      <p class="note">Hai giờ sinh cách nhau 20 phút nhưng thuộc hai trụ tháng khác nhau hoàn toàn.</p>
+
+      <p class="note">Toàn bộ mốc giờ trong bài này là giờ Việt Nam (UTC+7), không phải giờ Bắc Kinh (UTC+8). Nhiều phần mềm/app Bát Tự nguồn Trung Quốc xuất mặc định theo giờ Bắc Kinh, lệch 1 tiếng so với giờ Hà Nội &mdash; với mốc sát biên như thế này, dùng nhầm múi giờ có thể đẩy sai cả trụ tháng.</p>
+    </section>
+
+    <div class="divider" role="presentation">
+      <span class="line"></span>
+      <svg viewBox="0 0 26 14" fill="none"><circle cx="4" cy="7" r="2" fill="#8f4235"/><circle cx="13" cy="7" r="2" fill="#8f4235"/><circle cx="22" cy="7" r="2" fill="#8f4235"/></svg>
+      <span class="line"></span>
+    </div>
+
+    <!-- Lớp 7 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">07</span>
+        <h2>Văn học</h2>
+        <span class="badge verified">Nguồn cổ điển</span>
+      </div>
+
+      <p>Cụm từ &ldquo;Bạch Lộ&rdquo; không chỉ là thuật ngữ lịch pháp &mdash; nó xuất hiện ngay trong hai câu mở đầu bài thơ <strong>Kiêm Gia</strong> (<span lang="zh">蒹葭</span>, thuộc Tần Phong, <em>Kinh Thi</em>), một trong những bài thơ nổi tiếng và cổ xưa nhất của thơ ca Trung Hoa, khoảng thế kỷ 6&ndash;7 TCN.</p>
+
+      <blockquote>
+        <p>Kiêm gia thương thương, Bạch lộ vi sương</p>
+        <p class="gloss">Lau lách còn xanh tốt, mà móc trắng đã đọng thành sương.</p>
+      </blockquote>
+
+      <p>Bài thơ tả người đi tìm một &ldquo;người trong mộng&rdquo; ở phía bên kia dòng nước, đi ngược lên thì đường hiểm trở xa xôi, đi xuôi xuống thì thấy người ấy như ẩn hiện giữa dòng &mdash; không bao giờ chạm tới được. Sương trắng ở đây là hình ảnh mở đầu cho một nỗi khắc khoải xa cách, gắn liền với thời điểm giao mùa.</p>
+
+      <div class="callout">
+        <p class="callout-label">Điểm đắt giá</p>
+        <p>Bài thơ có ba khổ điệp cấu trúc, và cụm &ldquo;bạch lộ&rdquo; biến đổi qua từng khổ chứ không lặp y nguyên: khổ 1 <em>&ldquo;bạch lộ vi sương&rdquo;</em> &mdash; móc trắng đã đọng thành sương; khổ 2 <em>&ldquo;bạch lộ vị hi&rdquo;</em> &mdash; móc trắng chưa kịp khô; khổ 3 <em>&ldquo;bạch lộ vị dĩ&rdquo;</em> &mdash; móc trắng vẫn chưa tan hết.</p>
+        <p>Đây là cách đọc phổ biến trong giới chú giải cổ văn Trung Quốc: một chuỗi mốc thời gian trong cùng một buổi sáng &mdash; sương từ đọng thành giá lạnh, đến chưa khô, đến chưa tan &mdash; diễn tả sự trôi đi của thời gian song song với hành trình tìm kiếm không dứt, không thành. Nói cách khác, &ldquo;bạch lộ&rdquo; trong bài thơ không phải một hình ảnh tĩnh mà là một đồng hồ tự nhiên: sương đổi trạng thái theo nhịp mặt trời lên, và mỗi lần đổi trạng thái là một lần người đi tìm vẫn chưa chạm tới đích.</p>
+      </div>
+
+      <div class="callout">
+        <p class="callout-label">Điểm đắt giá</p>
+        <p>Tên gọi tiết khí &ldquo;Bạch Lộ&rdquo; trong lịch pháp có thể xem như bắt rễ từ chính hình ảnh thi ca này &mdash; nghĩa là trước khi trở thành một mốc thời gian trên lịch, &ldquo;bạch lộ&rdquo; đã là một hình ảnh văn học mang tâm trạng, tồn tại từ hơn 2500 năm trước.</p>
+        <p class="note">Đây là một liên tưởng hợp lý về mặt hình ảnh, không phải một khẳng định đã xác lập về trình tự lịch sử &mdash; hệ 24 tiết khí được hệ thống hóa chính thức muộn hơn nhiều, vào thời Hán.</p>
+      </div>
+
+      <p style="margin-top:28px;"><strong>Đỗ Phủ &mdash; &ldquo;Nguyệt Dạ Ức Xá Đệ&rdquo;</strong> <span class="zh-tag" lang="zh">(月夜憶舍弟)</span>: viết mùa thu năm 759, khi Đỗ Phủ đang lánh nạn đói kém ở Tần Châu giữa buổi loạn An Sử còn tiếp diễn (An Lộc Sơn đã chết từ 757, nhưng Sử Tư Minh vừa tái chiếm Lạc Dương mùa thu năm đó) &mdash; xa cách các em trai không rõ sống chết.</p>
+
+      <blockquote>
+        <p>Lộ tòng kim dạ bạch, Nguyệt thị cố hương minh</p>
+        <p class="gloss">Từ đêm nay, sương móc sẽ trắng xóa &mdash; trăng vẫn sáng nhất là ở quê nhà.</p>
+      </blockquote>
+
+      <div class="callout">
+        <p class="callout-label">Điểm đắt giá</p>
+        <p>Câu &ldquo;Lộ tòng kim dạ bạch&rdquo; không đứng một mình &mdash; nó là vế đầu của một cặp đối, vế sau là câu thơ còn nổi tiếng hơn cả nó: dù trăng nào cũng là một vầng trăng, tác giả vẫn quả quyết trăng quê sáng hơn, một sự phi lý cố ý để nói lên nỗi nhớ. Một câu khách quan &mdash; tiết trời sang Bạch Lộ; một câu chủ quan &mdash; nỗi nhớ đặt cạnh sự thật thiên văn. Tách rời câu ba khỏi câu bốn là mất đi đúng cái đòn bẩy tạo nên sức nặng của cặp đối.</p>
+      </div>
+
+      <p>Câu thơ vừa tả cảnh vừa tả tình: sương trắng lạnh của đêm giao mùa làm nền cho nỗi nhớ quê hương, nhớ em trong loạn lạc &mdash; cùng một hình ảnh sương thu như trong <em>Kinh Thi</em>, nhưng gắn với nỗi đau ly tán thời chiến thay vì nỗi khắc khoải tình cảm.</p>
+
+      <p>Hai bài thơ cách nhau khoảng 1400 năm &mdash; <em>Kinh Thi</em> ở thế kỷ 6&ndash;7 TCN, Đỗ Phủ năm 759 &mdash; nhưng cùng chọn hình ảnh sương trắng của tiết Bạch Lộ để gửi gắm nỗi xa cách, cho thấy đây là một mẫu hình ảnh bền vững trong thơ ca chữ Hán.</p>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Kết bài -->
+    <section class="closing">
+      <p class="section-label">Lời kết</p>
+      <p>Từ Xử Thử đến Bạch Lộ, rồi tới Thu Phân &mdash; nhiệt độ hạ dần theo quy luật, không đột ngột. Và giữa hành trình ấy, sương trắng trên đầu lá vào một sáng tháng Chín là bằng chứng đầu tiên rằng mùa đang đổi.</p>
+
+      <div class="closing-couplet">
+        <p>&ldquo;Lộ tòng kim dạ bạch,<br>Nguyệt thị cố hương minh.&rdquo;</p>
+        <span class="attrib">Đỗ Phủ &mdash; Nguyệt Dạ Ức Xá Đệ, năm 759</span>
+      </div>
+
+      <p>Bài tiếp theo trong seri: Thu Phân &mdash; ngày và đêm chia đều nhau.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    Mèo Đen<br>
+    Seri 24 tiết khí &mdash; Bạch Lộ, tiết thứ 15
+  </footer>
+
+</div>
+</body>
+</html>

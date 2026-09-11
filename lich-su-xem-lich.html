@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Từ Đặc Quyền Đến Vật Dụng: Lịch Sử Của Việc Xem Lịch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3ecdc;
+    --bg-soft: #ece2cd;
+    --ink: #2a2118;
+    --ink-soft: #5a4d3d;
+    --rule: #cdbb95;
+    --gold: #9c7a2c;
+    --gold-strong: #7d611f;
+    --indigo: #26375a;
+    --indigo-soft: #4a5f8c;
+    --verified: #55654a;
+    --verified-bg: #e4e2c9;
+    --shadow: rgba(42, 33, 24, 0.14);
+    --paper-noise: rgba(42, 33, 24, 0.035);
+    color-scheme: light;
+  }
+
+  html.dark {
+    --bg: #14171f;
+    --bg-soft: #1b202b;
+    --ink: #e7ddc7;
+    --ink-soft: #b3a68b;
+    --rule: #3a4054;
+    --gold: #d0ab4a;
+    --gold-strong: #e8c169;
+    --indigo: #93a9d6;
+    --indigo-soft: #6d84b3;
+    --verified: #9db38c;
+    --verified-bg: #232a1f;
+    --shadow: rgba(0, 0, 0, 0.4);
+    --paper-noise: rgba(255, 255, 255, 0.02);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'PT Serif', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.8;
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at 20% 30%, var(--paper-noise) 0, transparent 45%),
+      radial-gradient(circle at 80% 70%, var(--paper-noise) 0, transparent 45%);
+    z-index: 0;
+  }
+
+  ::selection { background: var(--gold); color: var(--bg); }
+
+  a:focus-visible,
+  button:focus-visible,
+  .rail a:focus-visible {
+    outline: 2px solid var(--gold-strong);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------- Reading progress (dòng thời gian đang trôi) ---------- */
+  .progress-track {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: transparent;
+    z-index: 50;
+  }
+  .progress-track .fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--indigo-soft), var(--gold-strong));
+    transition: width 0.08s linear;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  a { color: var(--gold-strong); }
+
+  /* ---------- Theme toggle ---------- */
+  .theme-toggle {
+    position: fixed;
+    top: 22px;
+    right: 22px;
+    z-index: 40;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    background: var(--bg-soft);
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px var(--shadow);
+    transition: transform 0.3s ease, background 0.4s ease;
+  }
+  .theme-toggle:hover { transform: rotate(18deg); }
+  .theme-toggle svg { width: 20px; height: 20px; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    padding: 100px 24px 70px;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--rule);
+    z-index: 1;
+    background:
+      radial-gradient(ellipse 620px 320px at 50% -40px, color-mix(in srgb, var(--indigo) 10%, transparent), transparent 70%),
+      var(--bg);
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 12% 22%, var(--ink-soft) 0, transparent 60%),
+      radial-gradient(1px 1px at 32% 15%, var(--ink-soft) 0, transparent 60%),
+      radial-gradient(1.5px 1.5px at 68% 12%, var(--ink-soft) 0, transparent 60%),
+      radial-gradient(1px 1px at 84% 26%, var(--ink-soft) 0, transparent 60%),
+      radial-gradient(1px 1px at 92% 8%, var(--ink-soft) 0, transparent 60%),
+      radial-gradient(1.5px 1.5px at 6% 10%, var(--ink-soft) 0, transparent 60%),
+      radial-gradient(1px 1px at 48% 8%, var(--ink-soft) 0, transparent 60%);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .hero-kicker {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+    margin-bottom: 22px;
+    position: relative;
+    animation: rise 0.9s ease both;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 5.2vw, 3.4rem);
+    line-height: 1.18;
+    max-width: 820px;
+    margin: 0 auto;
+    letter-spacing: -0.01em;
+    position: relative;
+    animation: rise 0.9s ease 0.12s both;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-strong);
+  }
+
+  .moon-strip {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 34px auto 0;
+    position: relative;
+    animation: rise 0.9s ease 0.24s both;
+  }
+  .moon-strip svg { width: 26px; height: 26px; }
+  .moon-strip svg:nth-child(4) { animation: glow 5s ease-in-out infinite; }
+
+  @keyframes glow {
+    0%, 100% { filter: drop-shadow(0 0 0 transparent); }
+    50% { filter: drop-shadow(0 0 6px var(--gold)); }
+  }
+
+  /* ---------- Layout ---------- */
+  .page {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 210px minmax(0, 700px);
+    justify-content: center;
+    gap: 56px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 24px 120px;
+  }
+
+  @media (max-width: 900px) {
+    .page { grid-template-columns: minmax(0, 700px); padding-top: 40px; }
+    .rail { display: none; }
+  }
+
+  @media (max-width: 560px) {
+    body { font-size: 16.5px; }
+    .hero { padding: 72px 20px 50px; }
+    .page { padding-left: 18px; padding-right: 18px; }
+    .lead::first-letter { font-size: 2.8rem; }
+  }
+
+  /* ---------- Side rail (timeline nav) ---------- */
+  .rail {
+    position: sticky;
+    top: 90px;
+    align-self: start;
+    height: fit-content;
+  }
+  .rail-title {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin: 0 0 16px 1px;
+  }
+
+  .rail-line {
+    border-left: 1px solid var(--rule);
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .rail a {
+    display: block;
+    font-size: 0.82rem;
+    text-decoration: none;
+    color: var(--ink-soft);
+    position: relative;
+    transition: color 0.25s ease;
+  }
+  .rail a::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--rule);
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .rail a .num {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    color: var(--gold-strong);
+    margin-right: 6px;
+  }
+  .rail a.active { color: var(--ink); font-weight: 700; }
+  .rail a.active::before { background: var(--gold-strong); transform: scale(1.3); }
+  .rail a:hover { color: var(--ink); }
+  .rail a:hover::before { background: var(--gold); }
+
+  /* ---------- Article body ---------- */
+  article { min-width: 0; }
+
+  .lead {
+    font-size: 1.18rem;
+    color: var(--ink);
+  }
+  .lead::first-letter {
+    font-family: 'Spectral', serif;
+    font-size: 3.6rem;
+    font-weight: 600;
+    float: left;
+    line-height: 0.8;
+    padding: 8px 10px 0 0;
+    color: var(--gold-strong);
+  }
+
+  section.entry {
+    margin-top: 0;
+    scroll-margin-top: 100px;
+  }
+
+  .lead + section.entry { margin-top: 60px; }
+
+  .entry-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+
+  .numeral {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    color: var(--gold-strong);
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 3px 10px;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .entry-head h2 {
+    font-size: 1.5rem;
+    line-height: 1.35;
+    flex: 1 1 260px;
+  }
+
+  @media (max-width: 520px) {
+    .entry-head { flex-direction: column; align-items: flex-start; gap: 10px; }
+  }
+
+  .verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'PT Serif', serif;
+    font-size: 0.72rem;
+    font-style: italic;
+    color: var(--verified);
+    background: var(--verified-bg);
+    padding: 3px 9px 3px 7px;
+    border-radius: 20px;
+  }
+  .verified svg { width: 11px; height: 11px; flex-shrink: 0; }
+
+  @media (max-width: 480px) {
+    .verified { white-space: normal; }
+  }
+
+  section.entry p { margin: 0 0 20px; color: var(--ink); }
+  section.entry p:last-child { margin-bottom: 0; }
+
+  .callout {
+    margin: 26px 0;
+    padding: 4px 0 4px 22px;
+    border-left: 2px solid var(--gold);
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  blockquote.folk {
+    margin: 34px 0;
+    padding: 28px 32px;
+    background: var(--bg-soft);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px var(--shadow);
+    position: relative;
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  blockquote.folk .moon-icon {
+    position: absolute;
+    top: -14px;
+    left: 26px;
+    width: 28px;
+    height: 28px;
+    background: var(--bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  blockquote.folk .moon-icon svg { width: 16px; height: 16px; }
+  blockquote.folk cite {
+    display: block;
+    margin-top: 12px;
+    font-style: normal;
+    font-family: 'PT Serif', serif;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  .divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 52px 0;
+    color: var(--rule);
+  }
+  .divider .rule { height: 1px; background: var(--rule); flex: 1; max-width: 160px; }
+  .divider svg { width: 16px; height: 16px; }
+
+  .closing {
+    margin-top: 80px;
+    padding-top: 48px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+  }
+  .closing::before {
+    content: "✦";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    background: var(--bg);
+    color: var(--gold-strong);
+    padding-right: 14px;
+    font-size: 0.9rem;
+  }
+  .closing h2 {
+    font-size: 1.7rem;
+    margin-bottom: 22px;
+    font-style: italic;
+  }
+  .closing .final-q {
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.55;
+    color: var(--gold-strong);
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 24px 70px;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  footer svg {
+    width: 18px;
+    height: 18px;
+    color: var(--rule);
+    margin-bottom: 14px;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-track" aria-hidden="true"><div class="fill" id="progressFill"></div></div>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Đổi giao diện sáng/tối">
+  <svg id="toggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+    <path d="M12 3a9 9 0 1 0 9 9c0-.46-.03-.92-.08-1.36A5.4 5.4 0 0 1 12 3z" />
+  </svg>
+</button>
+
+<header class="hero">
+  <div class="hero-kicker">Bài độc lập, không thuộc seri 24 tiết khí</div>
+  <h1>Từ đặc quyền đến vật dụng:<br>lịch sử của việc <em>“xem lịch”</em></h1>
+  <div class="moon-strip" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.5"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 7 7 0 0 1 0-18z" fill="currentColor" opacity="0.6"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 6 9 0 0 1 0-18z" fill="currentColor" opacity="0.8"/></svg>
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="currentColor"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 1 0 18 6 9 0 0 0 0-18z" fill="currentColor" opacity="0.8"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 1 0 18 7 7 0 0 0 0-18z" fill="currentColor" opacity="0.6"/></svg>
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.5"/></svg>
+  </div>
+</header>
+
+<div class="page">
+
+  <nav class="rail" aria-label="Mục lục">
+    <p class="rail-title">Dòng lịch sử</p>
+    <div class="rail-line">
+      <a href="#s1" data-target="s1"><span class="num">I</span>Tư tế cổ đại</a>
+      <a href="#s2" data-target="s2"><span class="num">II</span>La Mã cổ đại</a>
+      <a href="#s3" data-target="s3"><span class="num">III</span>Đông Á</a>
+      <a href="#s4" data-target="s4"><span class="num">IV</span>Trung cổ Âu châu</a>
+      <a href="#s5" data-target="s5"><span class="num">V</span>In ấn &amp; phổ cập</a>
+      <a href="#s6" data-target="s6"><span class="num">VI</span>Việt Nam TK20</a>
+      <a href="#s7" data-target="s7"><span class="num">VII</span>Nhật Bản</a>
+      <a href="#s8" data-target="s8"><span class="num">VIII</span>Dân gian</a>
+      <a href="#s9" data-target="s9"><span class="num">IX</span>Thời hiện đại</a>
+      <a href="#ket" data-target="ket"><span class="num">✦</span>Kết bài</a>
+    </div>
+  </nav>
+
+  <article>
+
+    <p class="lead">Ngày nay, muốn biết hôm nay là ngày gì, tiết gì, người ta chỉ cần liếc qua màn hình điện thoại. Nhưng suốt phần lớn chiều dài lịch sử nhân loại, việc ấy chưa từng đơn giản như vậy. Có thời, biết ngày tháng là đặc quyền của vua chúa; có thời, đó là bí mật riêng của giới tư tế; có thời, người ta phải bỏ tiền ra mua; và có thời, phần đông chỉ có thể nương theo tiếng trống làng, ánh trăng đầu ngõ mà đoán định. Câu chuyện về cách con người "xem lịch", suy cho cùng, là câu chuyện về việc ai đã và đang nắm quyền kiểm soát thời gian.</p>
+
+    <section class="entry" id="s1">
+      <div class="entry-head">
+        <span class="numeral">I</span>
+        <h2>Thời cổ đại: lịch là bí mật của tư tế</h2>
+        <span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Đã kiểm chứng</span>
+      </div>
+      <p>Ở những nền văn minh sớm nhất — Lưỡng Hà, Ai Cập cổ — việc quan sát bầu trời để tính lịch nằm trong tay giới tư tế, gắn liền mật thiết với tôn giáo, không hề tách rời. Kiến thức lịch pháp khi ấy được xem như một dạng tri thức bí truyền, không phổ biến ra dân chúng. Một phần vì việc quan sát và tính toán đòi hỏi chuyên môn cao; một phần, có lẽ quan trọng hơn, vì nắm được lịch tức là nắm được uy quyền — cả tôn giáo lẫn chính trị.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span class="rule"></span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.55"/></svg><span class="rule"></span></div>
+
+    <section class="entry" id="s2">
+      <div class="entry-head">
+        <span class="numeral">II</span>
+        <h2>La Mã cổ đại: phương Tây cũng từng chính trị hóa lịch</h2>
+        <span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Đã kiểm chứng</span>
+      </div>
+      <p>Trước khi vội cho rằng chỉ riêng phương Đông mới biến lịch thành công cụ quyền lực, đáng để nhìn lại chính La Mã cổ đại. Hội đồng Tư tế (Pontifex Maximus và các thành viên College of Pontiffs) được toàn quyền chèn thêm một "tháng nhuận" gọi là Mercedonius, nhằm chỉnh lại lịch âm La Mã vốn thường lệch mùa. Quyền hạn ấy đã bị lạm dụng một cách có hệ thống: các tư tế thường cộng thêm ngày để kéo dài nhiệm kỳ chính trị của phe mình, hoặc để can thiệp vào các cuộc bầu cử.</p>
+      <p>Hậu quả tích tụ dần cho đến năm 46 trước Công nguyên, khi Julius Caesar — lúc bấy giờ đã kiêm luôn chức Pontifex Maximus — buộc phải cải cách gấp. Ông nhờ đến nhà thiên văn Alexandria Sosigenes, tính lại lịch theo chu kỳ Mặt Trời thay vì Mặt Trăng, và kết quả là một năm dài tới 445 ngày — hậu thế gọi đùa đó là "năm của sự hỗn loạn".</p>
+      <p class="callout">Điều này cho thấy một sự thật đáng suy ngẫm: không phải Đông Á chính trị hóa lịch còn phương Tây thì không. Cả hai nền văn minh, ở buổi đầu, đều từng biến việc đo đếm thời gian thành công cụ của quyền lực. Khác biệt, nếu có, chỉ nằm ở chỗ phương Tây rẽ hướng sớm hơn nhiều — còn phương Đông giữ lại mô hình ấy lâu dài hơn hẳn.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span class="rule"></span><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 0 0 16 6.2 8 0 0 1 0-16z" fill="currentColor" opacity="0.6"/></svg><span class="rule"></span></div>
+
+    <section class="entry" id="s3">
+      <div class="entry-head">
+        <span class="numeral">III</span>
+        <h2>Đông Á: lịch là biểu tượng quyền lực chính trị</h2>
+        <span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Đã kiểm chứng</span>
+      </div>
+      <p>Tại Trung Hoa, việc tính lịch là độc quyền của triều đình, giao cho cơ quan chuyên trách như Khâm Thiên Giám; người thường không được tự ý làm lịch. "Phụng chính sóc" — tuân theo lịch do thiên tử ban hành — là nghi thức bắt buộc, thể hiện sự thần phục của các nước chư hầu, trong đó có Đại Việt. Hằng năm, sứ thần Việt Nam đi cống nạp có nhận lịch mới từ triều đình phương Bắc; quan trấn thủ nơi biên giới, như ở Lạng Sơn, phải chuẩn bị chu đáo để đón nhận lịch từ trước khi đoàn sứ mang lịch sang.</p>
+      <p>Ngay cả khi triều Nguyễn đã tự soạn lịch riêng — Đại Nam Hiệp Kỷ Lịch — hình thức "phụng chính sóc" đối với nhà Thanh vẫn được duy trì như một ràng buộc ngoại giao. Điều đó cho thấy: lịch, trong tay các triều đại Đông Á, chưa bao giờ chỉ là một công cụ đơn thuần, mà còn là một tuyên ngôn chính trị.</p>
+      <p>Có một chi tiết nhỏ nhưng đáng nhớ: năm 1845, vua Thiệu Trị đích thân viết 24 bài thơ tứ tuyệt về 24 tiết khí, cho in bằng mực son vào lịch ban hành. Lịch, khi ấy, là một sản phẩm "ngự chế" — mang dấu ấn cá nhân của bậc quân vương — chứ tuyệt nhiên không phải một ấn phẩm thương mại.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span class="rule"></span><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 0 0 16 4.5 8 0 0 1 0-16z" fill="currentColor" opacity="0.8"/></svg><span class="rule"></span></div>
+
+    <section class="entry" id="s4">
+      <div class="entry-head">
+        <span class="numeral">IV</span>
+        <h2>Phương Tây trung cổ: lịch trong tay nhà thờ và tu viện</h2>
+        <span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Đã kiểm chứng</span>
+      </div>
+      <p>Trước khi có kỹ thuật in, lịch và các tập almanac ở châu Âu là vật phẩm hiếm, phải chép tay, chủ yếu được lưu giữ trong các tu viện và giới học giả — gắn liền với việc tính toán ngày lễ tôn giáo, đặc biệt là Lễ Phục Sinh. Dân thường tiếp nhận thời gian qua tiếng chuông nhà thờ, chứ không phải qua việc tự mình đọc lịch.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span class="rule"></span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="currentColor"/></svg><span class="rule"></span></div>
+
+    <section class="entry" id="s5">
+      <div class="entry-head">
+        <span class="numeral">V</span>
+        <h2>Bước ngoặt: in ấn và cuộc phổ cập đầu tiên</h2>
+        <span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Đã kiểm chứng</span>
+      </div>
+      <p>Khi Gutenberg phát minh kỹ thuật in chữ rời tại châu Âu, vào khoảng năm 1450, cánh cửa sao chép sách hàng loạt được mở ra. Gần như ngay lập tức, các tập almanac — lịch kèm theo thông tin mùa vụ, ngày lễ thánh, dự báo thời tiết — trở thành một mặt hàng thương mại phổ biến bậc nhất. Đến cuối thế kỷ 16, almanac đã bán chạy hơn mọi đầu sách tiếng Anh khác, chỉ đứng sau Kinh Thánh.</p>
+      <p><em>Poor Richard's Almanack</em> của Benjamin Franklin, xuất bản đều đặn từ năm 1732 đến 1757, là một hiện tượng của thời kỳ thuộc địa Bắc Mỹ. Franklin chủ động cài thêm câu đố, châm ngôn để giữ chân độc giả quay lại mua mỗi năm — có thể xem đó như một hình mẫu sơ khai của chiến lược xây dựng nội dung và thương hiệu.</p>
+      <p>Khác hẳn phương Đông: sau Gutenberg, quyền kiểm soát lịch ở phương Tây dần chuyển từ triều đình và nhà thờ sang thị trường. Bất kỳ nhà in nào cũng có thể in lịch; bất kỳ ai biết chữ và có chút tiền cũng có thể mua.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span class="rule"></span><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 1 0 16 4.5 8 0 0 0 0-16z" fill="currentColor" opacity="0.8"/></svg><span class="rule"></span></div>
+
+    <section class="entry" id="s6">
+      <div class="entry-head">
+        <span class="numeral">VI</span>
+        <h2>Việt Nam thế kỷ 20: một almanac thương mại xuất hiện muộn</h2>
+        <span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Đã kiểm chứng</span>
+      </div>
+      <p>Dù Trung Hoa có kỹ thuật in từ rất sớm — khắc gỗ, từ thế kỷ 9 — việc in lịch tư nhân vẫn bị kiểm soát chặt, bởi lịch gắn liền với tính chính danh của triều đại theo quan niệm "thụ mệnh ư thiên". Đó là một bản chất hoàn toàn khác với almanac phương Tây, vốn thuần túy là sản phẩm thương mại.</p>
+      <p>Nhưng đến thế kỷ 20, Việt Nam cũng có một hiện tượng gần gũi với mô hình ấy, dù muộn hơn Anh quốc đến ba, bốn thế kỷ: <strong>Lịch Tam Tông Miếu</strong>. Năm 1924, một tổ chức tôn giáo nội sinh ở Sài Gòn — Minh Lý Đạo, đặt trụ sở tại Tam Tông Miếu — ra đời. Phải đến khoảng năm 1947, tổ chức này mới cho phát hành bộ lịch đầu tiên — cả lịch sách lẫn lịch bloc xé từng ngày — nhằm lấy kinh phí duy trì hoạt động, theo tôn chỉ không nhận cúng dường của tín đồ. Khoảng cách 23 năm ấy, giữa lúc lập đạo và lúc bắt đầu bán lịch, tự nó đã là một điều đáng suy ngẫm: việc thương mại hóa lịch không tự nhiên mà có, nó chỉ xuất hiện khi tổ chức đã ổn định và nhu cầu tài chính trở nên cấp thiết.</p>
+      <p>Từ đó cho đến năm 1975, lịch Tam Tông Miếu được phát hành đều đặn mỗi năm, in tới khoảng 200.000 bản, trở thành vật không thể thiếu trong hầu hết gia đình miền Nam — người ta mở lịch ra mỗi khi định ngày cưới hỏi, khai trương, động thổ. Việc ngừng xuất bản sau 1975, theo lời kể của một môn sinh Tam Tông Miếu, không phải do tổ chức tự nguyện dừng lại, mà vì chính quyền khi ấy không còn cho phép xuất bản loại lịch này nữa — và phải đến tận năm 2008, Minh Lý Đạo mới chính thức được công nhận là một tổ chức tôn giáo.</p>
+      <p>Có một nhánh rẽ ít người biết đến: người biên soạn chính của bộ lịch, ông Nhựt Thanh — một nhà tử vi — đã rời Việt Nam vào tháng 4 năm 1975. Ở hải ngoại, dòng lịch ấy vẫn được ông tiếp tục biên soạn dưới tên gọi "Lịch Tam Tông Miếu — Nhựt Thanh". Bộ lịch, vì thế, không hẳn đã chấm dứt vào năm 1975 — nó rẽ làm hai nhánh: một nhánh dừng lại trong nước, một nhánh tiếp tục mang theo tên người biên soạn ra nước ngoài.</p>
+      <p class="callout">Đây gần như là một phiên bản Việt Nam của mô hình almanac phương Tây — một tổ chức tôn giáo soạn lịch, bán ra thị trường tự do để tự trang trải, không qua triều đình. Nhưng nó đến muộn hơn rất nhiều, gắn với một tổ chức tôn giáo bản địa thay vì nhà thờ châu Âu, và kết thúc không phải vì quy luật thị trường, mà vì một quyết định hành chính — khác hẳn số phận của almanac phương Tây, vốn còn tồn tại đến tận ngày nay.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span class="rule"></span><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 1 0 16 6.2 8 0 0 0 0-16z" fill="currentColor" opacity="0.6"/></svg><span class="rule"></span></div>
+
+    <section class="entry" id="s7">
+      <div class="entry-head">
+        <span class="numeral">VII</span>
+        <h2>Nhật Bản: một lối rẽ khác của phương Đông</h2>
+        <span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Đã kiểm chứng</span>
+      </div>
+      <p>Trong khi Việt Nam còn giữ nếp "phụng chính sóc" đến tận thế kỷ 19, Nhật Bản đã dứt khoát rời bỏ mô hình lịch kiểu Đông Á từ rất sớm. Năm 1873, chính phủ Minh Trị chính thức bãi bỏ âm lịch — vốn du nhập từ Trung Hoa từ thế kỷ 6 — và chuyển hẳn sang dương lịch Gregorian. Quyết định được ban hành đột ngột đến mức ngày 3 tháng 12 năm 1872 theo lịch cũ đã nhảy thẳng sang ngày 1 tháng 1 năm 1873, xóa đi gần 27 ngày.</p>
+      <p>Người ta thường nhắc đến động lực tư tưởng — khát vọng hiện đại hóa, mong muốn đồng bộ với các cường quốc phương Tây. Nhưng còn một động lực khác, ít được nhắc đến hơn, lại rất thực tế: chính phủ khi ấy vừa chuyển cách trả lương quan chức từ theo năm sang theo tháng, mà năm 1872 âm lịch lại có tháng nhuận — nghĩa là ngân khố phải chi tới mười ba tháng lương. Chuyển sang dương lịch giúp tránh khoản chi phát sinh ấy.</p>
+      <p class="callout">Đằng sau một quyết định mang dáng vẻ biểu tượng lớn lao về văn hóa, đôi khi động lực thật sự lại nằm ở một bài toán ngân sách rất trần trụi.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span class="rule"></span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.55"/></svg><span class="rule"></span></div>
+
+    <section class="entry" id="s8">
+      <div class="entry-head">
+        <span class="numeral">VIII</span>
+        <h2>Người không biết chữ tiếp nhận thời gian ra sao</h2>
+        <span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Đã kiểm chứng — mức độ khái quát</span>
+      </div>
+      <p>Phần đông dân chúng xưa, cả Đông lẫn Tây, không đọc lịch trực tiếp. Thời gian và mùa vụ đến với họ qua một con đường khác: tục ngữ, ca dao, lời dặn của người già, tiếng trống làng, tiếng chuông chùa hay nhà thờ, và cả những quan sát vật hậu — chim di cư, hoa nở đúng mùa, như tam hậu trong 24 tiết khí đã từng được nhắc đến.</p>
+      <p>Ở Việt Nam, có một bài đồng dao quen thuộc — cứ thế, tiếp tục mô tả hình dạng mặt trăng thay đổi theo từng ngày, cho đến hết tháng:</p>
+      <blockquote class="folk">
+        <span class="moon-icon"><svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--gold-strong)"><path d="M12 3a9 9 0 1 0 0 18 7 7 0 0 1 0-18z"/></svg></span>
+        "Mồng một lưỡi trai, mồng hai lá lúa, mồng ba câu liêm, mồng bốn lưỡi liềm..."
+        <cite>Đồng dao dân gian Việt Nam</cite>
+      </blockquote>
+      <p>Ai thuộc lòng bài đồng dao ấy, chỉ cần ngước nhìn trăng là biết hôm nay là mồng mấy — không cần giấy, không cần chữ. Đó là một cuốn lịch sống trong trí nhớ tập thể, song song tồn tại với lịch chính thức suốt hàng nghìn năm, và có lẽ từng là con đường phổ biến nhất để phần đông nhân loại chạm đến khái niệm thời gian.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span class="rule"></span><svg viewBox="0 0 24 24"><path d="M12 2 13.8 9.4 21 12l-7.2 2.6L12 22l-1.8-7.4L3 12l7.2-2.6z" fill="currentColor"/></svg><span class="rule"></span></div>
+
+    <section class="entry" id="s9">
+      <div class="entry-head">
+        <span class="numeral">IX</span>
+        <h2>Thời hiện đại: từ đặc quyền đến vật dụng trong túi áo</h2>
+        <span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Đã kiểm chứng</span>
+      </div>
+      <p>Lịch treo tường, lịch để bàn, lịch bỏ túi dần trở nên phổ cập, rồi trở thành vật phẩm tặng miễn phí — từ ngân hàng, từ doanh nghiệp — thay vì một món hàng phải bỏ tiền mua. Từ cuối thế kỷ 20, lịch điện tử và ứng dụng trên điện thoại đưa thời gian vào tay mọi người, cập nhật tức thời, không còn bất kỳ rào cản tiếp cận nào.</p>
+      <p>So với hình ảnh ban đầu — một bí mật của tư tế, một biểu tượng thần phục chính trị — lịch ngày nay đã trở thành thứ quá đỗi sẵn có, đến mức ít ai còn dừng lại để nhận ra giá trị của nó nữa.</p>
+    </section>
+
+    <section class="entry closing" id="ket">
+      <h2>Kết bài</h2>
+      <p>Đường đi của lịch, nhìn suốt chiều dài lịch sử, không phải một đường thẳng đơn giản chia đôi Đông và Tây. Cả La Mã cổ đại lẫn các triều đại Đông Á đều từng khởi đầu bằng việc biến lịch thành công cụ quyền lực. Khác biệt chỉ nằm ở thời điểm rẽ hướng: phương Tây rẽ sớm — qua cuộc cải cách của Caesar, rồi qua Gutenberg, để lịch trở thành hàng hóa của thị trường tự do. Phương Đông giữ mô hình "lịch là quyền lực" lâu hơn nhiều; và khi thị trường hóa cuối cùng cũng đến — như trường hợp Lịch Tam Tông Miếu ở Việt Nam — nó đến muộn, và đi theo một con đường khác: qua một tổ chức tôn giáo bản địa, chứ không phải những nhà in tư nhân tự do như ở châu Âu. Nhật Bản, ngược lại, chọn cách dứt khoát cắt đứt với mô hình Đông Á từ rất sớm, bằng một quyết định vừa mang tính biểu tượng, vừa rất thực dụng.</p>
+      <p>Điều từng là đặc quyền của vua chúa, của tư tế, nay đã thu gọn trong một cú chạm màn hình.</p>
+      <p class="final-q">Câu hỏi đáng để lại, có lẽ là: khi mọi thứ đã trở nên quá dễ dàng, liệu con người có còn nhìn thấy giá trị của việc biết ngày, biết tháng — hay nó đã lặng lẽ trở thành một điều hiển nhiên đến mức vô hình?</p>
+    </section>
+
+  </article>
+</div>
+
+<footer>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 0 18 6 9 0 0 1 0-18z"/></svg>
+  <div>Từ Đặc Quyền Đến Vật Dụng: Lịch Sử Của Việc "Xem Lịch"</div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var toggle = document.getElementById('themeToggle');
+  var icon = document.getElementById('toggleIcon');
+  var sunPath = '<circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/>';
+  var moonPath = '<path d="M12 3a9 9 0 1 0 9 9c0-.46-.03-.92-.08-1.36A5.4 5.4 0 0 1 12 3z" fill="currentColor"/>';
+
+  function applyTheme(mode) {
+    if (mode === 'dark') {
+      root.classList.add('dark');
+      icon.innerHTML = sunPath;
+    } else {
+      root.classList.remove('dark');
+      icon.innerHTML = moonPath;
+    }
+  }
+
+  var saved = null;
+  try { saved = localStorage.getItem('xemlich-theme'); } catch (e) {}
+
+  if (saved === 'dark' || saved === 'light') {
+    applyTheme(saved);
+  } else {
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+
+  toggle.addEventListener('click', function () {
+    var next = root.classList.contains('dark') ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('xemlich-theme', next); } catch (e) {}
+  });
+
+  // Reading progress — dòng thời gian đang trôi khi cuộn trang
+  var progressFill = document.getElementById('progressFill');
+  function updateProgress() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressFill.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+
+  // Active section highlight in the rail
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a'));
+  var sections = links.map(function (a) {
+    return document.getElementById(a.getAttribute('data-target'));
+  });
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var link = document.querySelector('.rail a[data-target="' + entry.target.id + '"]');
+        if (!link) return;
+        if (entry.isIntersecting) {
+          links.forEach(function (l) { l.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+    sections.forEach(function (s) { if (s) observer.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
