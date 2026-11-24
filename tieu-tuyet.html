@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiểu Tuyết: Trời đất khép cửa | Thiên Địa Nhân</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%231E2638%27/%3E%3Cg stroke=%27%23F3F5F7%27 stroke-width=%272.2%27 stroke-linecap=%27round%27%3E%3Cpath d=%27M16 6v20M7.3 11l17.4 10M7.3 21l17.4-10%27/%3E%3C/g%3E%3C/svg%3E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tiểu Tuyết: Trời đất khép cửa">
+<meta property="og:description" content="Vì sao câu tục ngữ “Ngày tháng Mười chưa cười đã tối” trúng 128 trên 151 năm. Tiết Tiểu Tuyết qua thiên văn, chính sử, Đông y và mệnh lý.">
+<meta property="og:site_name" content="Thiên Địa Nhân">
+<meta name="description" content="Tiết Tiểu Tuyết (小雪): thiên văn, tam hậu, câu tục ngữ 'Ngày tháng Mười chưa cười đã tối', tuyết trong chính sử Việt, dưỡng sinh và mệnh lý tháng Hợi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1E2638;      /* mực đêm đông */
+  --dusk:#33405E;     /* trời chạng vạng */
+  --snow:#F3F5F7;     /* giấy tuyết */
+  --frost:#CBD3DD;    /* sương, đường kẻ */
+  --ember:#B8722C;    /* ánh lò lửa nhỏ */
+  --ember-text:#8F5516; /* ember cho chữ nhỏ, đủ tương phản */
+  --pine:#4E6B5C;     /* Đông y */
+  --plum:#6B4E71;     /* mệnh lý */
+  --text:#262C38;
+  --muted:#5A6476;
+  --serif:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --han:"Noto Serif TC","Songti TC","PMingLiU",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--snow);color:var(--text);font-family:var(--serif);font-size:1.125rem;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--dusk);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:2px}
+.han{font-family:var(--han);font-weight:400}
+.hex{font-family:"Segoe UI Symbol","Noto Sans Symbols 2","Apple Symbols",var(--han);font-size:1.15em}
+
+/* ---------- Thanh trên cùng ---------- */
+.skip{position:absolute;left:-999px;top:0;background:#1E2638;color:#fff;outline:2px solid #E3A766;padding:.6rem 1rem;font-family:var(--sans);z-index:10}
+.skip:focus{left:1rem;top:1rem}
+.topbar{background:var(--ink);color:#DCE2EA;font-family:var(--sans);font-size:.85rem}
+.topbar .wrap{max-width:72rem;margin:0 auto;padding:.7rem 1.5rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.topbar a{color:#DCE2EA;text-decoration:none}
+.topbar a:hover{text-decoration:underline}
+
+/* ---------- Hero: đường cong hoàng hôn ---------- */
+.hero{background:var(--ink);color:var(--snow);padding:2.5rem 1.5rem 3rem;overflow:hidden}
+.hero .wrap{max-width:72rem;margin:0 auto}
+.hero-head{display:flex;align-items:flex-end;gap:1.5rem;flex-wrap:wrap}
+.hero h1{font-weight:300;font-size:clamp(3.2rem,9vw,6.5rem);line-height:.95;margin:0;letter-spacing:-.01em}
+.hero .han-big{font-family:var(--han);font-size:clamp(2.2rem,6vw,4.2rem);color:var(--frost);opacity:.55;line-height:1}
+.hero .sub{font-style:italic;font-size:1.35rem;color:var(--frost);margin:.6rem 0 0}
+.hero .meta{font-family:var(--sans);font-size:.9rem;color:#9AA6B8;margin:.4rem 0 0}
+.cadao-hero{margin:2rem 0 1.25rem;font-size:clamp(1.35rem,3vw,1.9rem);font-weight:300;line-height:1.45;color:#fff}
+.cadao-hero span{display:block}
+.cadao-hero span:last-child{color:#F0C995}
+.chart-box{position:relative;margin-top:.5rem}
+.chart-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chart-box svg{width:100%;min-width:640px;height:auto;display:block}
+.swipe-hint{display:none;font-family:var(--sans);font-size:.8rem;color:#9AA6B8;margin:.4rem 0 0}
+@media (max-width:680px){.swipe-hint{display:block}}
+.chart-cap{font-family:var(--sans);font-size:.85rem;color:#9AA6B8;margin:.6rem 0 0;max-width:46rem}
+#curve{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 2.4s ease-out .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){#curve{animation:none;stroke-dashoffset:0}}
+
+/* ---------- Bố cục bài ---------- */
+.layout{max-width:72rem;margin:0 auto;padding:3rem 1.5rem 4rem;display:grid;grid-template-columns:13rem minmax(0,42rem);gap:3.5rem;justify-content:center}
+.toc{position:sticky;top:1.5rem;align-self:start;font-family:var(--sans);font-size:.88rem}
+.toc p{margin:0 0 .6rem;color:var(--muted);font-weight:500}
+.toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--frost)}
+.toc li a{display:block;padding:.32rem 0 .32rem .9rem;color:var(--muted);text-decoration:none;line-height:1.35}
+.toc li a:hover{color:var(--ink)}
+.toc li a .n{color:var(--ember-text);font-weight:600;margin-right:.35rem}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr);gap:1.5rem}.toc{position:static}.toc ol{columns:2;column-gap:1.5rem}}
+@media (max-width:520px){.toc ol{columns:1}}
+
+article h2{font-weight:500;font-size:1.9rem;line-height:1.2;color:var(--ink);margin:3.5rem 0 1rem;scroll-margin-top:1.5rem}
+article h2 .n{display:block;font-family:var(--sans);font-size:.85rem;font-weight:500;color:var(--ember-text);margin-bottom:.35rem}
+article h3{font-weight:600;font-size:1.25rem;color:var(--ink);margin:2rem 0 .6rem}
+article h4{font-family:var(--sans);font-weight:600;font-size:1rem;color:var(--ink);margin:1.75rem 0 .4rem}
+article p{margin:0 0 1rem}
+article ul,article ol{padding-left:1.3rem;margin:0 0 1rem}
+article li{margin:.3rem 0}
+article strong{font-weight:600;color:#1B2232}
+.lead{font-size:1.28rem;line-height:1.6;color:var(--ink)}
+
+/* Nhãn độ tin cậy: màu mã hóa loại nguồn */
+.tag{display:inline-block;font-family:var(--sans);font-size:.74rem;font-weight:500;line-height:1;padding:.32rem .55rem;border-radius:999px;vertical-align:.12em;margin-right:.35rem;white-space:nowrap}
+.t-kc{background:#E1E7EF;color:var(--dusk)}
+.t-tt{background:#F4E6D6;color:#8A5320}
+.t-dy{background:#DFE9E3;color:var(--pine)}
+.t-ml{background:#EAE1EC;color:var(--plum)}
+.legend{font-family:var(--sans);font-size:.88rem;color:var(--muted);border-top:1px solid var(--frost);border-bottom:1px solid var(--frost);padding:1rem 0;margin:0 0 2rem}
+.legend div{margin:.3rem 0}
+
+/* Trích dẫn cổ văn */
+blockquote{margin:1.5rem 0;padding:.2rem 0 .2rem 1.25rem;border-left:3px solid var(--frost)}
+blockquote .orig{font-family:var(--han);font-size:1.2rem;line-height:1.8;color:var(--ink);margin:0 0 .35rem}
+blockquote .tr{font-style:italic;color:var(--muted);margin:0}
+blockquote.poem .orig{font-size:1.3rem}
+.ket{font-size:1.15rem;line-height:1.7;color:var(--ink);margin:1.75rem 0;padding:1rem 1.25rem;background:#fff;border-top:2px solid var(--ink)}
+.cadao{font-style:italic;font-size:1.3rem;line-height:1.6;color:var(--ink);margin:1.5rem 0;padding-left:1.25rem;border-left:3px solid var(--ember)}
+
+/* Bảng */
+.tbl-wrap{overflow-x:auto;margin:1.25rem 0 .5rem}
+table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:.92rem}
+th,td{text-align:left;padding:.6rem .7rem;border-bottom:1px solid var(--frost);vertical-align:top}
+th{font-weight:600;color:var(--ink);border-bottom:2px solid var(--ink)}
+tr.hi td{background:#FBF1E5;font-weight:600}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.note{font-family:var(--sans);font-size:.85rem;color:var(--muted);margin:.4rem 0 1.25rem}
+
+/* Chuỗi ba mắt xích */
+.chain{list-style:none;padding:0;margin:1.5rem 0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:c}
+.chain li{position:relative;margin:0;padding:1.1rem 1rem 1.1rem;border:1px solid var(--frost);background:#fff;font-size:1rem;line-height:1.5}
+.chain li + li{border-left:none}
+.chain li::before{counter-increment:c;content:counter(c);display:block;font-family:var(--sans);font-weight:600;color:var(--ember);font-size:1.4rem;line-height:1;margin-bottom:.5rem}
+.chain li + li::after{content:"";position:absolute;left:-7px;top:1.35rem;width:12px;height:12px;background:var(--snow);border:1px solid var(--frost);transform:rotate(45deg);border-left:none;border-bottom:none;background:#fff}
+.chain-out{background:var(--ink);color:var(--snow);padding:1rem 1.2rem;margin:-1.5rem 0 1.5rem;font-size:1.02rem;line-height:1.55}
+@media (max-width:640px){.chain{grid-template-columns:1fr}.chain li + li{border-left:1px solid var(--frost);border-top:none}.chain li + li::after{display:none}}
+
+/* Lưới 151 năm */
+.years{margin:1.5rem 0 .5rem;font-family:var(--sans);font-size:.75rem;max-width:24rem}
+.yr-row{display:grid;grid-template-columns:3.2rem repeat(10,1fr);gap:4px;align-items:center;margin-bottom:4px}
+.yr-row .dec{color:var(--muted);text-align:right;padding-right:.5rem}
+.yr{aspect-ratio:1;border-radius:3px;background:var(--ember)}
+.yr.miss{background:transparent;border:1.5px solid var(--dusk)}
+.yr.none{background:transparent}
+.yr.now{outline:2px solid var(--ink);outline-offset:1px}
+.yr-legend{display:flex;gap:1.25rem;flex-wrap:wrap;font-family:var(--sans);font-size:.85rem;color:var(--muted);margin:.5rem 0 1.5rem}
+.yr-legend i{display:inline-block;width:.85rem;height:.85rem;border-radius:3px;vertical-align:-.1em;margin-right:.35rem}
+
+.aside{background:#E9EDF2;padding:1.1rem 1.25rem;margin:1.5rem 0;font-size:1.02rem}
+.aside p:last-child{margin-bottom:0}
+
+/* Hộp tiết khí năm */
+.yearbox{margin:4rem 0 0;border:2px solid var(--ink);background:#fff}
+.yearbox h2{margin:0;padding:1rem 1.25rem;background:var(--ink);color:var(--snow);font-size:1.4rem}
+.yearbox h2 .n{color:#F0C995}
+.yearbox .sub{font-family:var(--sans);font-size:.85rem;color:var(--muted);padding:.8rem 1.25rem 0;margin:0}
+.yearbox dl{margin:0;padding:.5rem 1.25rem 1.25rem}
+.yearbox .row{display:grid;grid-template-columns:10rem 1fr;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--frost)}
+.yearbox .row:last-child{border-bottom:none}
+.yearbox dt{font-family:var(--sans);font-weight:600;font-size:.88rem;color:var(--ink)}
+.yearbox dd{margin:0;font-size:1rem;line-height:1.6}
+@media (max-width:560px){.yearbox .row{grid-template-columns:1fr;gap:.2rem}}
+
+.pager{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:3rem 0 0;font-family:var(--sans);font-size:.92rem}
+.pager a,.pager span{display:block;padding:.8rem 1rem;border:1px solid var(--frost);text-decoration:none;color:var(--ink);min-width:12rem}
+.pager small{display:block;color:var(--muted);font-size:.78rem}
+.pager span{color:var(--muted)}
+footer{background:var(--ink);color:#9AA6B8;font-family:var(--sans);font-size:.85rem;text-align:center;padding:2rem 1.5rem}
+footer a{color:#DCE2EA}
+
+/* ---------- Chế độ tối: tự động theo cài đặt máy ---------- */
+@media (prefers-color-scheme:dark){
+  :root{color-scheme:dark;--ink:#EEF2F6;--snow:#151B27;--frost:#2F3A52;--text:#D6DDE6;--muted:#A3AEBF;--ember-text:#E3A766;--surface:#1D2535}
+  body{background:var(--snow);color:var(--text)}
+  a{color:#AFC3E6}
+  .topbar,footer{background:#0F141E}
+  .hero{background:#1E2638;color:#F3F5F7;border-bottom:1px solid #2F3A52}
+  .chain-out,.yearbox h2,.skip{color:#F3F5F7}
+  .hero .sub,.hero .han-big{color:#CBD3DD}
+  article h2,article h3,article h4,.lead,.cadao,.ket,blockquote .orig,th{color:#EEF2F6}
+  article strong{color:#F3F5F7}
+  th{border-bottom-color:#9AA6B8}
+  .t-kc{background:#2A3550;color:#C9D4E5}
+  .t-tt{background:#3B2D1F;color:#F0C995}
+  .t-dy{background:#223429;color:#AFD0BD}
+  .t-ml{background:#34273B;color:#D9C0E0}
+  .aside,.chain li,.ket,.yearbox{background:var(--surface)}
+  .chain li + li::after{background:var(--surface)}
+  .chain-out{background:#2A3550}
+  tr.hi td{background:#2C2519}
+  .yr.miss{border-color:#A3AEBF}
+  .yr.now{outline-color:#F3F5F7}
+  .yr-legend i[style*="dusk"]{border-color:#A3AEBF !important}
+  .ket{border-top-color:#A3AEBF}
+  .yearbox{border-color:#3A4660}
+  .yearbox h2{background:#2A3550}
+  .yearbox dt{color:#EEF2F6}
+  .pager a{color:#EEF2F6}
+  .toc li a:hover{color:#EEF2F6}
+}
+@page{margin:18mm 16mm}
+@media print{:root{color-scheme:light}body{background:#fff;color:#262C38}article h2,article h3,article strong{color:#1E2638}.aside,.chain li,.ket,.yearbox{background:#fff}.topbar,.toc,.skip,.hero .chart-box{display:none}.hero{background:#fff;color:#000;padding:0}.hero .sub,.hero .meta,.cadao-hero span,.cadao-hero span:last-child,.hero .han-big{color:#000;opacity:1}.layout{display:block;padding:1rem 0}.yearbox{break-inside:avoid}footer{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<a class="skip" href="#noi-dung">Bỏ qua, đến nội dung bài</a>
+
+<div class="topbar"><div class="wrap">
+  <a href="index.html">Thiên Địa Nhân: vòng 24 tiết khí</a>
+  <span>Seri 24 tiết khí, tiết thứ 20</span>
+</div></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-head">
+      <h1>Tiểu Tuyết</h1>
+      <div class="han-big" lang="zh-Hant">小雪</div>
+    </div>
+    <p class="sub">Trời đất khép cửa</p>
+    <p class="meta">Trung khí tháng Mười âm lịch. Mặt Trời ở kinh độ hoàng đạo 240°, khoảng 21–23/11 hằng năm.</p>
+
+    <p class="cadao-hero"><span>Đêm tháng Năm chưa nằm đã sáng,</span><span>Ngày tháng Mười chưa cười đã tối.</span></p>
+
+    <div class="chart-box">
+      <div class="chart-scroll" tabindex="0" role="region" aria-label="Biểu đồ, có thể vuốt ngang trên điện thoại"><svg id="sunsetChart" viewBox="0 0 960 360" role="img" aria-labelledby="chartTitle chartDesc">
+        <title id="chartTitle">Giờ mặt trời lặn ở Hà Nội, tháng 11 và 12 năm 2026</title>
+        <desc id="chartDesc">Đường cong giảm dần từ 17 giờ 21 đầu tháng 11, chạm đáy 17 giờ 13 phút 48 giây ngày 26 đến 27 tháng 11, trong tiết Tiểu Tuyết và trong tháng Mười âm lịch, rồi tăng lại lên 17 giờ 20 ngày Đông Chí 22 tháng 12.</desc>
+      </svg></div>
+      <p class="swipe-hint" aria-hidden="true">Vuốt ngang để xem cả biểu đồ.</p>
+      <p class="chart-cap">Giờ mặt trời lặn ở Hà Nội từng ngày, tháng 11 và 12 (số liệu năm 2026; các năm khác chỉ lệch dưới 1 phút, riêng dải tháng âm lịch xê dịch theo từng năm). Buổi chiều tối sớm nhất năm rơi vào giữa tiết Tiểu Tuyết, trong tháng Mười âm, chứ không phải ngày Đông Chí.</p>
+    </div>
+  </div>
+</header>
+
+<main class="layout" id="noi-dung">
+  <nav class="toc" aria-label="Mục lục">
+    <p>Trong bài</p>
+    <ol>
+      <li><a href="#mo-bai">Mở bài</a></li>
+      <li><a href="#lop-1"><span class="n">1</span>Thiên văn</a></li>
+      <li><a href="#lop-2"><span class="n">2</span>Tam hậu</a></li>
+      <li><a href="#lop-3"><span class="n">3</span>Ngày tháng Mười chưa cười đã tối</a></li>
+      <li><a href="#lop-4"><span class="n">4</span>Tuyết: lá thư từ trời</a></li>
+      <li><a href="#lop-5"><span class="n">5</span>Việt Nam</a></li>
+      <li><a href="#lop-6"><span class="n">6</span>Dưỡng sinh</a></li>
+      <li><a href="#lop-7"><span class="n">7</span>Mệnh lý, Dịch học</a></li>
+      <li><a href="#lop-8"><span class="n">8</span>Suy ngẫm</a></li>
+      <li><a href="#hop-2026">Hộp tiết khí 2026</a></li>
+    </ol>
+  </nav>
+
+  <article>
+    <div class="legend" aria-label="Nhãn độ tin cậy">
+      <div><span class="tag t-kc">Đã kiểm chứng</span>số liệu thiên văn, khí tượng, văn bản kinh điển có nguồn</div>
+      <div><span class="tag t-tt">Kinh nghiệm truyền thống</span>ca dao, tục ngữ, phong tục, kinh nghiệm dân gian</div>
+      <div><span class="tag t-dy">Lý thuyết Đông y</span>theo lý luận Đông y cổ truyền, không phải lời khuyên y khoa</div>
+      <div><span class="tag t-ml">Quy ước mệnh lý</span>quy ước của Bát Tự, Dịch học, có dị bản giữa các trường phái</div>
+    </div>
+
+    <section id="mo-bai">
+      <h2>Một câu tục ngữ trúng 128 trên 151 năm</h2>
+      <p class="lead">Câu tục ngữ “Đêm tháng Năm chưa nằm đã sáng, ngày tháng Mười chưa cười đã tối” có trong sách Ngữ văn lớp 7, và thường được hiểu là: tháng Năm đêm ngắn, tháng Mười ngày ngắn.</p>
+      <p><strong>Vế đầu đúng tuyệt đối.</strong> Đêm ngắn nhất năm là đêm Hạ Chí, và theo quy tắc của lịch âm dương, Hạ Chí <strong>luôn</strong> nằm trong tháng Năm âm lịch. Năm nào cũng vậy.</p>
+      <p><strong>Vế sau thì lạ.</strong> Ngày ngắn nhất năm là Đông Chí, mà Đông Chí <strong>luôn</strong> nằm trong tháng Mười Một, không phải tháng Mười. Vế đầu gọi đúng tháng có đêm ngắn nhất, vế sau lại “lệch” đi một tháng. Ông bà ta nói nhầm, hay vế sau đang nói một điều khác?</p>
+      <p>Bài này sẽ cho thấy: tính cho Hà Nội trong 151 năm (1950–2100), <strong>buổi chiều tối sớm nhất năm rơi đúng vào tháng Mười âm lịch ở 128 năm</strong>, khoảng 85%. Vế sau không đo độ dài của ngày, mà đo <strong>lúc trời tối</strong>. Và lý do nó đúng gắn chặt với chính tiết khí của bài hôm nay: <strong>Tiểu Tuyết</strong>.</p>
+      <p>Tiểu Tuyết là lúc mùa đông khép cửa. Mưa gặp lạnh thành tuyết, nhưng tuyết còn nhỏ, còn thưa: “Tiểu” là <em>chưa đến lúc thịnh</em>. Không còn là thu, chưa phải đông sâu. Mọi thứ đang thu lại, đóng lại, cất đi. Và trời tối sớm.</p>
+    </section>
+
+    <section id="lop-1">
+      <h2><span class="n">Lớp 1</span>Thiên văn: Tiểu Tuyết là gì, đặt ở đâu</h2>
+      <p><span class="tag t-kc">Đã kiểm chứng</span><strong>Định nghĩa.</strong> Tiểu Tuyết bắt đầu khi Mặt Trời tới <strong>kinh độ hoàng đạo 240°</strong>, rơi vào khoảng 21–23/11 dương lịch, phần lớn là ngày 22. Đây là tiết khí thứ 20 (tính từ Lập Xuân), tiết thứ hai của mùa đông, kéo dài khoảng 15 ngày đến Đại Tuyết (255°).</p>
+
+      <h3>Trung khí, và quy tắc đặt tên tháng</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span>24 tiết khí xen kẽ hai loại:</p>
+      <ul>
+        <li><strong>Tiết (tiết lệnh)</strong>: mở đầu tháng can chi, như Lập Đông mở tháng Hợi.</li>
+        <li><strong>Trung khí</strong>: nằm giữa tháng, như Tiểu Tuyết.</li>
+      </ul>
+      <p>Âm lịch đặt tên tháng <strong>theo trung khí</strong>: tháng âm nào chứa Tiểu Tuyết thì là <strong>tháng Mười</strong>; tháng nào chứa Đông Chí thì là tháng Mười Một. Quy tắc này là chìa khóa để hiểu câu tục ngữ ở Lớp 3.</p>
+
+      <h3>Tên gọi trong kinh điển</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span>Tên “Tiểu Tuyết” xuất hiện trong <em>Hoài Nam Tử, thiên Thiên Văn Huấn</em> (đầu Tây Hán): “thêm mười lăm ngày, (cán Đẩu) chỉ Hợi, ấy là Tiểu Tuyết”. Người xưa còn định tiết khí bằng hướng chỉ của chòm Bắc Đẩu. <em>Nguyệt Lệnh Thất Thập Nhị Hậu Tập Giải</em> (Ngô Trừng, đời Nguyên) giải nghĩa:</p>
+      <blockquote>
+        <p class="orig" lang="zh-Hant">十月中，雨下而為寒氣所薄，故凝而為雪。小者未盛之辭。</p>
+        <p class="tr">Giữa tháng Mười, mưa rơi xuống bị khí lạnh bức, nên đông lại thành tuyết. “Tiểu” là lời chỉ cái chưa thịnh.</p>
+      </blockquote>
+      <p><em>Quần Phương Phổ</em> (đời Minh) nói gọn hơn: khí lạnh mà sắp có tuyết, nhưng đất chưa lạnh lắm nên tuyết chưa lớn.</p>
+
+      <h3>Trung khí và cung hoàng đạo</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span>Cung hoàng đạo phương Tây (hệ nhiệt đới) chia hoàng đạo 30° một cung, tính từ điểm Xuân Phân. Vì vậy <strong>mỗi trung khí trùng đúng lúc Mặt Trời vào một cung mới</strong>. Tiểu Tuyết = 240° = Mặt Trời vào cung <strong>Nhân Mã (Sagittarius)</strong>. Hai nền văn minh, cùng một điểm trên bầu trời.</p>
+      <p>Lưu ý: do tuế sai, chòm sao <em>thật</em> sau lưng Mặt Trời lúc này là vùng giáp ranh Thiên Bình và Thiên Yết. “Cung” là một đoạn trên hoàng đạo, “chòm” là nhóm sao; hai thứ đã lệch nhau gần trọn một cung sau hơn 2.000 năm.</p>
+
+      <h3>Sao Định giữa trời: mùa làm nhà</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span><em>Kinh Thi, Dung Phong</em>: “Định chi phương trung, tác vu Sở cung” (sao Định đang giữa trời thì dựng cung Sở). Sao Định là tên cũ của <strong>Doanh Thất</strong> (Thất tú, trong chòm Phi Mã). Chú giải đời sau nói rõ: tháng Hợi, giữa tiết Tiểu Tuyết, sao Định lúc chập tối ở đúng chính nam, <strong>việc đắp đất, xây dựng có thể bắt đầu</strong>. Lúa đã gặt, sức dân đã rỗi.</p>
+      <p>Ngày nay ở Hà Nội vẫn xem được: quanh ngày Tiểu Tuyết, sao α Pegasi (Markab, trong Thất tú) qua kinh tuyến lúc <strong>khoảng 19h</strong>, gần như ngay trên đỉnh đầu, hơi chếch về phía nam. <span class="note">(Tính toán thiên văn, sai số vài phút.)</span></p>
+
+      <h3>Âm luật: Ứng Chung</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span>Theo <em>Lễ Ký, thiên Nguyệt Lệnh</em>, tháng Mạnh Đông (tháng Mười) ứng với luật <strong>Ứng Chung</strong>. <em>Sử Ký, Luật Thư</em> giải: Ứng Chung là <strong>dương khí ứng (đáp lại) nhưng không làm chủ việc</strong>. Dương chưa mất, chỉ đứng lặng. Ý này sẽ gặp lại ở Lớp 7.</p>
+    </section>
+
+    <section id="lop-2">
+      <h2><span class="n">Lớp 2</span>Tam hậu: ba bức tranh năm ngày</h2>
+      <p><span class="tag t-kc">Đã kiểm chứng</span>Mỗi tiết khí chia ba “hậu”, mỗi hậu khoảng 5 ngày. Nhiều hậu đã có mặt trong <em>Lã Thị Xuân Thu</em> và <em>Lễ Ký, Nguyệt Lệnh</em>; bộ 72 hậu xếp đủ theo từng tiết khí sớm nhất còn lại thấy trong <em>Dật Chu Thư, Thời Huấn Giải</em>. Bài thơ vịnh 24 khí tương truyền của Nguyên Chẩn (đời Đường) có câu: <em>Mạc quái hồng vô ảnh, như kim tiểu tuyết thì</em> (Chớ lạ cầu vồng không bóng, nay đã là lúc tiểu tuyết).</p>
+
+      <h3>Sơ hậu: Hồng tàng bất kiến <span class="han" lang="zh-Hant">虹藏不見</span></h3>
+      <p><em>Cầu vồng ẩn, không còn thấy.</em></p>
+      <ul>
+        <li><span class="tag t-kc">Đã kiểm chứng</span>Về vật lý, cầu vồng cần giọt mưa trong không khí và nắng chiếu xiên sau lưng người xem. Vào đông, mưa rào thưa hẳn, nên cầu vồng gần như biến mất. Miền Bắc Việt Nam cũng vậy: mùa khô hanh, mưa rào mùa hạ đã qua.</li>
+        <li><span class="tag t-tt">Kinh nghiệm truyền thống</span>Cách giải của người xưa: <strong>âm dương giao nhau thì thành cầu vồng; lúc này âm dương tách bạch đến cực điểm, nên cầu vồng ẩn đi</strong>. Sách xưa còn lưu ý: cầu vồng không có hình chất, nói “ẩn” là nói khí của nó chìm xuống. Sơ hậu đã báo trước điều trung hậu nói thẳng: trời đất thôi giao nhau.</li>
+        <li>Đối xứng: tiết Thanh Minh có hậu “Hồng thủy kiến” (cầu vồng bắt đầu hiện). Cầu vồng đến cùng mùa xuân, đi cùng mùa đông.</li>
+        <li><span class="tag t-tt">Kinh nghiệm truyền thống</span>Người Việt gọi cầu vồng là <strong>mống</strong>: <em>“Mống đông vồng tây, chẳng mưa dây cũng bão giật.”</em> Tục kiêng chỉ tay vào cầu vồng rất cổ: <em>Kinh Thi, Dung Phong</em> đã có “Đế đông tại đông, mạc chi cảm chỉ” (cầu vồng ở phương đông, không ai dám chỉ).</li>
+      </ul>
+
+      <h3>Trung hậu: Thiên khí thượng thăng, địa khí hạ giáng <span class="han" lang="zh-Hant">天氣上升地氣下降</span></h3>
+      <p><em>Khí trời bốc lên, khí đất chìm xuống.</em></p>
+      <ul>
+        <li><span class="tag t-ml">Quy ước mệnh lý</span>Triết học âm dương. Đầu xuân, <em>Nguyệt Lệnh</em> viết “thiên khí hạ giáng, địa khí thượng đằng, thiên địa hòa đồng”: khí trời xuống, khí đất lên, gặp nhau nên cây cỏ nảy mầm. Tháng Mười thì đảo ngược hoàn toàn: dương lên cao, âm chìm sâu, <strong>trời đất không giao nhau</strong>.</li>
+        <li>Hình ảnh này trùng với tượng quẻ <strong>Bĩ <span class="han" lang="zh-Hant">否</span></strong>: Càn (trời) trên, Khôn (đất) dưới, mỗi bên ở yên chỗ mình, không giao. (Liên hệ hình tượng; trong hệ 12 quẻ tiêu tức, quẻ của tháng Hợi là Khôn, xem Lớp 7.)</li>
+      </ul>
+
+      <h3>Mạt hậu: Bế tắc nhi thành đông <span class="han" lang="zh-Hant">閉塞而成冬</span></h3>
+      <p><em>Đóng kín lại mà thành mùa đông.</em></p>
+      <ul>
+        <li>Không giao thì không thông, không thông thì khép kín, mùa đông thành hình. Chữ <em>bế tắc</em> ở đây không mang nghĩa “hết đường” như ngày nay, mà là <strong>khép cửa giữ của</strong>: con vật vào hang, hạt giống nằm dưới đất, nhựa cây rút về rễ.</li>
+        <li><span class="tag t-kc">Đã kiểm chứng</span>Với người xưa, “khép cửa” là <strong>chính sách nhà nước</strong>. <em>Lã Thị Xuân Thu</em> và <em>Lễ Ký, Nguyệt Lệnh</em> chép về tháng Mười: thiên tử bắt đầu mặc áo lông; ra lệnh trăm quan rằng trời đất đã không thông, khép lại thành đông, phải <strong>cẩn thận cất giữ</strong>; sửa then cửa, giữ chặt khóa, củng cố thành quách, đề phòng biên giới. Cả quốc gia “đóng cửa” theo trời.</li>
+      </ul>
+
+      <h3>Bản Nhật Bản: đổi hậu cho hợp đất mình</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span>Người Nhật giữ sơ hậu “cầu vồng ẩn” nhưng sửa hai hậu sau thành <strong>“gió bấc quét lá”</strong> và <strong>“quýt bắt đầu vàng”</strong>, cho đúng khí hậu nước họ. Tam hậu không phải giáo điều mà là <strong>sổ tay quan sát</strong>: mỗi vùng ghi theo đất mình.</p>
+    </section>
+
+    <section id="lop-3">
+      <h2><span class="n">Lớp 3</span>“Ngày tháng Mười chưa cười đã tối”</h2>
+      <p><span class="tag t-tt">Kinh nghiệm truyền thống</span><span class="tag t-kc">Đã kiểm chứng</span></p>
+
+      <h3>Số liệu Hà Nội</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th scope="col">Thời điểm</th><th scope="col">Mặt trời mọc</th><th scope="col">Mặt trời lặn</th><th scope="col">Độ dài ngày</th></tr></thead>
+          <tbody>
+            <tr><td>Lập Đông (7/11)</td><td class="num">06:02</td><td class="num">17:18</td><td class="num">11 giờ 16 phút</td></tr>
+            <tr class="hi"><td>Tiểu Tuyết (22/11)</td><td class="num">06:11</td><td class="num">17:14</td><td class="num">11 giờ 03 phút</td></tr>
+            <tr class="hi"><td>Hoàng hôn sớm nhất năm (26–27/11)</td><td class="num">06:14</td><td class="num">17:13–17:14</td><td class="num">11 giờ 00 phút</td></tr>
+            <tr><td>Đại Tuyết (7/12)</td><td class="num">06:21</td><td class="num">17:15</td><td class="num">10 giờ 54 phút</td></tr>
+            <tr><td>Đông Chí (22/12), ngày ngắn nhất</td><td class="num">06:29</td><td class="num">17:20</td><td class="num">10 giờ 51 phút</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Tính cho năm 2026 theo thuật toán thiên văn chuẩn, tọa độ Hà Nội, UTC+7. Các năm khác, cùng ngày dương lịch, giờ mọc và lặn chỉ lệch dưới 1 phút.</p>
+
+      <p>Ba điều rút ra:</p>
+      <ol>
+        <li><strong>Hoàng hôn sớm nhất năm rơi vào 26–27/11, không phải Đông Chí.</strong> Từ 18/11 đến 6/12, giờ lặn chỉ xê dịch chưa tới 1 phút quanh 17h14. Trọn tiết Tiểu Tuyết (22/11–6/12) nằm gọn trong <strong>“đáy” của buổi chiều</strong>.</li>
+        <li>Từ Tiểu Tuyết đến Đông Chí, ngày chỉ ngắn thêm <strong>12 phút</strong>. Nhưng buổi sáng mất tới <strong>18 phút</strong> (mặt trời mọc muộn dần từ 6h11 tới 6h29), còn buổi chiều lại <strong>được thêm 6 phút</strong> (lặn từ 17h14 lùi về 17h20). Cái tối chuyển từ chiều sang sáng. Mặt trời mọc muộn nhất năm rơi vào giữa tháng 1, tiết Tiểu Hàn; bài đó sẽ nói tiếp.</li>
+        <li>Lý do: <strong>“phương trình thời gian”</strong>. Quỹ đạo Trái Đất hình elip và trục nghiêng làm giờ “chính ngọ thật” trôi lên xuống so với đồng hồ. Ngày Tiểu Tuyết, chính ngọ thật ở Hà Nội là <strong>11h42</strong>; đến Đông Chí đã lùi về <strong>11h55</strong>. Chính ngọ sớm kéo cả hoàng hôn sớm theo.</li>
+      </ol>
+
+      <h3>Vì sao câu tục ngữ “trúng” gần như mọi năm</h3>
+      <p>Đây là một chuỗi ba mắt xích:</p>
+      <ol class="chain">
+        <li><strong>Quỹ đạo Trái Đất “ghim” ngày tối sớm nhất.</strong> Từ 1950 đến 2100, ngày hoàng hôn sớm nhất ở Hà Nội luôn rơi vào 25–27/11, phần lớn là 26/11.</li>
+        <li><strong>Tiểu Tuyết luôn rơi vào 21–23/11</strong>, chỉ trước đó vài ngày.</li>
+        <li><strong>Quy tắc trung khí</strong>: tháng âm nào chứa Tiểu Tuyết thì là tháng Mười.</li>
+      </ol>
+      <p class="chain-out">Ghép lại: buổi chiều tối sớm nhất năm gần như luôn nằm trong tháng Mười âm lịch.</p>
+
+      <p>Kết quả tính cho 151 năm (1950–2100), mỗi ô là một năm:</p>
+      <div class="years" id="years" role="img" aria-label="Lưới 151 năm từ 1950 đến 2100: 128 năm buổi chiều tối sớm nhất rơi trong tháng Mười âm, 23 năm lệch sang đầu tháng Mười Một"></div>
+      <div class="yr-legend">
+        <span><i style="background:var(--ember)"></i>128 năm: rơi trong tháng Mười âm</span>
+        <span><i style="border:1.5px solid var(--dusk)"></i>23 năm: lệch sang đầu tháng Mười Một</span>
+        <span><i style="background:var(--ember);outline:2px solid var(--ink);outline-offset:1px"></i>năm 2026</span>
+      </div>
+      <p>Những năm trượt là khi tháng Mười kết thúc sớm (Tiểu Tuyết rơi vào những ngày cuối tháng âm), nên ngày tối sớm nhất lệch sang vài ngày đầu tháng Mười Một. Dù vậy, những năm ấy tháng Mười vẫn chứa một phần của giai đoạn “đáy” buổi chiều.</p>
+      <p>Còn Đông Chí, ngày ngắn nhất, thì theo quy tắc <strong>luôn</strong> nằm trong tháng Mười Một. Nếu chỉ đo độ dài ngày, vế sau phải là “tháng Mười Một”. Câu tục ngữ nói “tháng Mười”, tức là nói theo <strong>cảm nhận buổi chiều</strong>, cái mà người làm đồng thấy rõ nhất: chưa kịp xong việc, trời đã tối. Và dữ liệu xác nhận điều đó.</p>
+
+      <div class="aside">
+        <p><strong>Một lời nói ngay cho công bằng:</strong> câu tục ngữ có vần lưng, <em>Năm – nằm</em>, <em>Mười – cười</em>. Có thể chữ “Mười” được chọn một phần vì vần. Nhưng dù vì vần hay vì quan sát, câu ấy vẫn khớp với thiên văn ở 85% số năm. Còn vần thì chính là thứ giúp một quan sát đúng sống được qua nhiều đời.</p>
+      </div>
+      <p class="note">Phương pháp: tính trăng non và thời điểm Mặt Trời ở 240° bằng thư viện thiên văn; ranh giới tháng âm theo giờ Việt Nam UTC+7; giờ lặn theo chuẩn khí tượng, tính mép trên đĩa Mặt Trời và khúc xạ khí quyển. Có thể lệch một ngày ở vài năm sát ranh giới.</p>
+
+      <p><strong>Hai vế, hai thước đo.</strong> Vế đầu đo <strong>độ dài đêm</strong>: đêm Hạ Chí ở Hà Nội chỉ khoảng 10 giờ 36 phút, và Hạ Chí luôn thuộc tháng Năm, nên vế đầu đúng 100%. Vế sau đo <strong>giờ trời tối</strong>: hoàng hôn sớm nhất rơi vào tháng Mười ở 85% số năm. Hai vế không nói cùng một chuyện, nhưng cả hai đều gọi đúng tên tháng nhờ hệ thống trung khí.</p>
+      <p class="ket">Ông bà ta không có đồng hồ phút, không biết quỹ đạo elip. Nhưng qua nhiều đời đứng ngoài đồng nhìn mặt trời lặn, câu tục ngữ ấy đã giữ lại một hiệu ứng mà thiên văn học phải dùng “phương trình thời gian” mới giải thích được. Và nó gọi đúng tên tháng nhờ chính hệ thống trung khí của lịch âm dương.</p>
+    </section>
+
+    <section id="lop-4">
+      <h2><span class="n">Lớp 4</span>Tuyết: lá thư từ trời</h2>
+      <p>Việt Nam gần như không có tuyết. Nhưng tuyết lại gần chúng ta hơn ta tưởng.</p>
+
+      <h3>Hoa tuyết sáu cánh: người Hán thấy trước Kepler hơn 1.700 năm</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span>Câu sau được các sách đời sau dẫn từ <em>Hàn Thi Ngoại Truyện</em> của Hàn Anh, học giả đầu Tây Hán (thế kỷ 2 TCN):</p>
+      <blockquote>
+        <p class="orig" lang="zh-Hant">凡草木花多五出，雪花獨六出。</p>
+        <p class="tr">Hoa của cỏ cây phần nhiều năm cánh, riêng hoa tuyết sáu cánh.</p>
+      </blockquote>
+      <p>Đây là ghi chép sớm nhất được biết về hình sáu cánh của tinh thể tuyết. Ở châu Âu, phải đến năm 1611, nhà thiên văn <strong>Kepler</strong> mới viết chuyên luận <em>Về bông tuyết sáu cánh</em>, và chính giới khoa học phương Tây cũng ghi nhận Kepler không phải người đầu tiên.</p>
+
+      <h3>“Tuyết là lá thư từ trời gửi xuống”</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span>Nhà vật lý Nhật <strong>Nakaya Ukichirō</strong> là người đầu tiên tạo được tinh thể tuyết nhân tạo trong phòng thí nghiệm (1936). Ông chứng minh hình dạng bông tuyết do <strong>nhiệt độ và độ ẩm trong mây</strong> quyết định, rồi vẽ thành biểu đồ (nay gọi là <em>biểu đồ Nakaya</em>). Nhìn bông tuyết rơi xuống, ta đọc được trên cao kia mây lạnh bao nhiêu, ẩm bao nhiêu. Vì thế ông nói tuyết là lá thư từ trời, và biểu đồ của ông là cuốn từ điển để đọc thư.</p>
+      <p>Tam hậu, tục ngữ, biểu đồ Nakaya: <strong>ba cách đọc thư trời</strong>, cách nhau hàng nghìn năm.</p>
+
+      <h3>Ngô Trừng nói ngược, nhưng không sai hẳn</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span>Sách cổ nói <em>mưa gặp lạnh thì đông thành tuyết</em>. Khí tượng học hiện đại cho thấy chiều ngược lại cũng rất phổ biến, và ở vĩ độ trung bình còn là chuyện thường: trong những đám mây đủ cao, <strong>tinh thể băng (tuyết) hình thành trước trên tầng lạnh, rơi xuống gặp không khí ấm thì tan thành mưa</strong>. Đây là “quá trình Bergeron”. Số liệu vệ tinh CloudSat (nghiên cứu năm 2015) cho thấy tỷ lệ các trận mưa (từ 1 mm/ngày trở lên) có gắn với tuyết hình thành trong mây:</p>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th scope="col">Vùng</th><th scope="col">Tỷ lệ trận mưa gắn với tuyết trên mây</th></tr></thead>
+          <tbody>
+            <tr><td>Nhiệt đới</td><td class="num">khoảng 3/10</td></tr>
+            <tr><td>Cận nhiệt đới</td><td class="num">khoảng 4/10</td></tr>
+            <tr><td>Vĩ độ trung bình</td><td class="num">khoảng 8/10</td></tr>
+            <tr><td>Vùng cực</td><td class="num">trên 9/10</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Hà Nội nằm ở ranh nhiệt đới và cận nhiệt. Nghĩa là, tính trung bình cho vùng vĩ độ này, <strong>khoảng 3–4 trong 10 trận mưa khởi đầu là tuyết</strong> trên cao vài cây số, chỉ là tan trên đường xuống. <span class="note">(Đây là tỷ lệ trung bình theo vùng, chưa có số đo riêng cho Hà Nội.)</span> Tuyết vẫn ở trên đầu chúng ta, chỉ không chạm đất.</p>
+
+      <h3>Tuyết ở Thăng Long: chính sử ghi lại</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng, đối chiếu nguyên văn</span><em>Đại Việt sử ký toàn thư</em>, Bản kỷ quyển 3, đời Lý Nhân Tông, chép hai lần:</p>
+      <blockquote>
+        <p class="orig" lang="zh-Hant">壬午二年……春正月立春日，瑞雪降。</p>
+        <p class="tr">Năm Nhâm Ngọ (1102), niên hiệu Long Phù thứ 2: mùa xuân, tháng Giêng, ngày Lập Xuân, tuyết lành rơi.</p>
+      </blockquote>
+      <blockquote>
+        <p class="orig" lang="zh-Hant">甲午五年……春，瑞雪降。</p>
+        <p class="tr">Năm Giáp Ngọ (1114), niên hiệu Hội Tường Đại Khánh thứ 5: mùa xuân, tuyết lành rơi.</p>
+      </blockquote>
+      <p>Ba chi tiết đáng chú ý:</p>
+      <ul>
+        <li>Sử gọi là <strong>“thụy tuyết”</strong> (tuyết lành): tuyết ở kinh đô phương Nam là chuyện hiếm đến mức được ghi như điềm tốt, gần với tinh thần câu “Tiểu Tuyết tuyết đầy trời thì sang năm được mùa”.</li>
+        <li>Lần năm 1102 rơi <strong>đúng ngày Lập Xuân</strong>, và chính sử chép kèm cả tên tiết khí. Ghi chép sử Việt (truyền lại từ thời Lý, Trần, được Ngô Sĩ Liên biên soạn năm 1479) đã dùng tiết khí làm mốc thời gian cho sự kiện thời tiết.</li>
+        <li>Lần năm 1114 nguyên văn chỉ ghi “mùa xuân”, không nói Lập Xuân. Một số bài báo nói cả hai lần đều vào tiết Lập Xuân là chưa chính xác.</li>
+      </ul>
+      <p>Ngày nay tuyết thật chỉ còn ở vài đỉnh núi cao như Mẫu Sơn, Sa Pa, Fansipan, trong những đợt rét đậm tháng 12 và tháng 1.</p>
+    </section>
+
+    <section id="lop-5">
+      <h2><span class="n">Lớp 5</span>Việt Nam: khí hậu, nông lịch, phong tục, lịch sử</h2>
+      <p><span class="tag t-kc">Đã kiểm chứng</span><strong>Khí hậu.</strong> Tiểu Tuyết ở miền Bắc là thời của gió mùa đông bắc và <strong>nắng hanh</strong>: ngày nắng khô, độ ẩm có thể xuống dưới 50%, da nẻ, môi khô; đêm và sáng sớm lạnh rõ. Những hôm lặng gió, Hà Nội hay bị bụi mịn dày. Miền Trung ở cuối mùa mưa lũ. Nam Bộ vào mùa khô, sáng sớm se lạnh.</p>
+
+      <h3>“Tuyết nhỏ” của người Việt là rét đậm</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span>Gió mùa đông bắc trung bình bắt đầu về miền Bắc từ giữa đến cuối tháng 10. Còn <strong>rét đậm</strong> (nhiệt độ trung bình ngày từ 15°C trở xuống) và <strong>rét hại</strong> (từ 13°C trở xuống) thường rơi vào khoảng <strong>cuối tháng 11 đến tháng 1</strong>. Tức là Tiểu Tuyết chính là <strong>ngưỡng cửa của mùa rét đậm</strong> ở Bắc Bộ. Phương Bắc đo mùa đông bằng tuyết; người Việt đo bằng rét đậm, rét hại. “Tiểu Tuyết” dịch sang khí hậu Việt Nam có thể hiểu là “bắt đầu vào rét”.</p>
+      <p><strong>Hoa và cảnh.</strong> Hà Nội có <strong>cúc họa mi</strong> trắng trên các xe hoa (mùa ngắn, cuối tháng 10 đến đầu tháng 12), hoa sữa tàn dần, bàng bắt đầu đỏ lá. Tây Nguyên, Đà Lạt có dã quỳ vàng rực.</p>
+
+      <h3>Ở Việt Nam</h3>
+      <p><span class="tag t-tt">Kinh nghiệm truyền thống</span></p>
+      <ul>
+        <li><strong>Tháng Mười là tháng gặt lúa mùa</strong> ở đồng bằng Bắc Bộ. Nhiều nơi có <strong>Tết Cơm Mới (lễ Thường Tân)</strong>: nấu nồi cơm gạo mới dâng tổ tiên trước khi ăn. Ngày làm lễ tùy làng, thường trong tháng Mười âm.</li>
+        <li><strong>Rằm tháng Mười, Tết Hạ Nguyên</strong>: một trong Tam Nguyên (Thượng Nguyên rằm tháng Giêng, Trung Nguyên rằm tháng Bảy, Hạ Nguyên rằm tháng Mười). Rằm tháng Mười luôn cách Tiểu Tuyết không quá nửa tháng, vì Tiểu Tuyết là trung khí của chính tháng này.</li>
+        <li><strong>Vụ đông</strong>: ruộng vừa gặt được tranh thủ trồng khoai tây, su hào, bắp cải, các loại cải.</li>
+        <li><strong>Muối dưa cải, cà</strong>: trời hanh, nắng to là lúc phơi cải, muối dưa.</li>
+        <li><strong>Mùa nông nhàn, mùa làm nhà, cưới hỏi</strong>: gặt xong, thóc vào bồ, người rảnh tay. Cùng logic với “sao Định giữa trời thì dựng nhà”.</li>
+      </ul>
+
+      <h3>Rươi: lịch theo trăng, không theo tiết khí</h3>
+      <p class="cadao">Tháng chín đôi mươi, tháng mười mồng năm.</p>
+      <p class="note">Câu nói dân gian về mùa rươi.</p>
+      <p>Rươi sinh sản vào tháng 9–10 âm lịch: khi thành thục, phần thân chứa trứng và tinh đứt ra, nổi lên mặt nước để sinh sản, rươi bố mẹ chết đi làm mùn cho đất. Điều đáng chú ý là ngày rươi nổi được dân gian ghi bằng <strong>ngày âm</strong>, tức là gắn với tuần trăng và con nước, chứ không theo tiết khí. Vì vậy mỗi năm, ngày dương lịch của mùa rươi xê dịch tới gần một tháng, còn ngày âm thì gần như cố định. Riêng “mồng năm tháng mười” có thể rơi vào bất cứ ngày nào từ khoảng cuối tháng 10 đến cuối tháng 11 dương lịch, tùy năm.</p>
+      <p>Có những nhịp sống theo Mặt Trời (tiết khí), có những nhịp sống theo Mặt Trăng (ngày âm). Đó chính là lý do người xưa cần <strong>lịch âm dương</strong>, chứ không chỉ một trong hai.</p>
+
+      <h3>Bên Trung Hoa</h3>
+      <p><span class="tag t-tt">Kinh nghiệm truyền thống</span></p>
+      <ul>
+        <li><em>“Tiểu Tuyết yêm thái, Đại Tuyết yêm nhục”</em>: Tiểu Tuyết muối rau, Đại Tuyết ướp thịt.</li>
+        <li>Phương Nam có tục ăn bánh dày (từ ba <span class="han" lang="zh-Hant">糍粑</span>) quanh tiết này.</li>
+        <li><em>“Tiểu Tuyết địa phong nghiêm”</em>: đất phương Bắc bắt đầu đóng băng chặt.</li>
+        <li><em>“Tiểu Tuyết tuyết mãn thiên, lai niên tất phong niên”</em>: Tiểu Tuyết tuyết đầy trời thì sang năm được mùa. Tuyết phủ giữ ấm đất, diệt sâu bệnh, tích nước cho mùa xuân.</li>
+      </ul>
+
+      <h3>Một chi tiết lịch sử</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span>Nhà Tần lấy <strong>tháng Mười (tháng Hợi) làm tháng đầu năm</strong>. Tên tháng vẫn gọi là “tháng Mười”, nhưng năm mới bắt đầu từ đó. Có một thời, Tiểu Tuyết là trung khí của tháng đầu tiên trong năm. Điểm bắt đầu năm là quy ước con người chọn, không phải trời định.</p>
+    </section>
+
+    <section id="lop-6">
+      <h2><span class="n">Lớp 6</span>Dưỡng sinh theo mùa</h2>
+      <p><span class="tag t-dy">Lý thuyết Đông y</span><em>Phần này trình bày quan niệm Đông y cổ truyền để tham khảo, không thay lời khuyên của thầy thuốc.</em></p>
+
+      <h3>Nguyên tắc chung: “Tàng”</h3>
+      <p><em>Hoàng Đế Nội Kinh, Tố Vấn, thiên Tứ Khí Điều Thần Đại Luận</em>:</p>
+      <blockquote>
+        <p class="orig" lang="zh-Hant">冬三月，此謂閉藏。水冰地坼，無擾乎陽，早臥晚起，必待日光……此冬氣之應，養藏之道也。逆之則傷腎。</p>
+        <p class="tr">Ba tháng mùa đông gọi là “bế tàng”. Nước đóng băng, đất nứt nẻ; đừng quấy động dương khí; ngủ sớm dậy muộn, đợi có ánh mặt trời... Đó là ứng với khí mùa đông, là đạo nuôi sự cất giữ. Làm trái thì hại Thận.</p>
+      </blockquote>
+      <p>“Bế tàng” của Nội Kinh, “bế tắc thành đông” của tam hậu, lệnh “cẩn thận cất giữ” của Nguyệt Lệnh: <strong>ba văn bản khác nhau, cùng một chữ “đóng”</strong>.</p>
+
+      <h3>Khoa học hiện đại nói gì về “ngủ sớm dậy muộn”?</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng, có giới hạn</span>Một nghiên cứu ở Berlin (tạp chí <em>Frontiers in Neuroscience</em>, 2023) đo giấc ngủ bằng máy của gần 200 người sống ở thành phố, cho ngủ không dùng báo thức. Kết quả: tổng thời gian ngủ mùa đông dài hơn mùa hè tới khoảng <strong>1 giờ</strong> (chưa đủ ý nghĩa thống kê), còn <strong>giấc ngủ REM (giai đoạn mơ) mùa đông dài hơn mùa xuân khoảng 30 phút</strong> (có ý nghĩa thống kê). Nhóm tác giả đề xuất xã hội nên điều chỉnh giờ ngủ, giờ học, giờ làm theo mùa. Đây là bệnh nhân của một phòng khám giấc ngủ nên chưa đại diện cho mọi người, nhưng hướng kết quả trùng với lời khuyên hơn 2.000 năm tuổi của Nội Kinh.</p>
+      <p>Tố Vấn (thiên Kim Quỹ Chân Ngôn Luận) còn có ý: tinh là gốc của thân; ai cất giữ được tinh thì mùa xuân không mắc bệnh ôn. Mùa đông cất tốt là “đóng tiền trước” cho sức khỏe mùa xuân.</p>
+      <p><span class="tag t-dy">Lý thuyết Đông y</span><strong>Thận và Thủy.</strong> Mùa đông thuộc hành Thủy, tạng Thận. Thận tàng tinh, là gốc của năng lượng sống. Mùa đông là mùa <strong>cất vốn</strong>, không phải mùa tiêu vốn.</p>
+      <p><span class="tag t-dy">Ngũ vận lục khí</span><strong>Tiểu Tuyết mở “bước khí cuối năm”.</strong> Học thuyết vận khí chia năm thành 6 bước khí, bước đầu từ Đại Hàn. <strong>Bước thứ sáu (“chung chi khí”) bắt đầu đúng từ Tiểu Tuyết</strong>, kéo đến Đại Hàn năm sau. Chủ khí luôn là <strong>Thái Dương Hàn Thủy</strong> (lạnh, nước); khách khí đổi theo năm (xem Hộp cuối bài).</p>
+
+      <h3>Gợi ý cho Tiểu Tuyết miền Bắc</h3>
+      <ul>
+        <li><strong>Ngủ sớm hơn, dậy khi trời đã sáng.</strong> Trời tối từ 17h, không cần cố thức khuya. Và vì từ đây cái tối dồn sang buổi sáng, đừng ép dậy quá sớm khi trời còn tối.</li>
+        <li><strong>Giữ ấm ba chỗ</strong>: gáy, lưng (thắt lưng là vùng Đông y gắn với Thận), bàn chân.</li>
+        <li><strong>Chống hanh khô</strong> (“táo”): uống nước ấm đủ; ăn lê, củ cải, mật ong, các món canh.</li>
+        <li><strong>Thực phẩm màu đen</strong> (màu hành Thủy): vừng đen, đậu đen, mộc nhĩ; thêm khoai lang, hạt dẻ, món hầm.</li>
+        <li><strong>Đừng vội “đại bổ”</strong> khi trời còn ấm, dễ sinh nhiệt, nóng trong.</li>
+        <li><strong>Vận động vừa phải</strong>, không để ra mồ hôi đầm đìa.</li>
+      </ul>
+    </section>
+
+    <section id="lop-7">
+      <h2><span class="n">Lớp 7</span>Mệnh lý và Dịch học: tháng Hợi thuần âm</h2>
+
+      <h3>Tháng Hợi trong Bát Tự</h3>
+      <p><span class="tag t-ml">Quy ước mệnh lý</span></p>
+      <ul>
+        <li>Tháng Hợi bắt đầu từ Lập Đông, kết thúc trước Đại Tuyết; Tiểu Tuyết nằm giữa tháng.</li>
+        <li>Hợi thuộc <strong>Thủy</strong>; tàng can chính <strong>Nhâm thủy</strong> (Nhâm lộc tại Hợi), kèm <strong>Giáp mộc</strong>.</li>
+        <li><strong>Nhân nguyên tư lệnh</strong>, một bản phổ biến cho tháng Hợi: Mậu thổ 7 ngày, rồi Giáp mộc 5 ngày, rồi <strong>Nhâm thủy 18 ngày</strong> (có dị bản). Tính từ Lập Đông, Nhâm thủy nắm quyền từ khoảng ngày thứ 13, vài ngày trước Tiểu Tuyết. <strong>Đến Tiểu Tuyết, khí Thủy đã làm chủ trọn vẹn.</strong></li>
+      </ul>
+      <p><span class="tag t-ml">Quy ước mệnh lý</span><strong>Hạt mầm trong lòng đông.</strong> Hợi là đất <strong>Trường Sinh của Giáp mộc</strong>; Hợi, Mão, Mùi hợp thành Mộc cục. Ngay trong tháng thuần âm, sức sống mùa xuân (Mộc) đã thai nghén trong Thủy.</p>
+
+      <h3>Quẻ Khôn: thuần âm</h3>
+      <p><span class="tag t-ml">Quy ước mệnh lý</span>Trong <strong>12 quẻ tiêu tức</strong>, tháng Hợi ứng quẻ <strong>Khôn <span class="hex" aria-hidden="true">䷁</span></strong>, sáu hào âm, <strong>điểm âm cực</strong>. Tháng sau (tháng Tý, có Đông Chí) là quẻ <strong>Phục <span class="hex" aria-hidden="true">䷗</span></strong>: một hào dương sinh ở dưới cùng, “Nhất dương sinh”. Tiểu Tuyết là <strong>đáy sâu nhất trước khi dương quay lại</strong>.</p>
+      <p><span class="tag t-kc">Đã kiểm chứng về văn bản</span>Hào trên cùng quẻ Khôn: <em>“Long chiến vu dã, kỳ huyết huyền hoàng”</em> (rồng đánh nhau ngoài đồng, máu đen vàng). Hầu Quả (đời Đường) giải: Khôn là quẻ tháng Mười; âm đến Hợi là cùng cực, âm cùng cực áp sát dương nên “đánh nhau”.</p>
+
+      <h3>“Dương nguyệt”: cái tên ngược đời</h3>
+      <p><span class="tag t-kc">Đã kiểm chứng</span></p>
+      <ul>
+        <li><em>Nhĩ Nhã, thiên Thích Thiên</em>: <strong>tháng Mười gọi là “Dương”</strong>. Kinh Thi: “tuế diệc dương chỉ” (năm đã đến tháng Dương).</li>
+        <li>Trịnh Huyền (đời Hán) chú: tháng Mười Khôn làm chủ, <strong>ngại như không còn dương, nên gọi tháng này là Dương</strong>.</li>
+        <li>Chữ “ngại như không có dương” lấy từ <em>Văn Ngôn</em> quẻ Khôn, đúng đoạn giải hào “Long chiến”: vì ngại như không còn dương, nên mới gọi bằng chữ “rồng” (vật của dương).</li>
+      </ul>
+      <p>Đặt cạnh nhau: luật <strong>Ứng Chung</strong> (dương ứng mà không làm chủ), tên <strong>Dương nguyệt</strong> (gọi là dương để nhớ dương chưa mất), <strong>Giáp mộc trường sinh</strong> tại Hợi. Ba hệ thống (âm nhạc, từ điển học, mệnh lý) cùng nói một điều: <strong>ngay giữa lúc âm toàn thịnh, người xưa cố ý đánh dấu chỗ của dương.</strong></p>
+      <p>Và bầu trời xác nhận: <strong>buổi chiều tối sớm nhất năm (Lớp 3) cũng chính là lúc buổi chiều bắt đầu dài trở lại.</strong> Đáy của âm là điểm dương quay về, ngay trong tháng Mười, trước cả Đông Chí.</p>
+      <p><span class="tag t-tt">Kinh nghiệm truyền thống</span>Dân gian Trung Hoa gọi khoảng này là <strong>“Tiểu Dương Xuân”</strong>, người Nhật gọi <em>koharu-biyori</em> (ngày nắng tiểu xuân): đầu đông bỗng ấm áp, nắng hiền như xuân.</p>
+    </section>
+
+    <section id="lop-8">
+      <h2><span class="n">Lớp 8</span>Suy ngẫm: học cách “khép cửa”</h2>
+      <p>Tiểu Tuyết dạy một điều ngược với thói quen thời nay: <strong>không phải lúc nào cũng phải mở ra, tăng lên, làm thêm</strong>.</p>
+      <ul>
+        <li><strong>Thu lại để giữ.</strong> Khép cửa không phải thất bại, mà để cái đã có không thất thoát. Người xưa coi việc này quan trọng đến mức ban thành lệnh cho trăm quan. Cuối năm là lúc tổng kết, cất giữ, sửa sang, hơn là mở thêm việc mới.</li>
+        <li><strong>Trời đất không giao thì mỗi bên giữ chỗ của mình.</strong> Có những giai đoạn ép kết nối, ép tiến tới chỉ hao sức. Nhận ra lúc “Bĩ” để yên lặng chờ cũng là một năng lực.</li>
+        <li><strong>Rảnh tay thì dựng nhà.</strong> Mùa đóng cửa với đồng ruộng lại là mùa mở cửa cho xây dựng. Khép bên ngoài để làm vững bên trong.</li>
+        <li><strong>Đáy cũng là điểm quay lên.</strong> Tháng thuần âm vẫn gọi là “Dương nguyệt”; buổi chiều tối nhất năm cũng là lúc chiều bắt đầu dài lại.</li>
+        <li><strong>Đọc thư trời.</strong> Ông bà đọc bằng tục ngữ, người xưa đọc bằng tam hậu, Nakaya đọc bằng bông tuyết. Mỗi chiều tháng Mười, đứng nhìn mặt trời lặn lúc 17h14 cũng là đọc một lá thư.</li>
+      </ul>
+      <p>Bạch Cư Dị (đời Đường), bài <em>Vấn Lưu Thập Cửu</em>:</p>
+      <blockquote class="poem">
+        <p class="orig" lang="zh-Hant">綠蟻新醅酒，紅泥小火爐。<br>晚來天欲雪，能飲一杯無？</p>
+        <p class="tr">Rượu mới ủ, men nổi bọt xanh; lò lửa nhỏ nặn đất đỏ.<br>Chiều xuống, trời như sắp tuyết; uống với nhau một chén chăng?</p>
+      </blockquote>
+      <p>Không phải chuyện rượu. Là chuyện mùa đông, trời tối sớm, thì gọi người thân lại gần, ngồi quanh một chỗ ấm.</p>
+    </section>
+
+    <section class="yearbox" id="hop-2026" aria-labelledby="hop-title">
+      <h2 id="hop-title"><span class="n">Hộp tiết khí năm 2026</span>Tiểu Tuyết năm Bính Ngọ</h2>
+      <p class="sub">Dữ liệu riêng của năm nay, cập nhật hằng năm.</p>
+      <dl>
+        <div class="row"><dt>Thời khắc giao tiết</dt><dd><strong>14:23 Chủ Nhật 22/11/2026</strong> (giờ Việt Nam, UTC+7), tức 15:23:03 giờ Bắc Kinh, 16:23 giờ Nhật</dd></div>
+        <div class="row"><dt>Âm lịch</dt><dd><strong>14 tháng Mười</strong> năm Bính Ngọ (tháng Mười: 9/11 đến 8/12/2026)</dd></div>
+        <div class="row"><dt>Can chi</dt><dd>Ngày <strong>Canh Tý</strong>, tháng <strong>Kỷ Hợi</strong>, năm <strong>Bính Ngọ</strong></dd></div>
+        <div class="row"><dt>Kết thúc</dt><dd>Đại Tuyết lúc <strong>09:52 thứ Hai 7/12/2026</strong> (giờ Việt Nam), mở tháng <strong>Canh Tý</strong></dd></div>
+        <div class="row"><dt>Tam hậu</dt><dd>Sơ hậu 22–26/11, trung hậu 27/11–1/12, mạt hậu 2–6/12</dd></div>
+        <div class="row"><dt>Mùa rươi</dt><dd>“Tháng chín đôi mươi” năm nay là 29/10; “tháng mười mồng năm” là 13/11</dd></div>
+        <div class="row"><dt>Ngay sau tiết</dt><dd><strong>Rằm tháng Mười, Tết Hạ Nguyên: thứ Hai 23/11/2026</strong></dd></div>
+        <div class="row"><dt>Hoàng hôn Hà Nội</dt><dd>Sớm nhất năm: <strong>khoảng 17h14 ngày 26–27/11</strong>, tức 18–19 tháng Mười âm, nằm trong tháng Mười</dd></div>
+        <div class="row"><dt>Bầu trời tối</dt><dd>Sao α Pegasi (Thất tú) qua kinh tuyến, gần thiên đỉnh, khoảng 18h56 (22/11) và 18h36 (27/11)</dd></div>
+        <div class="row"><dt>Vận khí năm</dt><dd><span class="tag t-dy">Lý thuyết Đông y</span>Năm Bính: <strong>Thủy vận thái quá</strong>. Năm Ngọ: Thiếu Âm Quân Hỏa tư thiên, <strong>Dương Minh Táo Kim tại tuyền</strong>. Bước khí cuối năm (từ Tiểu Tuyết): chủ khí Hàn Thủy, khách khí <strong>Táo Kim</strong>, tức <strong>lạnh và khô</strong>. Kim sinh Thủy nên khách và chủ thuận nhau.</dd></div>
+        <div class="row"><dt>Thời tiết năm nay</dt><dd>Ảnh hưởng <strong>El Niño</strong>: tháng 11/2026 nhiệt độ cả nước dự báo cao hơn trung bình nhiều năm 1–2°C; không khí lạnh yếu hơn, <strong>rét đậm, rét hại có thể đến muộn</strong>. Một Tiểu Tuyết “Tiểu Dương Xuân” đúng nghĩa. Lưu ý: cùng bản dự báo cho rằng lượng mưa tháng 11 ở Bắc Bộ <strong>cao hơn</strong> trung bình 15–30%. Lý thuyết vận khí nói “táo” (khô), dự báo khí tượng lại nói mưa nhiều hơn thường lệ. Hai hệ thống không phải lúc nào cũng khớp; cứ quan sát thực tế mà điều chỉnh.</dd></div>
+        <div class="row"><dt>Gợi ý riêng năm nay</dt><dd>Trời ấm hơn thường lệ: chưa nên ăn quá nhiều đồ đại bổ, nóng. Ngày hanh thì chống khô (đủ nước, món canh); ngày nồm ẩm thì chú ý thông thoáng nhà cửa. Theo dõi bụi mịn những ngày lặng gió.</dd></div>
+      </dl>
+    </section>
+
+    <nav class="pager" aria-label="Bài trước và bài sau">
+      <a href="lap-dong.html"><small>Bài trước</small>Lập Đông</a>
+      <span><small>Bài sau</small>Đại Tuyết, ra ngày 7/12/2026</span>
+    </nav>
+  </article>
+</main>
+
+<footer>
+  <p><a href="index.html">Thiên Địa Nhân</a>, một seri của Dừa &amp; Mixue.</p>
+</footer>
+
+<script>
+(function(){
+  /* ---- Đường cong giờ mặt trời lặn (phút kể từ 0h), 1/11 đến 31/12/2026 ---- */
+  var D = [["01/11", 1041.12], ["02/11", 1040.58], ["03/11", 1040.05], ["04/11", 1039.55], ["05/11", 1039.07], ["06/11", 1038.6], ["07/11", 1038.16], ["08/11", 1037.73], ["09/11", 1037.33], ["10/11", 1036.95], ["11/11", 1036.58], ["12/11", 1036.24], ["13/11", 1035.92], ["14/11", 1035.63], ["15/11", 1035.35], ["16/11", 1035.1], ["17/11", 1034.86], ["18/11", 1034.66], ["19/11", 1034.47], ["20/11", 1034.31], ["21/11", 1034.16], ["22/11", 1034.05], ["23/11", 1033.95], ["24/11", 1033.88], ["25/11", 1033.83], ["26/11", 1033.8], ["27/11", 1033.8], ["28/11", 1033.82], ["29/11", 1033.86], ["30/11", 1033.92], ["01/12", 1034.01], ["02/12", 1034.12], ["03/12", 1034.25], ["04/12", 1034.4], ["05/12", 1034.58], ["06/12", 1034.77], ["07/12", 1034.99], ["08/12", 1035.23], ["09/12", 1035.49], ["10/12", 1035.77], ["11/12", 1036.07], ["12/12", 1036.39], ["13/12", 1036.73], ["14/12", 1037.08], ["15/12", 1037.46], ["16/12", 1037.86], ["17/12", 1038.27], ["18/12", 1038.7], ["19/12", 1039.14], ["20/12", 1039.61], ["21/12", 1040.08], ["22/12", 1040.58], ["23/12", 1041.09], ["24/12", 1041.61], ["25/12", 1042.14], ["26/12", 1042.69], ["27/12", 1043.25], ["28/12", 1043.82], ["29/12", 1044.41], ["30/12", 1045.0], ["31/12", 1045.61]];
+  var svg = document.getElementById('sunsetChart'), NS='http://www.w3.org/2000/svg';
+  var W=960,H=360,L=56,R=24,T=30,B=78;
+  var yMin=1032.5,yMax=Math.ceil(Math.max.apply(null,D.map(function(d){return d[1];})))+0.5;
+  function x(i){return L+(W-L-R)*i/(D.length-1);}
+  function y(v){return T+(H-T-B)*(yMax-v)/(yMax-yMin);}
+  function el(n,a,txt){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;}
+  function idx(dm){for(var i=0;i<D.length;i++)if(D[i][0]===dm)return i;return -1;}
+  function hm(v){var h=Math.floor(v/60),m=Math.floor(v%60);return h+'h'+(m<10?'0':'')+m;}
+  var font='font-family:"Be Vietnam Pro",system-ui,sans-serif;';
+
+  // Dải tiết Tiểu Tuyết 22/11–6/12
+  var a=idx('22/11'),b=idx('06/12');
+  el('rect',{x:x(a),y:T,width:x(b)-x(a),height:H-T-B,fill:'#33405E',opacity:.55});
+  el('text',{x:(x(a)+x(b))/2,y:T+16,'text-anchor':'middle',fill:'#DCE2EA',style:font+'font-size:13px'},'Tiết Tiểu Tuyết');
+
+  // Lưới giờ
+  for(var v=1033;v<=yMax;v+=2){
+    el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:'#3A4660','stroke-width':1});
+    el('text',{x:L-8,y:y(v)+4,'text-anchor':'end',fill:'#9AA6B8',style:font+'font-size:12px'},hm(v));
+  }
+  // Nhãn ngày trên trục
+  ['01/11','15/11','01/12','15/12','31/12'].forEach(function(dm){
+    var i=idx(dm); el('text',{x:x(i),y:H-B+18,'text-anchor':'middle',fill:'#9AA6B8',style:font+'font-size:12px'},dm);
+  });
+  // Dải tháng Mười âm lịch 9/11–8/12
+  var m1=idx('09/11'),m2=idx('08/12');
+  el('rect',{x:x(m1),y:H-B+30,width:x(m2)-x(m1),height:8,fill:'#F0C995',rx:2});
+  el('text',{x:x(m1),y:H-B+56,fill:'#F0C995',style:font+'font-size:12.5px'},'tháng Mười âm lịch (9/11 – 8/12)');
+  var n1=idx('09/12');
+  el('rect',{x:x(n1),y:H-B+30,width:x(D.length-1)-x(n1),height:8,fill:'none',stroke:'#9AA6B8','stroke-width':1,rx:2});
+  el('text',{x:x(D.length-1),y:H-B+56,'text-anchor':'end',fill:'#9AA6B8',style:font+'font-size:12.5px'},'tháng Mười Một âm lịch');
+
+  // Đường cong
+  var p='';D.forEach(function(d,i){p+=(i?'L':'M')+x(i).toFixed(1)+' '+y(d[1]).toFixed(1);});
+  var path=el('path',{id:'curve',d:p,fill:'none',stroke:'#F3F5F7','stroke-width':2.5,'stroke-linejoin':'round'});
+  try{path.style.setProperty('--len',Math.ceil(path.getTotalLength()));}catch(e){}
+
+  // Đáy
+  var mi=0;D.forEach(function(d,i){if(d[1]<D[mi][1])mi=i;});
+  el('circle',{cx:x(mi),cy:y(D[mi][1]),r:6,fill:'#B8722C',stroke:'#F3F5F7','stroke-width':2});
+  el('text',{x:x(mi),y:y(D[mi][1])+26,'text-anchor':'middle',fill:'#F0C995',style:font+'font-size:13.5px;font-weight:600'},'Lặn sớm nhất: 17h13, ngày 26–27/11');
+
+  // Đông Chí
+  var dc=idx('22/12');
+  el('line',{x1:x(dc),x2:x(dc),y1:T,y2:H-B,stroke:'#9AA6B8','stroke-dasharray':'3 4'});
+  el('circle',{cx:x(dc),cy:y(D[dc][1]),r:4.5,fill:'#9AA6B8'});
+  el('text',{x:x(dc)-10,y:y(D[dc][1])+4,'text-anchor':'end',fill:'#DCE2EA',style:font+'font-size:13px'},'Đông Chí, ngày ngắn nhất: 17h20');
+
+  // Trên màn hình hẹp: cuộn sẵn tới điểm đáy
+  var sc=svg.parentNode;
+  if(sc.scrollWidth>sc.clientWidth){sc.scrollLeft=Math.max(0,x(mi)/W*sc.scrollWidth-sc.clientWidth/2);}
+
+  /* ---- Lưới 151 năm ---- */
+  var miss=[1954,1962,1965,1973,1981,1984,1992,2003,2011,2014,2019,2022,2030,2033,2038,2041,2049,2057,2060,2068,2079,2087,2098];
+  var box=document.getElementById('years'),html='';
+  for(var dec=1950;dec<=2100;dec+=10){
+    html+='<div class="yr-row"><span class="dec">'+dec+'</span>';
+    for(var k=0;k<10;k++){
+      var yr=dec+k;
+      if(yr>2100){html+='<span class="yr none"></span>';continue;}
+      var cls='yr'+(miss.indexOf(yr)>-1?' miss':'')+(yr===2026?' now':'');
+      html+='<span class="'+cls+'" title="'+yr+(miss.indexOf(yr)>-1?': lệch sang tháng Mười Một':': trong tháng Mười')+'"></span>';
+    }
+    html+='</div>';
+  }
+  box.innerHTML=html;
+})();
+</script>
+</body>
+</html>
