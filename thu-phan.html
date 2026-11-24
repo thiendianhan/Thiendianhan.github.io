@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thu Phân — Ngày Và Đêm Chia Đều Nhau</title>
+<meta name="description" content="Thu Phân, tiết khí thứ 16 trong 24 tiết khí: vì sao ngày Thu Phân ngày vẫn dài hơn đêm, gốc tế nguyệt của Trung Thu, dưỡng sinh, Bát Tự tháng Dậu và thơ Nguyên Chẩn, Lý Phác.">
+<meta name="author" content="Mèo Đen">
+<link rel="canonical" href="https://thiendianhan.github.io/thu-phan.html">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Thiên Địa Nhân">
+<meta property="og:title" content="Thu Phân — Ngày và đêm chia đều nhau">
+<meta property="og:url" content="https://thiendianhan.github.io/thu-phan.html">
+<meta property="og:image" content="https://thiendianhan.github.io/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23e9dcd6'/%3E%3Cpath d='M50 4a46 46 0 0 1 0 92z' fill='%238f4235'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #f3f4ee;
+    --bg-panel: #eaece2;
+    --ink: #262a22;
+    --ink-soft: #5b6355;
+    --ink-faint: #636b59;
+    --reed: #6f8464;
+    --dew: #91a8ac;
+    --dew-soft: #dbe4e2;
+    --seal: #8f4235;
+    --seal-soft: #e9dcd6;
+    --gold: #7a5c22;
+    --gold-soft: #ece2c9;
+    --rule: #d3d6c9;
+    --max: 640px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ background: var(--bg); }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Literata", Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero{
+    padding: 72px 0 40px;
+    text-align: center;
+  }
+
+  .hero-mark{
+    width: 92px;
+    height: auto;
+    margin: 0 auto 28px;
+    display: block;
+    color: var(--reed);
+  }
+
+  .hero-eyebrow{
+    font-family: "IBM Plex Mono";
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    margin: 0 0 18px;
+  }
+
+  h1{
+    font-family: "Literata";
+    font-weight: 600;
+    font-size: clamp(30px, 5.4vw, 42px);
+    line-height: 1.3;
+    margin: 0 0 22px;
+  }
+  h1 em{
+    font-style: italic;
+    font-weight: 500;
+    color: var(--reed);
+  }
+
+  .hero-quote{
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 17px;
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+  .hero-quote .zh{
+    display: block;
+    font-style: normal;
+    color: var(--seal);
+    font-size: 15px;
+    margin-top: 8px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- Dividers ---------- */
+
+  .divider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 56px 0;
+    color: var(--dew);
+  }
+  .divider .line{ flex: 1; height: 1px; background: var(--rule); max-width: 120px; }
+  .divider svg{ width: 26px; height: 14px; }
+
+  /* ---------- Intro ---------- */
+
+  .intro p{
+    font-size: 18.5px;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+  .intro p:last-child{ margin-bottom: 0; }
+
+  /* ---------- Layer sections ---------- */
+
+  .layer{ margin-bottom: 8px; }
+
+  .layer-head{
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+
+  .layer-num{
+    font-family: "IBM Plex Mono";
+    font-size: 13px;
+    color: var(--ink-faint);
+    letter-spacing: 0.03em;
+  }
+
+  h2{
+    font-family: "Literata";
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+
+  .badge{
+    font-family: "IBM Plex Mono";
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    padding: 3px 9px 4px;
+    border-radius: 3px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .badge.verified{ color: var(--seal); border-color: var(--seal); background: var(--seal-soft); }
+  .badge.folk{ color: var(--gold); border-color: var(--gold); background: var(--gold-soft); }
+  .badge.medicine{ color: #2f5254; border-color: #2f5254; background: var(--dew-soft); }
+  .badge.astro{ color: var(--ink-soft); border-color: var(--ink-faint); background: #e4e5db; }
+
+  .layer p{ margin: 0 0 16px; color: var(--ink); }
+  .layer p:last-child{ margin-bottom: 0; }
+  .layer ul{ margin: 0 0 16px; padding-left: 0; list-style: none; }
+  .layer li{
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .layer li:last-child{ margin-bottom: 0; }
+  .layer li::before{
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 11px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--dew);
+  }
+
+  .note{
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* ---------- Callout (điểm đắt giá) ---------- */
+
+  .callout{
+    margin: 22px 0;
+    padding: 18px 22px 20px;
+    background: var(--bg-panel);
+    border-left: 2px solid var(--seal);
+    border-radius: 2px;
+  }
+  .callout-label{
+    font-family: "IBM Plex Mono";
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    color: var(--seal);
+    margin: 0 0 10px;
+  }
+  .callout p{ margin: 0 0 12px; color: var(--ink); font-size: 17px; }
+  .callout p:last-child{ margin-bottom: 0; }
+  .callout p.note{ font-size: 14.5px; }
+
+  /* ---------- Poetry blocks ---------- */
+
+  blockquote{
+    margin: 26px 0;
+    padding: 4px 0 4px 22px;
+    border-left: 2px solid var(--dew);
+  }
+  blockquote p{
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink);
+    margin: 0 0 6px;
+    line-height: 1.6;
+  }
+  blockquote .gloss{
+    font-style: normal;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  blockquote .zh-line{
+    display: block;
+    font-style: normal;
+    font-size: 16px;
+    color: var(--seal);
+    margin: 0 0 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .zh-tag{
+    font-family: "IBM Plex Mono";
+    font-size: 13px;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Table ---------- */
+
+  .table-wrap{ margin: 22px 0 8px; }
+  .table-scroll{
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "IBM Plex Mono";
+    font-size: 14px;
+  }
+  thead th{
+    text-align: left;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg-panel);
+  }
+  tbody td{
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+  }
+  tbody tr:last-child td{ border-bottom: none; }
+  tbody tr.current td{
+    background: var(--seal-soft);
+    font-weight: 500;
+    color: var(--seal);
+  }
+  tbody tr.estimate td{ color: var(--ink-faint); }
+  .table-caption{
+    font-family: "IBM Plex Mono";
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    margin: 10px 2px 0;
+    line-height: 1.6;
+  }
+
+  /* ---------- Bát Tự box ---------- */
+
+  .month-pillar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 20px 0;
+    padding: 20px;
+    background: var(--bg-panel);
+    border-radius: 4px;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  .month-pillar .stage{
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .month-pillar .arrow{
+    font-family: "IBM Plex Mono";
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+  .month-pillar .mid{
+    font-family: "IBM Plex Mono";
+    font-size: 12px;
+    color: var(--seal);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Closing ---------- */
+
+  .closing p{ margin: 0 0 16px; }
+  .closing p:last-child{ margin-bottom: 0; }
+
+  .closing-couplet{
+    text-align: center;
+    margin: 40px 0;
+    padding: 32px 20px;
+  }
+  .closing-couplet p{
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+  .closing-couplet .zh-line{
+    display: block;
+    font-style: normal;
+    color: var(--seal);
+    font-size: 19px;
+    margin-bottom: 6px;
+  }
+  .closing-couplet .attrib{
+    font-style: normal;
+    font-family: "IBM Plex Mono";
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    display: block;
+    margin-top: 16px;
+  }
+
+  footer{
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: "IBM Plex Mono";
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    line-height: 1.9;
+  }
+
+  .pn{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:56px; }
+  .pn a{ display:block; border:1px solid var(--rule); border-radius:4px; padding:12px 14px; text-decoration:none; color:var(--ink); }
+  .pn a:hover{ border-color:var(--reed); }
+  .pn small{ display:block; font-family:"IBM Plex Mono"; font-size:12px; color:var(--ink-faint); }
+  .pn .r{ text-align:right; }
+
+  ::selection{ background: var(--dew-soft); color: var(--ink); }
+
+  a{ color: var(--reed); }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--reed);
+    outline-offset: 2px;
+  }
+
+  .section-label{
+    font-family: "IBM Plex Mono";
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: var(--ink-faint);
+    margin: 0 0 14px;
+  }
+
+  figure{ margin: 0; }
+
+  @media print{
+    body{ background: #fff; color: #000; font-size: 13px; }
+    .hero-mark, .divider{ display: none; }
+    .badge, .callout, blockquote, table, .month-pillar{ break-inside: avoid; }
+    a{ color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <svg class="hero-mark" viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <line x1="10" y1="45" x2="90" y2="45" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="24" cy="45" r="14" fill="#e9dcd6" stroke="#8f4235" stroke-width="1.6"/>
+      <path d="M24 31 A14 14 0 0 1 24 59 Z" fill="#8f4235"/>
+      <circle cx="76" cy="45" r="14" fill="#262a22" fill-opacity="0" stroke="#91a8ac" stroke-width="1.6"/>
+      <path d="M76 31 A14 14 0 0 0 76 59 Z" fill="#91a8ac"/>
+      <line x1="24" y1="45" x2="24" y2="34" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="76" y1="45" x2="76" y2="34" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="50" cy="45" r="2.6" fill="currentColor"/>
+    </svg>
+    <p class="hero-eyebrow"><a href="index.html" style="color:inherit;text-decoration:none">Thiên Địa Nhân</a> · Tiết khí thứ 16 / 24 — <span lang="zh">秋分</span></p>
+    <h1>Ngày và đêm <em>chia đều</em> nhau</h1>
+    <p class="hero-quote">
+      Trời đất trở nên tĩnh lặng trang nghiêm, nóng lạnh mừng vì được quân bình.
+      <span class="zh" lang="zh">乾坤能靜肅，寒暑喜均平</span>
+    </p>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <p class="section-label">Mở đầu</p>
+      <p>Bài trước khép lại bằng một lời hẹn: &ldquo;Bài tiếp theo trong seri: Thu Phân &mdash; ngày và đêm chia đều nhau.&rdquo; Giờ là lúc giữ đúng lời hẹn ấy.</p>
+      <p>Nếu Bạch Lộ là khoảnh khắc mùa thu vừa &ldquo;lộ diện&rdquo; &mdash; một giọt sương mỏng còn e dè giữa những buổi trưa vẫn nóng &mdash; thì Thu Phân là lúc mùa thu không còn úp mở nữa. Đây là tiết khí thứ 16 trong 24 tiết khí, đúng điểm giữa của 90 ngày mùa thu, và cũng là một trong hai thời khắc hiếm hoi trong năm khi ngày và đêm trên toàn Trái Đất gần như chia đều nhau &mdash; mỗi bên xấp xỉ 12 giờ. Tên gọi <span lang="zh">秋分</span> vì vậy mang nghĩa kép: vừa là &ldquo;nửa mùa thu&rdquo;, vừa là &ldquo;chia đôi ngày đêm&rdquo;.</p>
+      <p>Nhưng Thu Phân không chỉ là một con số thiên văn tròn trịa. Nó còn là gốc gác ít ai ngờ của đêm rằm Trung Thu mà trẻ em vẫn háo hức rước đèn.</p>
+    </section>
+
+    <div class="divider" role="presentation">
+      <span class="line"></span>
+      <svg viewBox="0 0 26 14" fill="none"><circle cx="4" cy="7" r="2" fill="#91a8ac"/><circle cx="13" cy="7" r="2" fill="#91a8ac"/><circle cx="22" cy="7" r="2" fill="#91a8ac"/></svg>
+      <span class="line"></span>
+    </div>
+
+    <!-- Lớp 1 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">01</span>
+        <h2>Thiên văn</h2>
+        <span class="badge verified">Đã kiểm chứng</span>
+      </div>
+
+      <ul>
+        <li>Thu Phân là tiết khí thứ 16/24, ứng với kinh độ Mặt Trời đạt <strong>180°</strong> trên hoàng đạo &mdash; điểm Mặt Trời cắt xích đạo trời, đi từ Bắc xuống Nam.</li>
+        <li><strong>Năm 2026: thời điểm giao tiết chính xác là 00:05 UTC ngày 23/9/2026, tức 07:05 sáng giờ Hà Nội, ngày 23/9/2026</strong> &mdash; khớp giữa nhiều nguồn thiên văn độc lập.</li>
+        <li>Bản chất: đây là lúc trục nghiêng Trái Đất không hướng về phía Mặt Trời hay ra xa Mặt Trời &mdash; ngày và đêm gần bằng nhau trên toàn cầu.</li>
+        <li>Sau Thu Phân, bán cầu Bắc chính thức bước vào nửa &ldquo;đêm dài hơn ngày&rdquo;, kéo dài tới Xuân Phân năm sau.</li>
+      </ul>
+
+      <div class="callout">
+        <p class="callout-label">Điểm đắt giá</p>
+        <p>Ngày mà ngày và đêm bằng nhau <em>tuyệt đối</em>, trên thực tế, lại không rơi đúng vào ngày Thu Phân. Giới thiên văn gọi thời điểm ngày = đêm thật sự là &ldquo;equilux&rdquo;, và ở Bắc bán cầu nó luôn đến sau ngày Thu Phân vài hôm &mdash; vì hai lý do: Mặt Trời là một đĩa sáng chứ không phải một điểm (mép trên ló ra trước khi tâm chạm đường chân trời, nên &ldquo;ngày&rdquo; được tính dài hơn &ldquo;đêm&rdquo; một chút), và khí quyển khúc xạ ánh sáng, kéo dài thêm thời gian nhìn thấy Mặt Trời ở cả lúc mọc lẫn lúc lặn.</p>
+        <p>Ở Hà Nội, ngày Thu Phân 23/9/2026 vẫn dài khoảng <strong>12 giờ 07 phút</strong>. Ngày và đêm bằng nhau thật sự rơi vào khoảng <strong>28/9</strong>, muộn hơn chừng năm ngày.</p>
+        <p class="note">Nghe thì ngược, nhưng càng gần xích đạo, equilux càng xa ngày Thu Phân: độ dài ngày ở vĩ độ thấp thay đổi rất chậm (ở Hà Nội chỉ hụt hơn một phút mỗi ngày), nên phải mất nhiều ngày hơn mới &ldquo;trả hết&rdquo; mấy phút dư kia. Ngay trên xích đạo thì ngày luôn dài hơn đêm, không bao giờ có equilux. (Tính theo vị trí Hà Nội, tâm Mặt Trời ở &minus;0°50&prime; dưới chân trời.)</p>
+      </div>
+
+      <div class="callout">
+        <p class="callout-label">Tam hậu &mdash; ba giai đoạn năm ngày, theo Nguyệt Lệnh</p>
+        <p><span class="zh-tag" lang="zh">雷始收聲</span> &mdash; <em>nhất hậu</em>: lôi thủy thu thanh, sấm bắt đầu ngừng vang &mdash; người xưa cho rằng sấm là biểu hiện của dương khí, sang Thu Phân âm khí thắng thế nên sấm &ldquo;thu tiếng&rdquo;.</p>
+        <p><span class="zh-tag" lang="zh">蟄蟲坯戶</span> &mdash; <em>nhị hậu</em>: trập trùng bồi hộ, các loài trùng trú đông bắt đầu dùng đất mịn lấp kín cửa hang để tránh hàn khí.</p>
+        <p><span class="zh-tag" lang="zh">水始涸</span> &mdash; <em>tam hậu</em>: thủy thủy hạc, nước ở sông hồ, đầm lầy bắt đầu cạn dần do mưa ít, không khí khô hanh hơn &mdash; &ldquo;thu cao khí sảng&rdquo;.</p>
+      </div>
+
+      <p class="note">Số liệu tam hậu được ghi kèm Hán tự vì các bản dịch lưu hành trên mạng khá loạn &mdash; người đọc kỹ có thể tự đối chiếu.</p>
+
+      <figure class="table-wrap">
+        <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Năm (Can Chi)</th><th>Thời điểm giao tiết Thu Phân</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Giáp Thìn 2024</td><td>22/9/2024, 19:43</td></tr>
+            <tr><td>Ất Tỵ 2025</td><td>23/9/2025, 01:19</td></tr>
+            <tr class="current"><td>Bính Ngọ 2026</td><td>23/9/2026, 07:05 &larr; năm nay</td></tr>
+            <tr><td>Đinh Mùi 2027</td><td>23/9/2027, 13:01</td></tr>
+            <tr><td>Mậu Thân 2028</td><td>22/9/2028, 18:45</td></tr>
+            <tr><td>Kỷ Dậu 2029</td><td>23/9/2029, 00:38</td></tr>
+            <tr><td>Canh Tuất 2030</td><td>23/9/2030, 06:26</td></tr>
+            <tr><td>Tân Hợi 2031</td><td>23/9/2031, 12:15</td></tr>
+            <tr><td>Nhâm Tý 2032</td><td>22/9/2032, 18:10</td></tr>
+            <tr><td>Quý Sửu 2033</td><td>22/9/2033, 23:51</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <figcaption class="table-caption">Giờ Hà Nội (UTC+7), tính theo lịch thiên văn và làm tròn đến phút; có thể lệch ±1 phút so với các bảng công bố.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px;">Điểm đáng nêu: giờ giao tiết lùi khoảng 6 tiếng mỗi năm, rồi cứ năm nhuận lại kéo về sớm một ngày, nên có năm rơi vào đêm khuya, có năm rơi vào rạng sáng.</p>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Lớp 2 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">02</span>
+        <h2>Nhìn lại: Bạch Lộ vừa đi qua</h2>
+        <span class="badge astro">Mạch thời gian</span>
+      </div>
+      <p>Mười sáu ngày trước, Bạch Lộ mở ra bằng một tín hiệu rất khẽ: một lớp sương trắng mỏng đọng trên lá vào sáng sớm, tan ngay khi nắng lên, và đến trưa cái nóng cuối hè vẫn còn nấn ná. Đó là mùa thu ở giai đoạn &ldquo;vừa lộ diện&rdquo; &mdash; cảm nhận được nhưng chưa thể đo đếm rạch ròi.</p>
+      <p>Mười sáu ngày sau, ở Thu Phân, mọi thứ đã khác: đêm không còn ngắn hơn ngày nữa, mà bằng đúng ngày, rồi từ đây sẽ dài hơn. Cái mơ hồ của Bạch Lộ đã trở thành một con số chẵn ở Thu Phân &mdash; đó chính là nhịp đi của cả seri: mỗi tiết khí siết chặt thêm một nấc điều mà tiết khí trước mới chỉ gợi ý.</p>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Lớp 3 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">03</span>
+        <h2>Nhìn tới: Hàn Lộ sắp tới</h2>
+        <span class="badge astro">Mạch thời gian</span>
+      </div>
+      <p>Nếu Bạch Lộ là &ldquo;sương trắng&rdquo; thì tiết khí kế tiếp, Hàn Lộ (8/10/2026), là &ldquo;sương lạnh&rdquo; &mdash; cùng là sương, nhưng giờ mang hơi hàn rõ rệt, báo hiệu thu đã ngả sang nửa cuối. Thu Phân đứng gần giữa hai cột mốc ấy &mdash; 16 ngày từ Bạch Lộ tới đây, 15 ngày từ đây tới Hàn Lộ, lệch nhau đúng một ngày chứ không chia đôi tuyệt đối &mdash; đứng giữa nửa thu còn nóng và nửa thu bắt đầu se lạnh.</p>
+      <p>Nói cách khác, Thu Phân không chỉ là điểm cân bằng ngày&ndash;đêm, mà còn là điểm bản lề của cả mùa thu: đứng giữa, nhìn lại một sương trắng đã quen, và nhìn tới một sương lạnh sắp tới.</p>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Lớp 4 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">04</span>
+        <h2>Dân gian &amp; nông nghiệp</h2>
+        <span class="badge folk">Kinh nghiệm truyền thống</span>
+      </div>
+
+      <ul>
+        <li><strong>Lập trứng</strong> <span class="zh-tag" lang="zh">(立蛋 / 竪蛋)</span>: tục dựng đứng trứng gà tươi (4&ndash;5 ngày tuổi) trên mặt bàn vào đúng ngày Thu Phân &mdash; thành công được xem là điềm lành cho vụ thu hoạch. Phổ biến ở Trung Quốc và Đài Loan, có thể xem như một tục lệ Đông Á liên quan, không phải tục Việt.</li>
+        <li><strong>Tế nguyệt</strong> <span class="zh-tag" lang="zh">(秋祭月)</span>: &ldquo;Xuân tế nhật, thu tế nguyệt&rdquo; &mdash; thời xưa, Thu Phân từng là ngày quốc lễ cúng trăng của triều đình; sau này lễ cúng trăng dân gian dịch dần sang đúng rằm tháng Tám (Trung Thu) vì đêm rằm mới có trăng tròn để ngắm.</li>
+      </ul>
+
+      <div class="callout">
+        <p class="callout-label">Điểm đắt giá &mdash; cổ và kim</p>
+        <p>Từ năm 2018, Trung Quốc chính thức lấy ngày Thu Phân hàng năm làm &ldquo;Ngày hội Mùa của Nông dân Trung Quốc&rdquo; <span lang="zh">(中国农民丰收节)</span> &mdash; ngày lễ đầu tiên trong lịch sử nước này được thiết lập riêng cho nông dân ở cấp quốc gia. Lý do chọn đúng Thu Phân: đây là lúc mùa màng chín rộ nhất trong năm, thể hiện rõ nhất tinh thần &ldquo;được mùa&rdquo;.</p>
+      </div>
+
+      <p>Ở đồng bằng Bắc Bộ, thời điểm này trùng vào cao điểm chăm sóc lúa mùa &mdash; vụ cấy từ khoảng tháng 6&ndash;7 dương lịch đang trong giai đoạn làm đòng, trỗ bông &mdash; nông dân đặc biệt để ý sâu bệnh cuối vụ và thời tiết mưa bão, vì tháng 8&ndash;9 là cao điểm bão ở Bắc Bộ. Đêm dài hơn, sương đêm nặng hơn Bạch Lộ, ảnh hưởng tới việc tưới tiêu, phun thuốc &mdash; nên làm sớm trước khi sương tan để tránh rửa trôi.</p>
+
+      <p>Một chi tiết đáng yêu trong năm 2026: Thu Phân chỉ cách rằm Trung Thu đúng hai ngày &mdash; 23/9 và 25/9. Đây không phải quy luật cố định (Trung Thu chạy theo âm lịch, còn Thu Phân chạy theo vị trí Mặt Trời), có năm hai mốc này cách xa cả nửa tháng, nhưng năm nay chúng đứng sát nhau đến mức khó bỏ qua. Và sự sát nhau ấy không hề ngẫu nhiên về mặt lịch sử: như đã nhắc ở trên, Trung Thu chính là &ldquo;hậu duệ dân gian hóa&rdquo; của lễ tế nguyệt triều đình từng được cử hành đúng vào Thu Phân. Người xưa ngắm trăng ở Thu Phân trước, rồi vì đêm rằm mới thật sự tròn trăng, tục lệ mới trôi dần sang 15/8 âm lịch &mdash; để rồi, những năm như 2026 này, hai cái hẹn ấy lại vô tình đứng gần nhau như thuở ban đầu.</p>
+
+      <p class="note">Trung Thu 2026 rơi vào 25/9/2026 (thứ Sáu, tức 15/8 âm lịch) theo đa số nguồn quy đổi lịch âm&ndash;dương đã đối chiếu.</p>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Lớp 5 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">05</span>
+        <h2>Dưỡng sinh</h2>
+        <span class="badge medicine">Lý thuyết Đông y</span>
+      </div>
+      <p>Đông y gọi Thu Phân là lúc <strong>&ldquo;âm dương tương bán&rdquo;</strong> <span class="zh-tag" lang="zh">(陰陽相半)</span> &mdash; không phải một cách nói ước lệ như ở nhiều tiết khí khác, mà là một điểm cân bằng đúng nghĩa đen: ngày bằng đêm, dương khí và âm khí cũng được xem là ngang sức ngang tài. Nhưng cân bằng ở đây chỉ là khoảnh khắc &mdash; ngay sau nó, âm khí bắt đầu lấn dần.</p>
+      <p>Những nguyên tắc dưỡng Phế, dưỡng âm đã nhắc ở Bạch Lộ giờ cần được thực hành nghiêm hơn: hạn chế đồ sống lạnh vì Tỳ Vị dễ tổn khi âm khí đã thắng thế, giữ ấm bụng và cổ kỹ hơn giai đoạn trước, và quan trọng nhất là ngủ sớm dậy sớm &mdash; nguyên tắc &ldquo;tảo ngọa tảo khởi&rdquo; mà Hoàng Đế Nội Kinh đã dặn riêng cho mùa thu, để nhịp sinh hoạt con người thuận theo nhịp &ldquo;thu liễm&rdquo; của trời đất thay vì ngược lại nó.</p>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Lớp 6 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">06</span>
+        <h2>Bát Tự / Tử Vi</h2>
+        <span class="badge astro">Quy ước mệnh lý</span>
+      </div>
+
+      <p>Ở bài Bạch Lộ, khung callout &ldquo;Không chỉ đổi tên&rdquo; đã giải thích rằng mỗi lần sang một trong 12 &ldquo;tiết&rdquo; <span class="zh-tag" lang="zh">(節)</span>, trụ tháng trong Tứ Trụ cũng đổi theo. Đến Thu Phân, quy luật ấy tạo ra một điều dễ gây hiểu lầm nếu không nói rõ: 24 tiết khí không đứng ngang hàng nhau về vai trò luận mệnh.</p>
+
+      <ul>
+        <li>24 tiết khí chia làm 12 <strong>&ldquo;tiết&rdquo;</strong> <span class="zh-tag" lang="zh">(節)</span> &mdash; số lẻ trong năm, gồm cả Lập Thu, Bạch Lộ, Hàn Lộ &mdash; là những mốc đổi trụ tháng.</li>
+        <li>Và 12 <strong>&ldquo;khí&rdquo;</strong> <span class="zh-tag" lang="zh">(氣)</span> &mdash; số chẵn, gồm cả Thu Phân &mdash; chỉ là điểm giữa của một trụ tháng đã xác lập từ trước, không tạo ra ranh giới mới.</li>
+      </ul>
+
+      <div class="callout">
+        <p class="callout-label">Không đổi trụ tháng</p>
+        <p>Thu Phân là một &ldquo;khí&rdquo;, không phải một &ldquo;tiết&rdquo; &mdash; nên không làm đổi trụ tháng. <strong>Đinh Dậu</strong> (từ Bạch Lộ, 7/9) xuyên suốt qua Thu Phân, chỉ đổi sang <strong>Mậu Tuất</strong> khi Hàn Lộ tới (dự kiến 8/10).</p>
+      </div>
+
+      <div class="month-pillar">
+        <span class="stage">Đinh Dậu</span>
+        <span class="arrow">— xuyên suốt qua —</span>
+        <span class="mid">Thu Phân, 23/9</span>
+        <span class="arrow">— tới khi —</span>
+        <span class="stage">Mậu Tuất</span>
+      </div>
+
+      <p style="margin-top:28px;">Nhưng đó chỉ là điểm kỹ thuật, cũng là điểm dễ thấy nhất. Cái đáng giá hơn nằm ở chỗ khác: Thu Phân là lúc khí của trụ Dậu đi tới chỗ thuần nhất, lạnh nhất và sắc nhất trong cả tháng &mdash; kéo theo một loạt hệ quả trong luận mệnh.</p>
+
+      <div class="callout">
+        <p class="callout-label">Kim thanh túy nhất</p>
+        <p>Trong 12 địa chi, Tý &mdash; Ngọ &mdash; Mão &mdash; Dậu thường được xem là bốn chi &ldquo;thuần khí&rdquo;, và theo cách tính tàng can phổ biến nhất, riêng Dậu suốt cả tháng chỉ tàng một mình <strong>Tân Kim</strong>, không xen tạp khí nào khác. Nhờ vậy, khí Kim ấy tới Thu Phân đã tích đủ để đạt độ thuần nhất cao nhất: tượng như dao đã mài xong, gương đã lau sạch. Theo cách đọc tượng, lá số sinh quanh Thu Phân có khí Kim ở trụ tháng rất rõ, thường được gắn với nét quyết đoán, ghét nhập nhằng. Đây là gợi ý để xem cùng toàn cục, không phải kết luận về tính cách: nhật chủ và các trụ khác mới quyết định Kim ấy là được hay mất.</p>
+        <p class="note">Có một truyền thống tàng can chi tiết hơn (chia mỗi tháng thành nhiều giai đoạn dư khí &mdash; bổn khí) cho kết quả khác với bảng phổ biến trên; hai truyền thống không hoàn toàn khớp nhau, nên &ldquo;thuần túy nhất&rdquo; ở đây nên hiểu theo nghĩa biểu tượng hơn là một mốc tàng can tuyệt đối.</p>
+      </div>
+
+      <div class="callout">
+        <p class="callout-label">Tân nhật chủ: Kiến Lộc</p>
+        <p>Tân Kim có Lộc an tại chính Dậu. Nên ai mang nhật chủ Tân mà sinh đúng Thu Phân &mdash; trụ tháng Đinh Dậu &mdash; thì có Lộc ngay trong chính tháng sinh, gọi là cách <em>Kiến Lộc</em>: tự đứng vững bằng sức mình, ít phải nương cậy. Đây cũng là lúc bản mệnh và mùa sinh trùng khít hiếm có &mdash; người mang Tân Kim lại sinh đúng lúc khí Tân thuần nhất trong năm.</p>
+      </div>
+
+      <div class="callout">
+        <p class="callout-label">Thêm Bính, không bớt Đinh</p>
+        <p>24 tiết khí trong Bát Tự còn dùng để xét nóng lạnh (Điều Hậu), không chỉ vượng suy. Tháng Dậu cần Hỏa để sưởi khí Kim đang lên, và theo vòng Trường Sinh cổ điển, chính tại Dậu là nơi <strong>Đinh Hỏa trường sinh</strong> &mdash; trong khi Bính Hỏa lại ở thế tử. Đinh, vì vậy, không hề yếu đi ở Thu Phân; vai trò của nó &mdash; ngọn lửa đèn, lửa lò rèn, luyện Kim thành khí cụ &mdash; vẫn còn nguyên. Điều thay đổi là: trời càng về sau Thu Phân càng hàn, nên phần việc sưởi ấm toàn cục &mdash; như mặt trời so với ngọn đèn &mdash; của Bính Hỏa trở nên cần góp thêm, chứ không thay Đinh.</p>
+        <p class="note">Các bảng Điều Hậu Dụng Thần kinh điển thường cho Đinh và Bính phối hợp dùng chung cho trọn tháng Dậu, tùy nhật chủ &mdash; không tách đôi theo nửa tháng trước/sau Thu Phân, nên đây là một cách đọc mở rộng, không phải quy tắc cố định.</p>
+      </div>
+
+      <div class="callout">
+        <p class="callout-label">Dậu sinh Thủy</p>
+        <p>Dậu không tàng Thủy, nhưng theo lý sinh khắc ngũ hành, Kim là mẹ của Thủy. Thu Phân là lúc khí Kim đã vượng tới cực điểm, bắt đầu tiết ra hơi Thủy &mdash; chưa thấy trong tàng can, chỉ có trong khí vận, nên đây là một gợi ý điều hậu hơn là một dụng thần có căn cứ tàng can trực tiếp. Đây cũng là lúc sương bắt đầu đọng trong tự nhiên, đúng với tên hai tiết khí kề bên (Bạch Lộ &mdash; sương trắng, Hàn Lộ &mdash; sương lạnh). Với các mệnh Hỏa khô táo về mùa thu, hay Mậu Thổ cần nước tưới, đây là một điểm đáng cân nhắc khi chọn dụng thần.</p>
+      </div>
+
+      <div class="callout">
+        <p class="callout-label">Đào Hoa cho bộ Thân Tý Thìn</p>
+        <p>Trong bốn bộ tam hợp, Thân &mdash; Tý &mdash; Thìn (Thủy cục) có Đào Hoa an tại Dậu. Nên ai có sẵn Thân, Tý hoặc Thìn trong lá số mà sinh đúng Thu Phân, trụ tháng của họ lại chính là cung Đào Hoa &mdash; dễ có duyên, dễ được chú ý, nhưng cũng dễ vướng thị phi tình cảm.</p>
+        <p class="note">Điểm này chỉ đúng với người có sẵn Thân, Tý hoặc Thìn trong bát tự &mdash; không phải ai sinh Thu Phân cũng mang Đào Hoa.</p>
+      </div>
+
+      <div class="callout">
+        <p class="callout-label">Ứng kỳ Mão Dậu</p>
+        <p>Dậu xung Mão là một trong bốn cặp xung chính mạnh nhất của 12 địa chi. Thu Phân rơi đúng lúc khí Dậu đậm nhất, nên xung động vào thời điểm này thường được xem là mạnh hơn cả &mdash; với lá số có sẵn Mão, những năm/tháng/ngày gặp Thu Phân dễ ứng vào chuyện đổi chỗ ở, đổi việc, va chạm, phẫu thuật. Đây không phải điểm tốt&ndash;xấu, mà là một mốc ứng kỳ đáng lưu tâm khi xem hạn.</p>
+      </div>
+
+      <div class="callout">
+        <p class="callout-label">Dậu tự hình</p>
+        <p>Trong 12 địa chi, chỉ bốn chi tự hình khi gặp lại chính nó: Thìn, Ngọ, Dậu, Hợi. Nên nếu lá số đã có sẵn một chữ Dậu khác, sinh thêm đúng Thu Phân sẽ tạo tự hình ngay ở trụ tháng &mdash; thường gắn với mâu thuẫn nội tâm, tự làm khó mình, và trong dưỡng sinh được nối với tạng ứng với Kim là phổi, đại tràng.</p>
+      </div>
+
+      <p class="note" style="margin-top:8px;">Tóm gọn các điểm trên: Thu Phân không tạo trụ mới, nhưng cho biết trụ Dậu đã thuần đến đâu, lạnh đến đâu, và sắc đến đâu &mdash; Kim cực, Hỏa song, Thủy sinh, Mộc động.</p>
+    </section>
+
+    <div class="divider" role="presentation">
+      <span class="line"></span>
+      <svg viewBox="0 0 26 14" fill="none"><circle cx="4" cy="7" r="2" fill="#8f4235"/><circle cx="13" cy="7" r="2" fill="#8f4235"/><circle cx="22" cy="7" r="2" fill="#8f4235"/></svg>
+      <span class="line"></span>
+    </div>
+
+    <!-- Lớp 7 -->
+    <section class="layer">
+      <div class="layer-head">
+        <span class="layer-num">07</span>
+        <h2>Văn học</h2>
+        <span class="badge verified">Nguồn cổ điển</span>
+      </div>
+
+      <p><strong>Nguyên Chẩn</strong> <span class="zh-tag" lang="zh">(元稹, 779&ndash;831)</span>, nhà Đường, viết chùm thơ <em>&ldquo;Vịnh nhị thập tứ khí thi&rdquo;</em> <span class="zh-tag" lang="zh">(詠廿四氣詩)</span> &mdash; mỗi tiết khí một bài, cùng mô-típ &ldquo;24 bài thơ cho 24 tiết khí&rdquo; như chính seri này. Bài cho Thu Phân là <em>&ldquo;Thu Phân, bát nguyệt trung&rdquo;</em> <span class="zh-tag" lang="zh">(秋分八月中)</span>:</p>
+
+      <blockquote>
+        <span class="zh-line" lang="zh">琴彈南呂調，風色已高清。</span>
+        <span class="zh-line" lang="zh">雲散飄颻影，雷收振怒聲。</span>
+        <span class="zh-line" lang="zh">乾坤能靜肅，寒暑喜均平。</span>
+        <span class="zh-line" lang="zh">忽見新來雁，人心敢不驚？</span>
+        <p class="gloss">Đàn cầm gảy theo điệu Nam Lữ, sắc gió đã trong veo cao vợi. Mây tan bóng bay phất phơ, sấm thu tiếng gầm dữ dội. Trời đất trở nên tĩnh lặng trang nghiêm, nóng lạnh mừng vì được quân bình. Chợt thấy chim nhạn mới về, lòng người sao khỏi giật mình. <em>(bản dịch nghĩa)</em></p>
+      </blockquote>
+
+      <div class="callout">
+        <p class="callout-label">Điểm đắt giá</p>
+        <p>Câu &ldquo;<span lang="zh">雷收振怒聲</span>&rdquo; (sấm thu tiếng gầm) chính là hình ảnh hóa của &ldquo;nhất hậu &mdash; lôi thủy thu thanh&rdquo; ở Lớp 1, và &ldquo;<span lang="zh">寒暑喜均平</span>&rdquo; (nóng lạnh mừng được quân bình) là câu tóm gọn chính xác bản chất thiên văn của Thu Phân &mdash; hiếm có bài thơ cổ nào bám sát định nghĩa khoa học của tiết khí đến vậy.</p>
+        <p>Đây cũng là một điểm tự tham chiếu đẹp: một nhà thơ Đường cũng từng làm đúng việc mà seri &ldquo;24 tiết khí&rdquo; này đang làm &mdash; viết một bài riêng cho mỗi tiết khí.</p>
+      </div>
+
+      <p style="margin-top:28px;"><strong>Lý Phác</strong> <span class="zh-tag" lang="zh">(李朴, đời Tống)</span>, bài <em>&ldquo;Trung Thu&rdquo;</em> <span class="zh-tag" lang="zh">(中秋)</span>, có một câu nối thẳng chữ &ldquo;phân&rdquo; của Thu Phân với vầng trăng rằm tháng Tám:</p>
+
+      <blockquote>
+        <span class="zh-line" lang="zh">皓魄當空寶鏡升，雲間仙籟寂無聲。</span>
+        <span class="zh-line" lang="zh">平分秋色一輪滿，長伴雲衢千里明。</span>
+        <p class="gloss">Vầng sáng giữa trời như gương báu nhô lên, trong mây tiếng tiên lặng im. Chia đều sắc thu, một vầng trăng tròn đầy, mãi soi đường mây sáng nghìn dặm. <em>(bản dịch nghĩa)</em></p>
+      </blockquote>
+
+      <div class="callout">
+        <p class="callout-label">Điểm đắt giá</p>
+        <p>&ldquo;<span lang="zh">平分秋色</span>&rdquo; (bình phân thu sắc, chia đều sắc thu) về sau thành thành ngữ, nhưng gốc của nó là hình ảnh trăng Trung Thu đứng giữa mùa thu, đúng như Thu Phân đứng giữa mùa thu về thiên văn. Đây là bằng chứng văn học cho mối dây tế nguyệt &rarr; Trung Thu đã nêu ở Lớp 4.</p>
+        <p class="note">Rằm tháng Tám không luôn trùng Thu Phân; năm 2026 hai mốc chỉ cách nhau hai ngày là một trùng hợp gần.</p>
+      </div>
+
+      <p>Hai bài thơ, một nối với định nghĩa thiên văn của tiết khí, một nối với tục lệ dân gian, cách nhau vài trăm năm nhưng cùng xoay quanh một chữ &ldquo;phân&rdquo;: chia đều.</p>
+    </section>
+
+    <div class="divider" role="presentation"><span class="line"></span></div>
+
+    <!-- Kết bài -->
+    <section class="closing">
+      <p class="section-label">Lời kết</p>
+      <p>Ngày và đêm chia đều nhau &mdash; lời hẹn từ cuối bài Bạch Lộ giờ đã thành sự thật, đúng 07h05 sáng 23/9/2026, giờ Hà Nội.</p>
+
+      <p>Nhưng đi hết bảy lớp ý nghĩa của Thu Phân, có thể thấy &ldquo;chia đều&rdquo; không chỉ là một con số thiên văn. Nó là ẩn dụ chạy xuyên suốt cả tiết khí này: chia đôi 90 ngày mùa thu, chia đôi quãng đường từ Bạch Lộ tới Hàn Lộ, chia đôi cả âm dương trong dưỡng sinh. Lặng lẽ hơn, nó còn chia đôi tháng Dậu trong Tứ Trụ &mdash; dù không hề tạo ra ranh giới mới nào ở đó. Một tiết khí không đổi trụ tháng, không tạo ra trụ Dậu mới như Bạch Lộ hay Hàn Lộ &mdash; nhưng chính vì đứng đúng giữa, không nghiêng về bên nào, Thu Phân trở thành một loại cột mốc khác: không phải nơi mọi thứ bắt đầu đổi khác, mà là nơi khí của trụ tháng đã có sẵn đạt tới trạng thái đậm đặc nhất, rõ nhất &mdash; và vì vậy cũng là nơi để nhìn lại đã đi được bao xa, và nhìn tới còn bao xa nữa.</p>
+
+      <p>Người xưa cũng từng dừng lại ở đúng điểm cân bằng này để ngắm trăng, để tế nguyệt &mdash; một tục lệ mà hậu thế, không còn nhớ gốc gác, vẫn tiếp tục qua mỗi mùa Trung Thu. Và một nhà thơ đời Đường, cũng vào một Thu Phân nào đó hơn một nghìn năm trước, đã viết xuống đúng hai điều mà cả bài này muốn nói:</p>
+
+      <div class="closing-couplet">
+        <p>
+          <span class="zh-line" lang="zh">乾坤能靜肅，寒暑喜均平。</span>
+          <em>Trời đất trở nên tĩnh lặng trang nghiêm, nóng lạnh mừng vì được quân bình.</em>
+        </p>
+        <span class="attrib">Nguyên Chẩn &mdash; Thu Phân, bát nguyệt trung</span>
+      </div>
+
+      <p>Bài tiếp theo trong seri: <a href="han-lo.html">Hàn Lộ &mdash; khi sương bắt đầu lạnh</a>.</p>
+    </section>
+
+  </main>
+
+  <nav class="pn" aria-label="Bài trước, bài sau">
+    <a href="bach-lo.html"><small>&larr; Bài trước</small>Bạch Lộ</a>
+    <a href="han-lo.html" class="r"><small>Bài sau &rarr;</small>Hàn Lộ</a>
+  </nav>
+
+  <footer>
+    Mèo Đen<br>
+    <a href="index.html" style="color:inherit">Thiên Địa Nhân</a> &mdash; Seri 24 tiết khí &mdash; Thu Phân, tiết thứ 16
+  </footer>
+
+</div>
+</body>
+</html>
