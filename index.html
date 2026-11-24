@@ -339,6 +339,53 @@
     margin:0;
   }
 
+  .wheel-lit{ fill:none; stroke:var(--brass); stroke-width:3; stroke-linecap:round; opacity:0.85; filter:drop-shadow(0 0 4px rgba(201,162,74,0.55)); }
+  .wheel-count{ text-align:center; margin:18px 0 0; font-size:0.86rem; color:var(--text-dim); }
+  .wheel-count b{ color:var(--brass); font-weight:500; }
+
+  /* ---- Hero: lối vào bài mới ---- */
+  .hero-latest{
+    display:inline-flex; align-items:baseline; gap:10px;
+    margin-top:22px; padding:10px 18px;
+    border:1px solid var(--brass-dim); border-radius:999px;
+    font-size:0.9rem; color:var(--paper);
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .hero-latest span{ color:var(--brass); font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1rem; }
+  .hero-latest:hover, .hero-latest:focus-visible{ border-color:var(--brass); background:rgba(201,162,74,0.08); }
+  .hero-latest:focus-visible{ outline:2px solid var(--brass); outline-offset:3px; }
+
+  /* ---- Danh sách bài đã đăng ---- */
+  .posts{ list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+  .posts li{ border-bottom:1px solid var(--line); }
+  .post{
+    display:grid; grid-template-columns:76px minmax(0,1fr) auto; gap:4px 20px; align-items:center;
+    padding:20px 6px; transition:background .25s ease;
+  }
+  a.post:hover, a.post:focus-visible{ background:linear-gradient(90deg, rgba(201,162,74,0.08), transparent 80%); }
+  a.post:focus-visible{ outline:2px solid var(--brass); outline-offset:-2px; }
+  .post-han{
+    grid-row:span 2; font-family:'Noto Serif TC','Songti SC','SimSun',serif; font-size:2.1rem; line-height:1;
+    color:var(--brass); letter-spacing:0.02em; text-align:center;
+  }
+  .post-name{ font-family:'Cormorant Garamond', serif; font-size:1.45rem; font-weight:500; color:var(--paper); line-height:1.2; }
+  .post-sub{ grid-column:2; color:var(--text-dim); font-size:0.92rem; line-height:1.5; }
+  .post-meta{ grid-row:1 / span 2; grid-column:3; text-align:right; font-size:0.8rem; color:var(--text-dim); line-height:1.6; white-space:nowrap; }
+  .post-meta b{ display:block; color:var(--paper-dim); font-weight:400; font-size:0.86rem; }
+  .post-new{ display:inline-block; margin-left:8px; vertical-align:middle; font-family:'Be Vietnam Pro',sans-serif; font-size:0.68rem; font-weight:500; color:var(--ink); background:var(--brass); border-radius:3px; padding:1px 7px; }
+  .post.upcoming .post-han{ color:var(--line); }
+  .post.upcoming .post-name{ color:var(--text-dim); }
+  @media (max-width:520px){
+    .post{ grid-template-columns:52px minmax(0,1fr); padding:18px 2px; gap:2px 14px; }
+    .post-han{ font-size:1.6rem; }
+    .post-meta{ grid-row:auto; grid-column:2; text-align:left; white-space:normal; }
+    .post-meta b{ display:inline; margin-right:8px; }
+  }
+
+  a.related-card{ display:block; }
+  a.related-card:focus-visible{ outline:2px solid var(--brass); outline-offset:3px; }
+  .related-card .read-link{ display:inline-block; margin-top:12px; }
+
   footer{
     text-align:center;
     padding:48px 24px 64px;
@@ -432,6 +479,7 @@
     <h1>Thiên Địa Nhân</h1>
     <p class="hero-sub">Trời vận hành, đất đổi mùa, con người đứng giữa mà quan sát, mà đặt tên, mà sống theo. Đây là nơi ghi lại 24 tiết khí — chậm rãi, từng bài một — cùng những bài viết khác về thời gian và lịch pháp.</p>
     <p class="hero-status" id="hero-status">Trời đất đang vận hành&hellip;</p>
+    <div><a class="hero-latest" href="tieu-tuyet.html"><span>Bài mới</span>Tiểu Tuyết: Trời đất khép cửa</a></div>
   </div>
 </header>
 
@@ -457,7 +505,7 @@
       <p class="section-note">24 tiết khí xếp trên một vòng, theo bốn mùa. Điểm sáng là bài đã đăng — chạm vào để đọc.</p>
 
       <div class="wheel-visual">
-<svg viewBox="0 0 620 620" class="wheel-svg" role="img" aria-label="Vòng 24 tiết khí xếp theo mùa, mỗi tiết 15 độ">
+<svg viewBox="-58 -58 736 736" class="wheel-svg" role="img" aria-label="Vòng 24 tiết khí xếp theo mùa, mỗi tiết 15 độ">
   <defs>
     <radialGradient id="wheelSunGlow" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#fff6da"/>
@@ -497,6 +545,13 @@
     <line x1="192.5" y1="106.5" x2="186.0" y2="95.2" class="wheel-tick" stroke="#589a85"/>
     <line x1="249.2" y1="83.0" x2="245.8" y2="70.5" class="wheel-tick" stroke="#569873"/>
   </g>
+  </g>
+  <g class="wheel-lits" aria-hidden="true">
+    <path d="M216.3 525.5 A235 235 0 0 1 170.2 498.9" class="wheel-lit"/>
+    <path d="M121.1 449.8 A235 235 0 0 1 94.5 403.7" class="wheel-lit"/>
+    <path d="M91.4 396.1 A235 235 0 0 1 77.6 344.7" class="wheel-lit"/>
+    <path d="M76.5 336.6 A235 235 0 0 1 76.5 283.4" class="wheel-lit"/>
+    <path d="M77.6 275.3 A235 235 0 0 1 91.4 223.9" class="wheel-lit"/>
   </g>
   <g class="wheel-seasons">
     <text x="403.3" y="208.7" text-anchor="middle" class="wheel-season-label">Xuân</text>
@@ -635,17 +690,32 @@
   </g>
 </svg>
       </div>
+      <p class="wheel-count">Đã đăng <b>5</b> trên 24 tiết khí. Mỗi cung sáng trên vòng là một bài.</p>
+    </section>
+
+    <section class="posts-section reveal">
+      <h2 class="section-title">Các bài đã đăng</h2>
+      <p class="section-note">Mỗi bài ra đúng ngày giao tiết. Bài mới nhất ở trên cùng.</p>
+      <ol class="posts" reversed>
+        <li><div class="post upcoming"><span class="post-han" lang="zh">大雪</span><span class="post-name">Đại Tuyết</span><span class="post-sub">Bài tiếp theo, đang viết.</span><span class="post-meta"><b>7/12/2026</b>Tiết 21 · 255°</span></div></li>
+        <li><a class="post" href="tieu-tuyet.html"><span class="post-han" lang="zh">小雪</span><span class="post-name">Tiểu Tuyết<span class="post-new">Mới</span></span><span class="post-sub">Trời đất khép cửa. Vì sao "ngày tháng Mười chưa cười đã tối".</span><span class="post-meta"><b>22/11/2026</b>Tiết 20 · 240°</span></a></li>
+        <li><a class="post" href="lap-dong.html"><span class="post-han" lang="zh">立冬</span><span class="post-name">Lập Đông</span><span class="post-sub">Đóng kín để ủ mầm. Chữ Đông nghĩa là kết thúc.</span><span class="post-meta"><b>7/11/2026</b>Tiết 19 · 225°</span></a></li>
+        <li><a class="post" href="suong-giang.html"><span class="post-han" lang="zh">霜降</span><span class="post-name">Sương Giáng</span><span class="post-sub">Trời khóa kho đúng hẹn, đất nguội trễ hẹn.</span><span class="post-meta"><b>23/10/2026</b>Tiết 18 · 210°</span></a></li>
+        <li><a class="post" href="han-lo.html"><span class="post-han" lang="zh">寒露</span><span class="post-name">Hàn Lộ</span><span class="post-sub">Khi sương bắt đầu lạnh. Hai cuốn lịch, con rươi đọc lịch trăng.</span><span class="post-meta"><b>8/10/2026</b>Tiết 17 · 195°</span></a></li>
+        <li><a class="post" href="bach-lo.html"><span class="post-han" lang="zh">白露</span><span class="post-name">Bạch Lộ</span><span class="post-sub">Khi sương bắt đầu trắng trên lá.</span><span class="post-meta"><b>7/9/2026</b>Tiết 15 · 165°</span></a></li>
+      </ol>
     </section>
 
     <section class="related-section reveal">
       <h2 class="section-title">Bài Viết Khác</h2>
       <p class="section-note">Không thuộc seri 24 tiết khí, nhưng cùng một mối quan tâm: thời gian, lịch pháp, vũ trụ.</p>
       <div class="related-grid">
-        <div class="related-card">
-          <span class="tag">Sắp đăng</span>
+        <a class="related-card" href="lich-su-xem-lich.html">
+          <span class="tag">Bài độc lập</span>
           <h3>Từ Đặc Quyền Đến Vật Dụng: Lịch Sử Của Việc &ldquo;Xem Lịch&rdquo;</h3>
           <p>Ai từng nắm quyền kiểm soát thời gian — từ tư tế Lưỡng Hà, triều đình Đông Á, đến ứng dụng lịch trong túi áo hôm nay.</p>
-        </div>
+          <span class="read-link">Đọc bài</span>
+        </a>
       </div>
     </section>
 
